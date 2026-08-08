@@ -8,13 +8,20 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap');
 :root{
-  --bg:#0f0f0f; --s1:#171717; --s2:#1f1f1f; --s3:#272727;
-  --b1:rgba(255,255,255,0.07); --b2:rgba(255,255,255,0.13);
-  --t1:#ebebeb; --t2:#888; --t3:#4d4d4d;
-  --g:#10b981; --g-bg:rgba(16,185,129,0.1); --g-bd:rgba(16,185,129,0.25);
-  --gr:#3b82f6; --gr-bg:rgba(59,130,246,0.1); --gr-bd:rgba(59,130,246,0.25);
-  --r:#e879b0; --r-bg:rgba(232,121,176,0.1); --r-bd:rgba(232,121,176,0.25);
-  --acc:#f59e0b; --acc-bg:rgba(245,158,11,0.1); --acc-bd:rgba(245,158,11,0.3);
+  --bg:#ebe5db;
+  --s1:#f5f0e8;
+  --s2:#ebe5db;
+  --s3:#ddd7cc;
+  --b1:rgba(0,0,0,0.08);
+  --b2:rgba(0,0,0,0.15);
+  --t1:#26201a;
+  --t2:#5a5047;
+  --t3:#7a6e63;
+  --t4:#a89e94;
+  --g:#1a6b40;  --g-bg:#edf7f1; --g-bd:rgba(26,107,64,0.22);
+  --gr:#1a4a9f; --gr-bg:#eef3fd; --gr-bd:rgba(26,74,159,0.22);
+  --r:#9f1a6b;  --r-bg:#fceef6; --r-bd:rgba(159,26,107,0.22);
+  --acc:#b5730c; --acc-bg:#fef8ec; --acc-bd:rgba(181,115,12,0.28);
   --rad:12px;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -119,9 +126,8 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--t1);
 .step-ttl{font-size:11px;font-weight:600;color:var(--t2)}
 .step-body{font-size:13px;line-height:1.95;color:var(--t1)}
 
-/* KaTeX display blocks in dark mode */
-.katex-display{background:var(--s3);border-radius:8px;padding:10px 14px;margin:8px 0;overflow-x:auto}
-.katex{color:var(--t1)!important}
+/* KaTeX display blocks */
+.katex-display{background:var(--s3);border-radius:8px;padding:10px 14px;margin:8px 0;overflow-x:auto;border:1px solid var(--b1)}
 
 .ans-box{background:var(--acc-bg);border:1px solid var(--acc-bd);border-radius:10px;padding:11px 14px;margin-top:14px}
 .ans-lbl{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:5px}
