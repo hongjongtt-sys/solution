@@ -49,8 +49,8 @@ $$n=\\varphi(38)=\\varphi(2)\\cdot\\varphi(19)=1\\times18=18$$`},
   ],
   answer:'26',
   footnotes:[
-    {n:'①',text:'순환군 G=⟨a⟩에서 n의 약수 d마다 부분군 ⟨a^(n/d)⟩가 하나씩 존재. 개수 = τ(n) (약수 개수).'},
-    {n:'②',text:'φ(n): 1~n 중 n과 서로소인 수의 개수. φ(p)=p-1, φ(ab)=φ(a)φ(b)(서로소). 순환군에서 위수 d인 원소는 φ(d)개.'}
+    {n:'①',text:'순환군 $G=\langle a\rangle$에서 $n$의 약수 $d$마다 부분군 $\langle a^{n/d}\rangle$가 하나씩 존재. 개수 $= \tau(n)$ (약수 개수).'},
+    {n:'②',text:'$\varphi(n)$: 1~n 중 n과 서로소인 수의 개수. $\varphi(p)=p-1$, $\varphi(ab)=\varphi(a)\varphi(b)$ (서로소). 순환군에서 위수 $d$인 원소는 $\varphi(d)$개.'}
   ]
 },
 {
@@ -83,9 +83,9 @@ $\\mathbb{Z}_{19}$의 이차잉여 ③ 목록: $1^2=1,2^2=4,3^2=9,4^2=16,5^2=6,6
   ],
   answer:'증명 완료 (14는 mod 19에서 이차잉여 아님)',
   footnotes:[
-    {n:'①',text:'단원: 역원이 존재하는 원소. Zₙ에서 gcd(a,n)=1 ⟺ a가 단원.'},
-    {n:'②',text:'중국인 나머지 정리: b²≡14 (mod 2014) ⟺ b²≡14 (mod 2), b²≡14 (mod 19), b²≡14 (mod 53) 세 조건이 동시에 성립.'},
-    {n:'③',text:'이차잉여: x²≡a (mod p)가 해를 가지는 a. 소수 p에서 (p-1)/2개가 이차잉여.'}
+    {n:'①',text:'단원: 역원이 존재하는 원소. $\mathbb{Z}_n$에서 $\gcd(a,n)=1 \iff a$가 단원.'},
+    {n:'②',text:'중국인 나머지 정리: $b^2\equiv 14\pmod{2014} \iff b^2\equiv 14\pmod{2}$, $b^2\equiv 14\pmod{19}$, $b^2\equiv 14\pmod{53}$ 세 조건이 동시에 성립.'},
+    {n:'③',text:'이차잉여: $x^2\equiv a\pmod{p}$가 해를 가지는 $a$. 소수 $p$에서 $\frac{p-1}{2}$개가 이차잉여.'}
   ]
 },
 {
@@ -110,8 +110,8 @@ $\\alpha_0=3^{1/6}e^{i\\pi/6}\\in\\mathbb{Q}(\\alpha_0)$이면 $\\alpha_0^3=3^{1
   ],
   answer:'|G(K/ℚ)|=6 (증명 완료)',
   footnotes:[
-    {n:'①',text:'아이젠슈타인 기준: f(x)=xⁿ+a_{n-1}xⁿ⁻¹+⋯+a₀에서 소수 p가 모든 aₖ를 나누고 p²∤a₀이면 ℚ 위 기약.'},
-    {n:'②',text:'갈루아 기본 정리: K가 F 위 갈루아 확대이면 |G(K/F)|=[K:F].'}
+    {n:'①',text:'아이젠슈타인 기준: $f(x)=x^n+a_{n-1}x^{n-1}+\cdots+a_0$에서 소수 $p$가 모든 $a_k$를 나누고 $p^2\nmid a_0$이면 $\mathbb{Q}$ 위 기약.'},
+    {n:'②',text:'갈루아 기본 정리: $K$가 $F$ 위 갈루아 확대이면 $|G(K/F)|=[K:F]$.'}
   ]
 },
 
@@ -134,8 +134,8 @@ $$\\text{ord}((3,3)+H)=1$$`}
   ],
   answer:'1',
   footnotes:[
-    {n:'①',text:'H=⟨(5,5)⟩의 원소 전체: (5,5),(10,4),(3,3),(8,2),(1,1),(6,0),(11,5),(4,4),(9,3),(2,2),(7,1),(0,0). |H|=12.'},
-    {n:'②',text:'잉여군 G/H에서 항등원 = H. a∈H ⟺ a+H = H.'}
+    {n:'①',text:'$H=\langle(5,5)\rangle$의 원소 전체: $(5,5),(10,4),(3,3),(8,2),(1,1),(6,0),(11,5),(4,4),(9,3),(2,2),(7,1),(0,0)$. $|H|=12$.'},
+    {n:'②',text:'잉여군 $G/H$에서 항등원 $= H$. $a\in H \iff a+H = H$.'}
   ]
 },
 
@@ -156,8 +156,8 @@ $x\\in\\{0,4,8\\}$, $y$는 자유. $|K|=3\\times6=18$`},
   ],
   answer:'4',
   footnotes:[
-    {n:'①',text:'4|3x이고 gcd(3,4)=1이면 4|x. (3의 mod 4 역원은 3이므로 양변에 곱하면 됨.)'},
-    {n:'②',text:'제1 준동형 정리: |G/Ker(f)|=|G|/|Ker(f)|.'}
+    {n:'①',text:'$4\mid 3x$이고 $\gcd(3,4)=1$이면 $4\mid x$. (3의 mod 4 역원은 3이므로 양변에 곱하면 됨.)'},
+    {n:'②',text:'제1 준동형 정리: $|G/\ker(f)|=|G|/|\ker(f)|$.'}
   ]
 },
 {
@@ -186,8 +186,8 @@ $F=\\mathbb{Q}(\\sqrt{2})\\subset\\mathbb{R}$에서 $i\\notin F$이므로 $\\alp
   ],
   answer:'$x^2-2\\sqrt{2}\\,x+3$',
   footnotes:[
-    {n:'①',text:'irr(α,F)가 F₀에서도 기약인 이유: F₀⊆F이면 F₀에서의 인수분해가 F에서도 유효. 만약 F₀에서 기약이 아니면 [K:F]<r에 모순.'},
-    {n:'②',text:'차수 2인 다항식은 근이 있으면 일차 인수로 분해. F⊂ℝ이므로 허수 α∉F, 근 없음 → 기약.'}
+    {n:'①',text:'$\text{irr}(\alpha,F)$가 $F_0$에서도 기약인 이유: $F_0\subseteq F$이면 $F_0$에서의 인수분해가 $F$에서도 유효. 만약 $F_0$에서 기약이 아니면 $[K:F]<r$에 모순.'},
+    {n:'②',text:'차수 2인 다항식은 근이 있으면 일차 인수로 분해. $F\subset\mathbb{R}$이므로 허수 $i\notin F$, 따라서 $\alpha\notin F$이므로 기약.'}
   ]
 },
 {
@@ -211,7 +211,7 @@ $$(3+1)(1+1)=8$$`}
   answer:'8',
   footnotes:[
     {n:'①',text:'순환군의 부분군: 위수의 약수 d마다 하나씩 존재.'},
-    {n:'②',text:'갈루아 기본 정리: 중간체 E ↔ 부분군 G(K/E)의 일대일 대응. E가 클수록 대응 부분군은 작음.'}
+    {n:'②',text:'갈루아 기본 정리: 중간체 $E\leftrightarrow$ 부분군 $G(K/E)$의 일대일 대응. $E$가 클수록 대응 부분군은 작음.'}
   ]
 },
 
@@ -234,7 +234,7 @@ $R=\\mathbb{Z}_2\\times\\mathbb{Z}_3\\times\\mathbb{Z}_5$`},
   ],
   answer:'30',
   footnotes:[
-    {n:'①',text:'Zₙ이 체 ⟺ n이 소수.'},
+    {n:'①',text:'$\mathbb{Z}_n$이 체 $\iff$ $n$이 소수.'},
     {n:'②',text:'직접곱 환의 표수 = 각 성분 표수의 lcm.'}
   ]
 },
@@ -260,8 +260,8 @@ $\\frac{320}{|H\\cap N|}$이 200의 약수가 되는 경우:
   ],
   answer:'H⊆N (증명 완료)',
   footnotes:[
-    {n:'①',text:'N◁G, H≤G이면 HN은 G의 부분군이고 |HN|=|H||N|/|H∩N|.'},
-    {n:'②',text:'라그랑주 정리: |HN|∣|G|=200.'}
+    {n:'①',text:'$N\trianglelefteq G$, $H\leq G$이면 $HN$은 $G$의 부분군이고 $|HN|=|H||N|/|H\cap N|$.'},
+    {n:'②',text:'라그랑주 정리: $|HN|\mid|G|=200$.'}
   ]
 },
 {
@@ -284,8 +284,8 @@ $$[F:\\mathbb{Q}]=\\frac{[K:\\mathbb{Q}]}{[K:F]}=\\frac{100}{2}=50$$`}
   ],
   answer:'$[F:\\mathbb{Q}]=50$',
   footnotes:[
-    {n:'①',text:'갈루아 기본 정리: [K:K^H]=|H|.'},
-    {n:'②',text:'α는 (α+α⁻¹)∈F를 계수로 갖는 2차 다항식의 근이므로 [K:F]≤2. σ≠id이므로 등호 성립.'}
+    {n:'①',text:'갈루아 기본 정리: $[K:K^H]=|H|$.'},
+    {n:'②',text:'$\alpha$는 $(\alpha+\alpha^{-1})\in F$를 계수로 갖는 2차 다항식의 근이므로 $[K:F]\leq 2$. $\sigma\neq\mathrm{id}$이므로 등호 성립.'}
   ]
 },
 
@@ -310,7 +310,7 @@ $$91-(46+19-10)=91-55=36$$`}
   ],
   answer:'36',
   footnotes:[
-    {n:'①',text:'Zₘ×Zₙ ≅ Z_{mn} ⟺ gcd(m,n)=1.'},
+    {n:'①',text:'$\mathbb{Z}_m\times\mathbb{Z}_n \cong \mathbb{Z}_{mn} \iff \gcd(m,n)=1$.'},
     {n:'②',text:'포함-배제: |2의 배수 ∪ 5의 배수| = 46+19-10 = 55.'}
   ]
 },
@@ -330,8 +330,8 @@ $$\\text{경우의 수}=\\binom{5}{2}=10$$`}
   ],
   answer:'10',
   footnotes:[
-    {n:'①',text:'|F[x]/⟨f⟩|=|F|^{deg f}. F=Z₅이면 5^{deg f}=25 → deg f=2.'},
-    {n:'②',text:'F[x]/⟨f⟩의 극대 아이디얼 ↔ f의 기약 인수. f=p₁p₂(서로 다른 일차식)이면 극대 아이디얼 2개.'}
+    {n:'①',text:'$|F[x]/\langle f\rangle|=|F|^{\deg f}$. $F=\mathbb{Z}_5$이면 $5^{\deg f}=25 \Rightarrow \deg f=2$.'},
+    {n:'②',text:'$F[x]/\langle f\rangle$의 극대 아이디얼 $\leftrightarrow$ $f$의 기약 인수. $f=p_1p_2$ (서로 다른 일차식)이면 극대 아이디얼 2개.'}
   ]
 },
 {
@@ -352,9 +352,9 @@ $$\\tau(2018)=(1+1)(1+1)=4$$`}
   ],
   answer:'4',
   footnotes:[
-    {n:'①',text:'f가 기약 → G가 f의 근에 전이적. G가 아벨이고 전이적이면 단순 추이적: |G|=근의 개수=deg f.'},
-    {n:'②',text:'위수 pq(서로 다른 소수)인 아벨군은 Z_{pq} 뿐.'},
-    {n:'③',text:'갈루아 대응: 부분체 ↔ G의 부분군. 순환군의 부분군 수 = 위수의 약수 수.'}
+    {n:'①',text:'$f$가 기약 $\Rightarrow$ $G$가 $f$의 근에 전이적. $G$가 아벨이고 전이적이면 단순 추이적: $|G|=$ 근의 개수 $=\deg f$.'},
+    {n:'②',text:'위수 $pq$ (서로 다른 소수)인 아벨군은 $\mathbb{Z}_{pq}$ 뿐.'},
+    {n:'③',text:'갈루아 대응: 부분체 $\leftrightarrow$ $G$의 부분군. 순환군의 부분군 수 $=$ 위수의 약수 수.'}
   ]
 },
 
@@ -379,9 +379,9 @@ $$|U|=|U(\\mathbb{Z}_7)|^2=6^2=36$$`}
   ],
   answer:'36',
   footnotes:[
-    {n:'①',text:'gcd(x, x-1)=1: 유클리드 알고리즘 적용.'},
-    {n:'②',text:'환의 CRT: gcd(f,g)=1이면 F[x]/⟨fg⟩ ≅ F[x]/⟨f⟩ × F[x]/⟨g⟩.'},
-    {n:'③',text:'직적환 (a,b)가 단원 ⟺ a,b 각각 단원. Z₇의 단원: {1,2,3,4,5,6}, 6개.'}
+    {n:'①',text:'$\gcd(x,\,x-1)=1$: 유클리드 알고리즘 적용.'},
+    {n:'②',text:'환의 CRT: $\gcd(f,g)=1$이면 $F[x]/\langle fg\rangle \cong F[x]/\langle f\rangle \times F[x]/\langle g\rangle$.'},
+    {n:'③',text:'직적환 $(a,b)$가 단원 $\iff$ $a,b$ 각각 단원. $\mathbb{Z}_7$의 단원: $\{1,2,3,4,5,6\}$, 6개.'}
   ]
 },
 {
@@ -408,7 +408,7 @@ $$|HP_5'|=\\frac{6\\times5}{\\gcd(6,5)}=30\\qquad\\blacksquare$$`}
   ],
   answer:'위수 30인 부분군 HP₅\' 존재',
   footnotes:[
-    {n:'①',text:'실로우 정리: |G|=pⁿm(p∤m)이면 실로우 p-부분군이 존재하고, 개수 nₚ≡1(mod p), nₚ|m.'},
+    {n:'①',text:'실로우 정리: $|G|=p^n m$ ($p\nmid m$)이면 실로우 $p$-부분군이 존재하고, 개수 $n_p\equiv 1\pmod{p}$, $n_p\mid m$.'},
     {n:'②',text:'부분군이 유일하면 자동으로 정규 (모든 켤레도 같은 크기의 부분군이므로).'}
   ]
 },
@@ -432,9 +432,9 @@ $$2\\mid|G(K/\\mathbb{Q})|\\qquad\\blacksquare$$`}
   ],
   answer:'|G(K/ℚ)|는 짝수 (증명 완료)',
   footnotes:[
-    {n:'①',text:'체에서 비영 원소로 나눌 수 있음. b≠0이면 α≠0이므로 α⁻¹∈K.'},
-    {n:'②',text:'K가 F 위 갈루아 확대이면 G(K/F)={F를 고정하는 K의 자기동형사상}.'},
-    {n:'③',text:'|⟨φ⟩|=2가 G의 부분군이므로 라그랑주 정리에 의해 2∣|G|.'}
+    {n:'①',text:'체에서 비영 원소로 나눌 수 있음. $b\neq 0$이면 $\alpha\neq 0$이므로 $\alpha^{-1}\in K$.'},
+    {n:'②',text:'$K$가 $F$ 위 갈루아 확대이면 $G(K/F)=\{F\text{를 고정하는 }K\text{의 자기동형사상}\}$.'},
+    {n:'③',text:'$|\langle\varphi\rangle|=2$가 $G$의 부분군이므로 라그랑주 정리에 의해 $2\mid|G|$.'}
   ]
 },
 
@@ -460,7 +460,7 @@ $$\\text{ord}(\\sigma,9)=\\text{lcm}(6,4)=12 ②$$`}
   answer:'σ의 위수: 6 / (σ,9)의 위수: 12',
   footnotes:[
     {n:'①',text:'서로소인 순환치환의 곱의 위수 = 각 길이의 lcm.'},
-    {n:'②',text:'직적군 (g,h)의 위수 = lcm(ord(g), ord(h)).'}
+    {n:'②',text:'직적군 $(g,h)$의 위수 $= \text{lcm}(\text{ord}(g),\,\text{ord}(h))$.'}
   ]
 },
 {
@@ -487,8 +487,8 @@ $$(x-2)^{-1}\\equiv g(x)=-\\frac{1}{2}x^3-x^2+4$$`}
   ],
   answer:'$p(x)=x^4-4x^2+2$, $g(x)=-\\frac{1}{2}x^3-x^2+4$',
   footnotes:[
-    {n:'①',text:'α⁴-4α²+2=0: α²=2-√2를 순차 대입하여 유도.'},
-    {n:'②',text:'확장 유클리드 알고리즘으로 gcd(x-2, p(x))=1을 보이고 역원 계산.'}
+    {n:'①',text:'$\alpha^4-4\alpha^2+2=0$: $\alpha^2=2-\sqrt{2}$를 순차 대입하여 유도.'},
+    {n:'②',text:'확장 유클리드 알고리즘으로 $\gcd(x-2,\,p(x))=1$을 보이고 역원 계산.'}
   ]
 },
 {
@@ -507,9 +507,9 @@ $$\\text{irr}(\\zeta,\\mathbb{Q})=\\Phi_{24}(x)=x^8-x^4+1 ③$$`}
   ],
   answer:'$|G|=8$, $\\text{irr}(\\zeta,\\mathbb{Q})=x^8-x^4+1$',
   footnotes:[
-    {n:'①',text:'x²⁴-1의 분해체 = ℚ(원시 24차 단위근) = ℚ(ζ₂₄).'},
-    {n:'②',text:'G(ℚ(ζₙ)/ℚ) ≅ (ℤ/nℤ)*, |G|=φ(n). φ(24)=φ(8)φ(3)=4×2=8.'},
-    {n:'③',text:'원분다항식 Φₙ(x): 원시 n차 단위근들을 근으로 갖는 기약 다항식. Φ₂₄(x)=x⁸-x⁴+1.'}
+    {n:'①',text:'$x^{24}-1$의 분해체 $= \mathbb{Q}(\zeta_{24})$.'},
+    {n:'②',text:'$G(\mathbb{Q}(\zeta_n)/\mathbb{Q}) \cong (\mathbb{Z}/n\mathbb{Z})^*$, $|G|=\varphi(n)$. $\varphi(24)=\varphi(8)\varphi(3)=4\times 2=8$.'},
+    {n:'③',text:'원분다항식 $\Phi_n(x)$: 원시 $n$차 단위근들을 근으로 갖는 기약 다항식. $\Phi_{24}(x)=x^8-x^4+1$.'}
   ]
 },
 
@@ -538,7 +538,7 @@ $$\\frac{72}{6}=12$$`}
   ],
   answer:'위수18 원소: 72개 / Z₁₈ 동형 부분군: 12개',
   footnotes:[
-    {n:'①',text:'소수 p에 대해 Zₚ*는 위수 p-1인 순환군.'}
+    {n:'①',text:'소수 $p$에 대해 $\mathbb{Z}_p^*$는 위수 $p-1$인 순환군.'}
   ]
 },
 {
@@ -565,8 +565,8 @@ $$\\text{irr}(\\alpha,\\mathbb{Q})=x^4+x^3+x^2+x+1? ②$$
   ],
   answer:'$\\mathbb{Q}(\\sqrt[5]{5})\\subseteq K$ 증명 완료',
   footnotes:[
-    {n:'①',text:'ζ₁₀=e^{2πi/10}=e^{iπ/5}∈K. x⁵+5의 근들로부터 ζ₁₀을 만들 수 있음.'},
-    {n:'②',text:'α의 최소다항식은 더 정밀한 계산 필요. [ℚ(α):ℚ]=2임은 α가 허수이고 α²∈ℝ∩ℚ임을 이용.'}
+    {n:'①',text:'$\zeta_{10}=e^{2\pi i/10}=e^{i\pi/5}\in K$. $x^5+5$의 근들로부터 $\zeta_{10}$을 만들 수 있음.'},
+    {n:'②',text:'$\alpha$의 최소다항식은 더 정밀한 계산 필요. $[\mathbb{Q}(\alpha):\mathbb{Q}]=2$임은 $\alpha$가 허수이고 $\alpha^2\in\mathbb{R}\cap\mathbb{Q}$임을 이용.'}
   ]
 },
 
@@ -590,7 +590,7 @@ $$\\text{irr}(\\alpha,\\mathbb{Q})=x^4+x^3+x^2+x+1? ②$$
   ],
   answer:'2, 6, 7, 8',
   footnotes:[
-    {n:'①',text:'순환군 Z_n에서 생성원 개수 = φ(n). φ(10)=φ(2)φ(5)=1×4=4.'}
+    {n:'①',text:'순환군 $\mathbb{Z}_n$에서 생성원 개수 $= \varphi(n)$. $\varphi(10)=\varphi(2)\varphi(5)=1\times 4=4$.'}
   ]
 },
 {
@@ -615,7 +615,7 @@ $|H_1\\cap H_2|=1$ (계산)이면 $|H_1H_2|=20\\times6=120=|G|$. $\\blacksquare$
   ],
   answer:'$|G|=120$',
   footnotes:[
-    {n:'①',text:'갈루아 기본 정리에서 F가 정규확대 ↔ G(K/F)◁G(K/ℚ).'}
+    {n:'①',text:'갈루아 기본 정리에서 $F$가 정규확대 $\iff G(K/F)\trianglelefteq G(K/\mathbb{Q})$.'}
   ]
 },
 {
@@ -638,7 +638,7 @@ $$|U|=2\\times\\varphi(2^n)\\times4=2\\times2^{n-1}\\times4=2^{n+2}$$`},
   ],
   answer:'n = 3',
   footnotes:[
-    {n:'①',text:'Z의 단원은 ±1. Z_{2ⁿ}의 단원 개수=φ(2ⁿ)=2^{n-1}. Z₅의 단원 개수=4.'}
+    {n:'①',text:'$\mathbb{Z}$의 단원은 $\pm 1$. $\mathbb{Z}_{2^n}$의 단원 개수 $=\varphi(2^n)=2^{n-1}$. $\mathbb{Z}_5$의 단원 개수 $=4$.'}
   ]
 },
 
@@ -667,8 +667,8 @@ $$\\text{irr}(\\beta,\\mathbb{Q})=x^2+x-3$$`}
   ],
   answer:'$|X|=4$, $\\text{irr}(\\beta,\\mathbb{Q})=x^2+x-3$',
   footnotes:[
-    {n:'①',text:'G(ℚ(ζₙ)/ℚ) ≅ (Z/nZ)*. n=13이면 (Z/13Z)*≅Z₁₂.'},
-    {n:'②',text:'이차잉여 mod 13: {1,3,4,9,10,12}. β = 이차잉여들의 합.'}
+    {n:'①',text:'$G(\mathbb{Q}(\zeta_n)/\mathbb{Q}) \cong (\mathbb{Z}/n\mathbb{Z})^*$. $n=13$이면 $(\mathbb{Z}/13\mathbb{Z})^*\cong\mathbb{Z}_{12}$.'},
+    {n:'②',text:'이차잉여 $\pmod{13}$: $\{1,3,4,9,10,12\}$. $\beta =$ 이차잉여들의 합.'}
   ]
 },
 {
@@ -697,8 +697,8 @@ $$\\text{char}=5$$`}
   ],
   answer:'$\\min\\nu(\\eta)=5$, $\\text{char}=5$',
   footnotes:[
-    {n:'①',text:'Z[i]는 유클리드 정역: β=qα+r에서 q=β/α를 계산하고 가장 가까운 가우스 정수로 반올림.'},
-    {n:'②',text:'Z[i]/⟨π⟩ ≅ F_{ν(π)} (π가 가우스 소수일 때). ν(2-i)=5는 소수 → Z[i]/⟨2-i⟩ ≅ F₅.'}
+    {n:'①',text:'$\mathbb{Z}[i]$는 유클리드 정역: $\beta=q\alpha+r$에서 $q=\beta/\alpha$를 계산하고 가장 가까운 가우스 정수로 반올림.'},
+    {n:'②',text:'$\mathbb{Z}[i]/\langle\pi\rangle \cong \mathbb{F}_{\nu(\pi)}$ ($\pi$가 가우스 소수일 때). $\nu(2-i)=5$는 소수 $\Rightarrow \mathbb{Z}[i]/\langle 2-i\rangle \cong \mathbb{F}_5$.'}
   ]
 },
 
@@ -727,7 +727,7 @@ $5,10,20,40,65,130,260,520$ → $8$개.`}
   ],
   answer:'생성원: 192개 / L의 개수: 8',
   footnotes:[
-    {n:'①',text:'순환군 G에서 (A)(B)=G ⟺ lcm(|A|,|B|)=|G|.'}
+    {n:'①',text:'순환군 $G$에서 $(A)(B)=G \iff \text{lcm}(|A|,|B|)=|G|$.'}
   ]
 },
 {
@@ -760,7 +760,7 @@ $d=22$: $[E:\\mathbb{Q}]=22$인 중간체. $G=G(K/\\mathbb{Q})\\cong\\mathbb{Z}_
   ],
   answer:'$[K:\\mathbb{Q}]=506$',
   footnotes:[
-    {n:'①',text:'x²³-a에서 23이 소수이고 a가 23제곱수가 아니면 분해체 [K:Q]=23×φ(23)=23×22=506.'}
+    {n:'①',text:'$x^{23}-a$에서 $23$이 소수이고 $a$가 23제곱수가 아니면 분해체 $[K:\mathbb{Q}]=23\times\varphi(23)=23\times 22=506$.'}
   ]
 },
 {
@@ -793,8 +793,8 @@ $(5,2),(5,3),(5,4)$ ✓`}
   ],
   answer:'$(3,0),(3,2),(5,2),(5,3),(5,4)$',
   footnotes:[
-    {n:'①',text:'F[x]/⟨f⟩가 정역 ⟺ f가 기약 (F가 체일 때).'},
-    {n:'②',text:'x²+bx+c가 기약 ⟺ 판별식 b²-4c가 이차비잉여.'}
+    {n:'①',text:'$F[x]/\langle f\rangle$가 정역 $\iff$ $f$가 기약 ($F$가 체일 때).'},
+    {n:'②',text:'$x^2+bx+c$가 기약 $\iff$ 판별식 $b^2-4c$가 이차비잉여.'}
   ]
 },
 
@@ -817,7 +817,7 @@ $n=1,2,3,4,5$: $b=5$개 (모두 $\\gcd(4,2^n-1)=1$ 만족).`}
   ],
   answer:'$a=2$, $b=5$',
   footnotes:[
-    {n:'①',text:'Zₘ×Zₙ이 순환군 ⟺ gcd(m,n)=1. |F*|=|F|-1.'}
+    {n:'①',text:'$\mathbb{Z}_m\times\mathbb{Z}_n$이 순환군 $\iff \gcd(m,n)=1$. $|F^*|=|F|-1$.'}
   ]
 },
 {
@@ -844,8 +844,8 @@ $$G(F/\\mathbb{Q})\\cong G/N\\cong S_3\\qquad\\blacksquare$$`}
   ],
   answer:'$[E:\\mathbb{Q}]=6$인 부분체 $7$개, $S_3$ 동형 부분체 존재 증명 완료',
   footnotes:[
-    {n:'①',text:'갈루아 대응: [K:E]=|G(K/E)|. [E:ℚ]=12/2=6 ⟺ [K:E]=2.'},
-    {n:'②',text:'중간체 F가 갈루아 확대 ⟺ G(K/F)◁G. G/G(K/F) ≅ G(F/ℚ).'}
+    {n:'①',text:'갈루아 대응: $[K:E]=|G(K/E)|$. $[E:\mathbb{Q}]=12/2=6 \iff [K:E]=2$.'},
+    {n:'②',text:'중간체 $F$가 갈루아 확대 $\iff G(K/F)\trianglelefteq G$. $G/G(K/F) \cong G(F/\mathbb{Q})$.'}
   ]
 },
 {
@@ -868,7 +868,7 @@ $$S\\cong\\mathbb{Z}_{12}/K_2\\in\\{\\mathbb{Z}_4,\\mathbb{Z}_2,\\{0\\}\\}$$`}
   ],
   answer:'최소 아이디얼: $\\mathbb{Z}_{10}\\times\\langle4\\rangle$ / 동형 아닌 S: $\\mathbb{Z}_4,\\mathbb{Z}_2,\\{0\\}$',
   footnotes:[
-    {n:'①',text:'gcd(3,10)=1이므로 ⟨3⟩=Z₁₀. gcd(8,12)=4이므로 8을 포함하는 최소 아이디얼은 ⟨4⟩.'}
+    {n:'①',text:'$\gcd(3,10)=1$이므로 $\langle 3\rangle=\mathbb{Z}_{10}$. $\gcd(8,12)=4$이므로 $8$을 포함하는 최소 아이디얼은 $\langle 4\rangle$.'}
   ]
 },
 
@@ -895,8 +895,8 @@ $$|\\ker\\phi|=26$$`}
   ],
   answer:'$|\\text{Im}(\\phi)|=20$, $|\\ker\\phi|=26$',
   footnotes:[
-    {n:'①',text:'Zd의 부분군 개수=τ(d)(약수 개수)=6. 200의 약수 중 약수가 6개인 것: 20=2²×5, 50=2×5².'},
-    {n:'②',text:'준동형 정리: |G|=|Im||Ker|.'}
+    {n:'①',text:'$\mathbb{Z}_d$의 부분군 개수 $=\tau(d)=6$. 200의 약수 중 약수 6개인 것: $20=2^2\times 5$, $50=2\times 5^2$.'},
+    {n:'②',text:'준동형 정리: $|G|=|\mathrm{Im}||\ker|$.'}
   ]
 },
 {
@@ -923,7 +923,7 @@ $$|E|=7^2=49$$`}
   ],
   answer:'$f$는 기약 (증명 완료), $|E|=49$',
   footnotes:[
-    {n:'①',text:'유한체의 갈루아군: G(F_{pⁿ}/F_p)≅Z_n (프로베니우스 사상 생성).'}
+    {n:'①',text:'유한체의 갈루아군: $G(\mathbb{F}_{p^n}/\mathbb{F}_p)\cong\mathbb{Z}_n$ (프로베니우스 사상 생성).'}
   ]
 }
 
