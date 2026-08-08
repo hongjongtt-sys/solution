@@ -5,111 +5,137 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>임용수학 기출풀이</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="katexReady=true;tryInit()"></script>
-
-<!-- ▼ 과목 데이터 파일: 과목 추가 시 여기에 한 줄씩 추가 -->
-<script src="data-현대대수.js"></script>
-<!-- <script src="data-해석학.js"></script> -->
-<!-- <script src="data-위상수학.js"></script> -->
-
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;700&family=DM+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap');
 :root{
-  --bg:#f8f7f4;--surface:#fff;--surface2:#f0ede6;
-  --border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);
-  --text:#1c1a17;--text2:#6b6557;--text3:#9e9a90;
-  --accent:#c8860a;--accent-l:#fef3e0;
-  --radius:14px;--radius-sm:9px;
-  --shadow:0 2px 8px rgba(0,0,0,0.07),0 1px 2px rgba(0,0,0,0.04);
-  --shadow-lg:0 8px 32px rgba(0,0,0,0.10),0 2px 8px rgba(0,0,0,0.06);
+  --bg:#0f0f0f; --s1:#171717; --s2:#1f1f1f; --s3:#272727;
+  --b1:rgba(255,255,255,0.07); --b2:rgba(255,255,255,0.13);
+  --t1:#ebebeb; --t2:#888; --t3:#4d4d4d;
+  --g:#10b981; --g-bg:rgba(16,185,129,0.1); --g-bd:rgba(16,185,129,0.25);
+  --gr:#3b82f6; --gr-bg:rgba(59,130,246,0.1); --gr-bd:rgba(59,130,246,0.25);
+  --r:#e879b0; --r-bg:rgba(232,121,176,0.1); --r-bd:rgba(232,121,176,0.25);
+  --acc:#f59e0b; --acc-bg:rgba(245,158,11,0.1); --acc-bd:rgba(245,158,11,0.3);
+  --rad:12px;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:60px}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--t1);min-height:100vh;padding-bottom:60px;line-height:1.65}
 
-/* ── 헤더 ── */
-.header{background:var(--text);color:#fff;padding:24px 20px 20px}
-.header-inner{max-width:680px;margin:0 auto}
-.eyebrow{font-size:10px;font-weight:600;letter-spacing:0.14em;color:var(--accent);text-transform:uppercase;margin-bottom:6px}
-.header h1{font-family:'Noto Serif KR',serif;font-size:24px;font-weight:700;margin-bottom:4px}
-.header-sub{font-size:12px;color:rgba(255,255,255,0.45)}
+/* ── sticky nav ── */
+.nav-sticky{position:sticky;top:0;z-index:100;background:var(--bg)}
+.hdr{background:var(--s1);border-bottom:1px solid var(--b1);padding:14px 18px 12px}
+.hdr-row{display:flex;align-items:baseline;gap:10px}
+.hdr-title{font-size:16px;font-weight:700;letter-spacing:-0.3px}
+.hdr-cnt{font-size:11px;color:var(--t3)}
 
-/* ── 과목 탭 ── */
-.subject-bar{background:#111;border-bottom:1px solid rgba(255,255,255,0.08);overflow-x:auto;scrollbar-width:none}
-.subject-bar::-webkit-scrollbar{display:none}
-.subject-inner{max-width:680px;margin:0 auto;display:flex;padding:0 12px}
-.subj-btn{flex-shrink:0;padding:13px 16px;border:none;background:none;font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:500;color:rgba(255,255,255,0.4);cursor:pointer;position:relative;transition:color 0.2s;white-space:nowrap;letter-spacing:-0.2px}
-.subj-btn.active{color:#fff}
-.subj-btn.active::after{content:'';position:absolute;bottom:0;left:10px;right:10px;height:2px;background:var(--accent);border-radius:1px}
+/* subject bar */
+.subj-bar{background:var(--bg);border-bottom:1px solid var(--b1);overflow-x:auto;scrollbar-width:none}
+.subj-bar::-webkit-scrollbar{display:none}
+.subj-inner{display:flex;padding:0 14px;gap:2px}
+.subj-btn{flex-shrink:0;padding:9px 14px;border:none;background:none;font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:500;color:var(--t3);cursor:pointer;position:relative;transition:color .15s;white-space:nowrap}
+.subj-btn.on{color:var(--t1)}
+.subj-btn.on::after{content:'';position:absolute;bottom:0;left:8px;right:8px;height:2px;background:var(--acc);border-radius:1px}
 
-/* ── 탭 ── */
-.tab-bar{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
-.tab-inner{max-width:680px;margin:0 auto;display:flex}
-.tab-btn{flex:1;padding:14px 12px;border:none;background:none;font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:500;color:var(--text3);cursor:pointer;position:relative;transition:color 0.2s}
-.tab-btn.active{color:var(--text)}
-.tab-btn.active::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--accent);border-radius:1px}
+/* view tabs */
+.view-bar{background:var(--s1);border-bottom:1px solid var(--b1);display:flex}
+.view-btn{flex:1;padding:11px;border:none;background:none;font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:500;color:var(--t3);cursor:pointer;position:relative;transition:color .15s}
+.view-btn.on{color:var(--t1)}
+.view-btn.on::after{content:'';position:absolute;bottom:0;left:20%;right:20%;height:2px;background:var(--acc);border-radius:1px}
 
-/* ── 필터 ── */
-.filter-bar{max-width:680px;margin:0 auto;padding:12px 16px 4px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
-.filter-bar::-webkit-scrollbar{display:none}
-.fc{flex-shrink:0;padding:5px 13px;border-radius:20px;border:1px solid var(--border2);background:var(--surface);font-family:'Noto Sans KR',sans-serif;font-size:12px;color:var(--text2);cursor:pointer;transition:all 0.15s;white-space:nowrap}
-.fc.on{color:#fff;border-color:transparent;background:var(--text)}
+/* ── year pills ── */
+.yr-bar{overflow-x:auto;scrollbar-width:none;padding:10px 14px 8px;background:var(--bg);border-bottom:1px solid var(--b1)}
+.yr-bar::-webkit-scrollbar{display:none}
+.yr-inner{display:flex;gap:5px;width:max-content}
+.yr-pill{padding:4px 10px;border-radius:20px;border:1px solid var(--b2);background:none;font-family:'DM Mono',monospace;font-size:11px;color:var(--t2);cursor:pointer;transition:all .15s;white-space:nowrap}
+.yr-pill.on{background:var(--acc);color:#000;border-color:var(--acc);font-weight:600}
 
-/* ── 섹션 헤더 ── */
-.wrap{max-width:680px;margin:0 auto;padding:8px 16px}
-.sec-head{display:flex;align-items:center;gap:9px;padding:14px 0 8px;border-bottom:1px solid var(--border)}
-.sec-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;background:var(--accent)}
-.sec-title{font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text2)}
-.sec-count{font-size:11px;color:var(--text3);font-family:'DM Mono',monospace;margin-left:auto}
+/* cat filter */
+.cat-bar{overflow-x:auto;scrollbar-width:none;padding:7px 14px;background:var(--bg)}
+.cat-bar::-webkit-scrollbar{display:none}
+.cat-inner{display:flex;gap:5px}
+.cb{flex-shrink:0;padding:4px 13px;border-radius:20px;border:1px solid var(--b2);background:none;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:var(--t2);cursor:pointer;transition:all .15s}
+.cb.on-all{background:var(--s2);color:var(--t1);border-color:var(--b2)}
+.cb.on-g{background:var(--g-bg);color:var(--g);border-color:var(--g-bd)}
+.cb.on-gr{background:var(--gr-bg);color:var(--gr);border-color:var(--gr-bd)}
+.cb.on-r{background:var(--r-bg);color:var(--r);border-color:var(--r-bd)}
 
-/* ── 카드 ── */
-.card{background:var(--surface);border-radius:var(--radius);margin:7px 0;box-shadow:var(--shadow);border:1px solid var(--border);overflow:hidden;transition:box-shadow 0.2s}
-.card:hover{box-shadow:var(--shadow-lg)}
-.card-head{display:flex;align-items:flex-start;gap:10px;padding:14px 16px;cursor:pointer;user-select:none}
+/* freq cat tabs */
+.fcat-bar{padding:10px 14px 4px;background:var(--bg)}
+.fcat-inner{display:flex;gap:7px}
+.fcat-btn{flex:1;padding:10px 6px;border-radius:10px;border:1px solid var(--b1);background:var(--s1);font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:600;color:var(--t3);cursor:pointer;transition:all .15s;text-align:center;line-height:1.5}
+.fcat-btn .fc-stars{display:block;font-size:8px;letter-spacing:1px;margin-top:2px;font-weight:400}
+.fcat-btn .fc-cnt{display:block;font-size:9px;font-family:'DM Mono',monospace;font-weight:400;margin-top:1px}
+.fcat-btn.on-g{background:var(--g-bg);color:var(--g);border-color:var(--g-bd)}
+.fcat-btn.on-gr{background:var(--gr-bg);color:var(--gr);border-color:var(--gr-bd)}
+.fcat-btn.on-r{background:var(--r-bg);color:var(--r);border-color:var(--r-bd)}
+
+/* ── content ── */
+.wrap{max-width:680px;margin:0 auto;padding:6px 12px}
+
+/* year section header */
+.yr-sec{display:flex;align-items:center;gap:7px;padding:12px 0 7px}
+.yr-sec-yr{font-family:'DM Mono',monospace;font-size:11px;font-weight:700;color:var(--acc)}
+.yr-sec-line{flex:1;height:1px;background:var(--b1)}
+.yr-sec-cnt{font-size:10px;color:var(--t3);font-family:'DM Mono',monospace}
+
+/* ── card ── */
+.card{background:var(--s1);border-radius:var(--rad);margin:5px 0;border:1px solid var(--b1);overflow:hidden;transition:border-color .15s}
+.card:hover{border-color:var(--b2)}
+.card[data-cat=galois]{border-left:3px solid var(--g)}
+.card[data-cat=group]{border-left:3px solid var(--gr)}
+.card[data-cat=ring]{border-left:3px solid var(--r)}
+.card-head{display:flex;align-items:flex-start;gap:10px;padding:13px 14px;cursor:pointer;user-select:none}
 .card-meta{flex:1;min-width:0}
 .tags{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:5px}
-.tag{font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;letter-spacing:0.03em}
-.tag-year{background:var(--surface2);color:var(--text2);font-family:'DM Mono',monospace}
-.tag-a{background:#e8edf7;color:#3d5a99}
-.tag-b{background:#e8f4ed;color:#2d7a4f}
-.tag-pts{background:var(--accent-l);color:var(--accent)}
-.card-title{font-size:13px;font-weight:600;color:var(--text);line-height:1.4}
-.chevron{width:20px;height:20px;border-radius:50%;background:var(--surface2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--text3);transition:all 0.2s;margin-top:1px}
-.chevron svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform 0.2s}
-.card.open .chevron{background:var(--text);color:#fff}
-.card.open .chevron svg{transform:rotate(180deg)}
+.tag{font-size:9px;font-weight:700;padding:2px 6px;border-radius:6px;letter-spacing:.03em;font-family:'DM Mono',monospace}
+.t-yr{background:var(--s2);color:var(--t3)}
+.t-a{background:var(--gr-bg);color:var(--gr)}
+.t-b{background:var(--g-bg);color:var(--g)}
+.t-pts{background:var(--acc-bg);color:var(--acc)}
+.t-g{background:var(--g-bg);color:var(--g)}
+.t-gr{background:var(--gr-bg);color:var(--gr)}
+.t-r{background:var(--r-bg);color:var(--r)}
+.card-title{font-size:13px;font-weight:600;color:var(--t1);line-height:1.45}
+.chev{width:22px;height:22px;border-radius:50%;border:1px solid var(--b2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--t3);transition:all .2s;margin-top:1px}
+.chev svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.card.open .chev{background:var(--t1);border-color:var(--t1);color:#000}
+.card.open .chev svg{transform:rotate(180deg)}
 
-/* ── 카드 바디 ── */
-.card-body{display:none;border-top:1px solid var(--border)}
+/* ── card body ── */
+.card-body{display:none;border-top:1px solid var(--b1)}
 .card.open .card-body{display:block}
-.prob-box{background:var(--surface2);padding:13px 16px;border-bottom:1px solid var(--border)}
-.prob-label{font-size:9px;font-weight:700;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:5px}
-.prob-text{font-size:13px;line-height:1.85;color:var(--text)}
-.sol-area{padding:14px 16px}
-.step{margin-bottom:15px}
-.step-num{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:5px}
-.step-body{font-size:13px;line-height:1.9;color:var(--text)}
-.ans-box{background:var(--accent-l);border:1px solid rgba(200,134,10,0.3);border-radius:var(--radius-sm);padding:11px 14px;margin-top:12px}
-.ans-label{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:3px}
-.ans-val{font-size:14px;font-weight:700;color:var(--text)}
-.fns{border-top:1px solid var(--border);margin-top:12px;padding-top:10px}
-.fn-label{font-size:9px;font-weight:700;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:7px}
+
+.prob-box{background:var(--s2);padding:13px 14px;border-bottom:1px solid var(--b1)}
+.box-lbl{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:6px}
+.prob-text{font-size:13px;line-height:1.95;color:var(--t2)}
+
+.sol{padding:14px}
+.step{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--b1)}
+.step:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.step-hd{display:flex;align-items:center;gap:7px;margin-bottom:8px}
+.step-num{font-family:'DM Mono',monospace;font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;flex-shrink:0;letter-spacing:.04em}
+[data-cat=galois] .step-num{background:var(--g-bg);color:var(--g)}
+[data-cat=group]  .step-num{background:var(--gr-bg);color:var(--gr)}
+[data-cat=ring]   .step-num{background:var(--r-bg);color:var(--r)}
+.step-ttl{font-size:11px;font-weight:600;color:var(--t2)}
+.step-body{font-size:13px;line-height:1.95;color:var(--t1)}
+
+/* KaTeX display blocks in dark mode */
+.katex-display{background:var(--s3);border-radius:8px;padding:10px 14px;margin:8px 0;overflow-x:auto}
+.katex{color:var(--t1)!important}
+
+.ans-box{background:var(--acc-bg);border:1px solid var(--acc-bd);border-radius:10px;padding:11px 14px;margin-top:14px}
+.ans-lbl{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:5px}
+.ans-val{font-size:14px;font-weight:700;color:var(--t1)}
+
+.fns{margin-top:14px;padding-top:11px;border-top:1px solid var(--b1)}
+.fn-hd{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:7px}
 .fn-row{display:flex;gap:7px;margin-bottom:6px}
-.fn-n{font-family:'DM Mono',monospace;font-size:10px;color:var(--accent);font-weight:600;flex-shrink:0;padding-top:1px}
-.fn-t{font-size:12px;color:var(--text2);line-height:1.6}
+.fn-n{font-family:'DM Mono',monospace;font-size:10px;color:var(--acc);font-weight:700;flex-shrink:0;padding-top:1px;min-width:14px}
+.fn-t{font-size:11px;color:var(--t3);line-height:1.6}
 
-/* ── 빈도순 ── */
-.freq-head{display:flex;align-items:center;gap:10px;padding:18px 0 8px}
-.freq-badge{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;font-family:'DM Mono',monospace;color:#fff;flex-shrink:0}
-.freq-info h2{font-size:14px;font-weight:700;color:var(--text)}
-.freq-info p{font-size:11px;color:var(--text2);margin-top:2px}
-.stars{color:var(--accent);font-size:11px;letter-spacing:1px}
-
-/* ── 카테고리 태그 (동적) ── */
-.tag-cat{font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px}
+.empty{text-align:center;padding:48px 20px;color:var(--t3);font-size:13px}
 
 @media(max-width:480px){
-  .header h1{font-size:20px}
   .card-title{font-size:12px}
   .step-body,.prob-text{font-size:12px}
 }
@@ -117,192 +143,226 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text
 </head>
 <body>
 
-<div class="header">
-  <div class="header-inner">
-    <div class="eyebrow">임용수학 기출풀이</div>
-    <h1 id="header-title">과목을 선택하세요</h1>
-    <div class="header-sub" id="header-sub">2014~2026 · 전문제 해설 · 개념 각주</div>
+<div class="nav-sticky">
+  <div class="hdr">
+    <div class="hdr-row">
+      <span class="hdr-title">임용수학 기출풀이</span>
+      <span class="hdr-cnt" id="hdr-cnt"></span>
+    </div>
+  </div>
+  <div class="subj-bar"><div class="subj-inner" id="subj-tabs"></div></div>
+  <div class="view-bar">
+    <button class="view-btn on" onclick="switchView('year',this)">📅 연도순</button>
+    <button class="view-btn"   onclick="switchView('freq',this)">⭐ 빈도순</button>
   </div>
 </div>
 
-<div class="subject-bar">
-  <div class="subject-inner" id="subj-tabs"></div>
-</div>
+<div id="nav-area"></div>
+<div class="wrap"><div id="content-area"></div></div>
 
-<div class="tab-bar">
-  <div class="tab-inner">
-    <button class="tab-btn active" id="tab-year-btn" onclick="switchView('year',this)">📅 연도순</button>
-    <button class="tab-btn" id="tab-freq-btn" onclick="switchView('freq',this)">⭐ 빈도순</button>
-  </div>
-</div>
-
-<div id="filter-area"></div>
-<div id="content-area"></div>
-
+<!-- ▼ KaTeX 동기 로드 (타이밍 문제 해결) -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="data-현대대수.js"></script>
 <script>
-// ═══════════════════════════════════════
-// 상태
-// ═══════════════════════════════════════
-let curSubject = null;   // 현재 과목 key
-let curView = 'year';    // 'year' | 'freq'
-let curFilter = 'all';   // 'all' | category id
-let katexReady = false;
-let domReady = false;
+// ── state ──
+let CUR_SUBJ = null, CUR_VIEW = 'year', CUR_YEAR = null, CUR_CAT = null, CUR_FCAT = null;
 
-// ═══════════════════════════════════════
-// 초기화
-// ═══════════════════════════════════════
-function tryInit() {
-  katexReady = true;
-  if (domReady) doInit();
+const YEARS = [2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026];
+const CAT = {
+  galois:{ name:'갈루아이론', cls:'g' },
+  group: { name:'군론',       cls:'gr' },
+  ring:  { name:'환론',       cls:'r'  }
+};
+
+// ── KaTeX ──
+function renderMath(el) {
+  if (typeof window.renderMathInElement !== 'function') return;
+  window.renderMathInElement(el || document.getElementById('content-area'), {
+    delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],
+    throwOnError:false, strict:false
+  });
 }
+
+// ── init ──
 document.addEventListener('DOMContentLoaded', () => {
-  domReady = true;
-  buildSubjectTabs();
   const keys = Object.keys(window.SUBJECTS || {});
-  if (keys.length > 0) selectSubject(keys[0]);
-  if (katexReady) renderMath();
+  // subject tabs
+  document.getElementById('subj-tabs').innerHTML = keys.map((k,i) =>
+    `<button class="subj-btn${i===0?' on':''}" onclick="selSubj('${k}',this)">${window.SUBJECTS[k].label}</button>`
+  ).join('');
+  if (keys.length) selSubj(keys[0]);
 });
 
-function buildSubjectTabs() {
-  const subjects = window.SUBJECTS || {};
-  const keys = Object.keys(subjects);
-  const el = document.getElementById('subj-tabs');
-  el.innerHTML = keys.map(k =>
-    `<button class="subj-btn" onclick="selectSubject('${k}',this)">${subjects[k].label}</button>`
-  ).join('');
-}
-
-function selectSubject(key, btn) {
-  curSubject = key;
-  curFilter = 'all';
+function selSubj(key, btn) {
+  CUR_SUBJ = key;
+  CUR_YEAR = null; CUR_CAT = null;
   const s = window.SUBJECTS[key];
-  document.getElementById('header-title').textContent = s.label;
-  document.querySelectorAll('.subj-btn').forEach(b => b.classList.remove('active'));
-  const btns = document.querySelectorAll('.subj-btn');
-  btns.forEach(b => { if(b.textContent === s.label) b.classList.add('active'); });
+  CUR_FCAT = s.freqGroups?.[0]?.id || null;
+  document.getElementById('hdr-cnt').textContent = `2014~2026 · ${(s.problems||[]).length}문제`;
+  document.querySelectorAll('.subj-btn').forEach(b=>b.classList.remove('on'));
+  (btn || document.querySelector('.subj-btn'))?.classList.add('on');
   render();
 }
 
 function switchView(v, btn) {
-  curView = v;
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+  CUR_VIEW = v;
+  document.querySelectorAll('.view-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
   render();
 }
 
-function setFilter(f, btn) {
-  curFilter = f;
-  document.querySelectorAll('.fc').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
+// ── render ──
+function render() {
+  if (!CUR_SUBJ) return;
+  renderNav();
   renderContent();
-  setTimeout(renderMath, 100);
+  setTimeout(()=>renderMath(), 80);
+}
+
+function renderNav() {
+  const el = document.getElementById('nav-area');
+  const s = window.SUBJECTS[CUR_SUBJ];
+  const cats = s.categories || [];
+
+  if (CUR_VIEW === 'year') {
+    const hasYear = y => (s.problems||[]).some(p=>p.year===y);
+    el.innerHTML = `
+      <div class="yr-bar">
+        <div class="yr-inner">
+          <button class="yr-pill${CUR_YEAR===null?' on':''}" onclick="setYear(null,this)">전체</button>
+          ${YEARS.filter(hasYear).map(y=>`<button class="yr-pill${CUR_YEAR===y?' on':''}" onclick="setYear(${y},this)">'${String(y).slice(2)}</button>`).join('')}
+        </div>
+      </div>
+      <div class="cat-bar">
+        <div class="cat-inner">
+          <button class="cb${CUR_CAT===null?' on-all':''}" onclick="setCat(null,this)">전체</button>
+          ${cats.map(c=>`<button class="cb${CUR_CAT===c.id?' on-'+CAT[c.id]?.cls:''}" onclick="setCat('${c.id}',this)">${c.name}</button>`).join('')}
+        </div>
+      </div>`;
+  } else {
+    const groups = s.freqGroups || [];
+    el.innerHTML = `
+      <div class="fcat-bar">
+        <div class="fcat-inner">
+          ${groups.map(g=>`<button class="fcat-btn${CUR_FCAT===g.id?' on-'+CAT[g.id]?.cls:''}" onclick="setFcat('${g.id}',this)">
+            ${g.name}
+            <span class="fc-stars">${g.stars}</span>
+            <span class="fc-cnt">${g.count}회 출제</span>
+          </button>`).join('')}
+        </div>
+      </div>`;
+  }
+}
+
+function setYear(y, btn) {
+  CUR_YEAR = y;
+  document.querySelectorAll('.yr-pill').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  renderContent(); setTimeout(()=>renderMath(),80);
+}
+
+function setCat(c, btn) {
+  CUR_CAT = c;
+  document.querySelectorAll('.cb').forEach(b=>b.className='cb');
+  btn.className = 'cb '+(c===null?'on-all':'on-'+(CAT[c]?.cls||''));
+  renderContent(); setTimeout(()=>renderMath(),80);
+}
+
+function setFcat(c, btn) {
+  CUR_FCAT = c;
+  document.querySelectorAll('.fcat-btn').forEach(b=>b.className='fcat-btn');
+  btn.className = 'fcat-btn on-'+(CAT[c]?.cls||'');
+  renderContent(); setTimeout(()=>renderMath(),80);
+}
+
+// ── content ──
+function renderContent() {
+  const el = document.getElementById('content-area');
+  if (!CUR_SUBJ) { el.innerHTML=''; return; }
+  const s = window.SUBJECTS[CUR_SUBJ];
+  el.innerHTML = CUR_VIEW==='year' ? buildYear(s) : buildFreq(s);
+}
+
+function buildYear(s) {
+  let probs = s.problems || [];
+  if (CUR_CAT) probs = probs.filter(p=>p.cat===CUR_CAT);
+  if (CUR_YEAR !== null) {
+    const yp = probs.filter(p=>p.year===CUR_YEAR);
+    return yp.length ? yp.map(p=>cardHtml(p)).join('') : '<div class="empty">해당 연도 문제가 없어요</div>';
+  }
+  const years = [...new Set(probs.map(p=>p.year))].sort();
+  if (!years.length) return '<div class="empty">해당하는 문제가 없어요</div>';
+  return years.map(y=>{
+    const yp = probs.filter(p=>p.year===y);
+    return `<div class="yr-sec">
+      <span class="yr-sec-yr">${y}</span>
+      <span class="yr-sec-line"></span>
+      <span class="yr-sec-cnt">${yp.length}문제</span>
+    </div>${yp.map(p=>cardHtml(p)).join('')}`;
+  }).join('');
+}
+
+function buildFreq(s) {
+  if (!CUR_FCAT) return '<div class="empty">카테고리를 선택해주세요</div>';
+  const g = (s.freqGroups||[]).find(g=>g.id===CUR_FCAT);
+  if (!g) return '';
+  const probs = (g.problems||[]).map(id=>(s.problems||[]).find(p=>p.id===id)).filter(Boolean)
+    .sort((a,b)=>b.pts-a.pts||b.year-a.year);
+  return probs.length ? probs.map(p=>cardHtml(p)).join('') : '<div class="empty">문제가 없어요</div>';
+}
+
+// ── card ──
+function catTagCls(cat){return{galois:'t-g',group:'t-gr',ring:'t-r'}[cat]||''}
+function catName(cat){return{galois:'갈루아이론',group:'군론',ring:'환론'}[cat]||cat}
+
+function cardHtml(p) {
+  return `<div class="card" id="c-${p.id}" data-cat="${p.cat}">
+  <div class="card-head" onclick="toggleCard('${p.id}')">
+    <div class="card-meta">
+      <div class="tags">
+        <span class="tag t-yr">${p.year}</span>
+        <span class="tag ${p.type==='전공A'?'t-a':'t-b'}">${p.type}</span>
+        <span class="tag ${catTagCls(p.cat)}">${catName(p.cat)}</span>
+        <span class="tag t-pts">${p.pts}점</span>
+      </div>
+      <div class="card-title">${p.title}</div>
+    </div>
+    <div class="chev"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+  </div>
+  <div class="card-body">
+    <div class="prob-box">
+      <div class="box-lbl">문제</div>
+      <div class="prob-text">${p.problem}</div>
+    </div>
+    <div class="sol">
+      ${(p.steps||[]).map((st,i)=>`<div class="step">
+        <div class="step-hd">
+          <span class="step-num">STEP ${i+1}</span>
+          <span class="step-ttl">${st.title}</span>
+        </div>
+        <div class="step-body">${st.body}</div>
+      </div>`).join('')}
+      <div class="ans-box">
+        <div class="ans-lbl">정답</div>
+        <div class="ans-val">${p.answer}</div>
+      </div>
+      ${p.footnotes?.length?`<div class="fns">
+        <div class="fn-hd">개념 각주</div>
+        ${p.footnotes.map(f=>`<div class="fn-row"><span class="fn-n">${f.n}</span><span class="fn-t">${f.text}</span></div>`).join('')}
+      </div>`:''}
+    </div>
+  </div>
+</div>`;
 }
 
 function toggleCard(id) {
-  const c = document.getElementById('c-' + id);
+  const c = document.getElementById('c-'+id);
   c.classList.toggle('open');
-  setTimeout(renderMath, 50);
+  if (c.classList.contains('open')) {
+    setTimeout(()=>renderMath(c), 50);
+  }
 }
-
-// ═══════════════════════════════════════
-// 렌더
-// ═══════════════════════════════════════
-function render() {
-  renderFilter();
-  renderContent();
-  setTimeout(renderMath, 150);
-}
-
-function renderFilter() {
-  const el = document.getElementById('filter-area');
-  if (!curSubject || curView === 'freq') { el.innerHTML = ''; return; }
-  const s = window.SUBJECTS[curSubject];
-  const cats = s.categories || [];
-  el.innerHTML = `<div class="filter-bar">
-    <button class="fc on" onclick="setFilter('all',this)">전체</button>
-    ${cats.map(c => `<button class="fc" onclick="setFilter('${c.id}',this)">${c.name}</button>`).join('')}
-  </div>`;
-}
-
-function renderContent() {
-  const el = document.getElementById('content-area');
-  if (!curSubject) { el.innerHTML = ''; return; }
-  const s = window.SUBJECTS[curSubject];
-  if (curView === 'year') el.innerHTML = renderYear(s);
-  else el.innerHTML = renderFreq(s);
-}
-
-function renderYear(s) {
-  const probs = curFilter === 'all' ? s.problems : s.problems.filter(p => p.cat === curFilter);
-  const years = [...new Set(probs.map(p => p.year))].sort();
-  return `<div class="wrap">${years.map(y => {
-    const ps = probs.filter(p => p.year === y);
-    return `<div class="sec-head"><div class="sec-dot"></div><div class="sec-title">${y}년도</div><div class="sec-count">${ps.length}문제</div></div>
-    ${ps.map(p => card(p, s)).join('')}`;
-  }).join('')}</div>`;
-}
-
-function renderFreq(s) {
-  const groups = s.freqGroups || [];
-  return `<div class="wrap">${groups.map((g, i) => {
-    const ps = (g.problems || []).map(id => s.problems.find(p => p.id === id)).filter(Boolean);
-    const sorted = [...ps].sort((a,b) => b.pts - a.pts || b.year - a.year);
-    return `<div class="freq-head">
-      <div class="freq-badge" style="background:${g.color}">${i+1}</div>
-      <div class="freq-info"><h2>${g.name}</h2><p><span class="stars">${g.stars}</span> · ${g.count}회 출제 · ${g.desc}</p></div>
-    </div>${sorted.map(p => card(p, s)).join('')}`;
-  }).join('')}</div>`;
-}
-
-function card(p, s) {
-  const cat = (s.categories || []).find(c => c.id === p.cat) || {};
-  const tagStyle = cat.color ? `style="background:${cat.light||'#eee'};color:${cat.color}"` : '';
-  return `<div class="card" id="c-${p.id}">
-    <div class="card-head" onclick="toggleCard('${p.id}')">
-      <div class="card-meta">
-        <div class="tags">
-          <span class="tag tag-year">${p.year}</span>
-          <span class="tag ${p.type==='전공A'?'tag-a':'tag-b'}">${p.type}</span>
-          ${cat.name ? `<span class="tag tag-cat" ${tagStyle}>${cat.name}</span>` : ''}
-          <span class="tag tag-pts">[${p.pts}점]</span>
-        </div>
-        <div class="card-title">${p.title}</div>
-      </div>
-      <div class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
-    </div>
-    <div class="card-body">
-      <div class="prob-box">
-        <div class="prob-label">문제</div>
-        <div class="prob-text">${p.problem}</div>
-      </div>
-      <div class="sol-area">
-        ${(p.steps||[]).map(st => `<div class="step">
-          <div class="step-num">${st.num} — ${st.title}</div>
-          <div class="step-body">${st.body}</div>
-        </div>`).join('')}
-        <div class="ans-box">
-          <div class="ans-label">정답</div>
-          <div class="ans-val">${p.answer}</div>
-        </div>
-        ${p.footnotes && p.footnotes.length ? `<div class="fns">
-          <div class="fn-label">개념 각주</div>
-          ${p.footnotes.map(f => `<div class="fn-row"><span class="fn-n">${f.n}</span><span class="fn-t">${f.text}</span></div>`).join('')}
-        </div>` : ''}
-      </div>
-    </div>
-  </div>`;
-}
-
-function renderMath() {
-  if (!window.renderMathInElement) return;
-  renderMathInElement(document.getElementById('content-area'), {
-    delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],
-    throwOnError:false
-  });
-}
-
-function doInit() { render(); }
 </script>
 </body>
 </html>
