@@ -61,9 +61,6 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--t1);
 .cat-inner{display:flex;gap:5px}
 .cb{flex-shrink:0;padding:4px 13px;border-radius:20px;border:1px solid var(--b2);background:none;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:var(--t2);cursor:pointer;transition:all .15s}
 .cb.on-all{background:var(--s2);color:var(--t1);border-color:var(--b2)}
-.cb.on-g{background:var(--g-bg);color:var(--g);border-color:var(--g-bd)}
-.cb.on-gr{background:var(--gr-bg);color:var(--gr);border-color:var(--gr-bd)}
-.cb.on-r{background:var(--r-bg);color:var(--r);border-color:var(--r-bd)}
 
 /* freq cat tabs */
 .fcat-bar{padding:10px 14px 4px;background:var(--bg)}
@@ -71,9 +68,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--t1);
 .fcat-btn{flex:1;padding:10px 6px;border-radius:10px;border:1px solid var(--b1);background:var(--s1);font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:600;color:var(--t3);cursor:pointer;transition:all .15s;text-align:center;line-height:1.5}
 .fcat-btn .fc-stars{display:block;font-size:8px;letter-spacing:1px;margin-top:2px;font-weight:400}
 .fcat-btn .fc-cnt{display:block;font-size:9px;font-family:'DM Mono',monospace;font-weight:400;margin-top:1px}
-.fcat-btn.on-g{background:var(--g-bg);color:var(--g);border-color:var(--g-bd)}
-.fcat-btn.on-gr{background:var(--gr-bg);color:var(--gr);border-color:var(--gr-bd)}
-.fcat-btn.on-r{background:var(--r-bg);color:var(--r);border-color:var(--r-bd)}
+
 
 /* ── content ── */
 .wrap{max-width:680px;margin:0 auto;padding:6px 12px}
@@ -85,11 +80,8 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--t1);
 .yr-sec-cnt{font-size:10px;color:var(--t3);font-family:'DM Mono',monospace}
 
 /* ── card ── */
-.card{background:var(--s1);border-radius:var(--rad);margin:5px 0;border:1px solid var(--b1);overflow:hidden;transition:border-color .15s}
+.card{background:var(--s1);border-radius:var(--rad);margin:5px 0;border:1px solid var(--b1);border-left-width:3px;border-left-style:solid;overflow:hidden;transition:border-color .15s}
 .card:hover{border-color:var(--b2)}
-.card[data-cat=galois]{border-left:3px solid var(--g)}
-.card[data-cat=group]{border-left:3px solid var(--gr)}
-.card[data-cat=ring]{border-left:3px solid var(--r)}
 .card-head{display:flex;align-items:flex-start;gap:10px;padding:13px 14px;cursor:pointer;user-select:none}
 .card-meta{flex:1;min-width:0}
 .tags{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:5px}
@@ -120,9 +112,6 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--t1);
 .step:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0}
 .step-hd{display:flex;align-items:center;gap:7px;margin-bottom:8px}
 .step-num{font-family:'DM Mono',monospace;font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;flex-shrink:0;letter-spacing:.04em}
-[data-cat=galois] .step-num{background:var(--g-bg);color:var(--g)}
-[data-cat=group]  .step-num{background:var(--gr-bg);color:var(--gr)}
-[data-cat=ring]   .step-num{background:var(--r-bg);color:var(--r)}
 .step-ttl{font-size:11px;font-weight:600;color:var(--t2)}
 .step-body{font-size:13px;line-height:1.95;color:var(--t1)}
 
@@ -171,16 +160,21 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--t1);
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 <script src="data-현대대수.js"></script>
 <script src="data-해석학.js"></script>
+<script src="data-복소해석학.js"></script>
 <script>
 // ── state ──
 let CUR_SUBJ = null, CUR_VIEW = 'year', CUR_YEAR = null, CUR_CAT = null, CUR_FCAT = null;
 
 const YEARS = [2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026];
-const CAT = {
-  galois:{ name:'갈루아이론', cls:'g' },
-  group: { name:'군론',       cls:'gr' },
-  ring:  { name:'환론',       cls:'r'  }
-};
+
+// 현재 과목의 카테고리 정보를 id로 조회 (색상은 각 data-XX.js의 categories/freqGroups에서 가져옴)
+function getCatInfo(catId) {
+  const s = window.SUBJECTS[CUR_SUBJ];
+  if (!s) return null;
+  return (s.categories || []).find(c => c.id === catId)
+      || (s.freqGroups || []).find(g => g.id === catId)
+      || null;
+}
 
 // ── KaTeX ──
 function renderMath(el) {
@@ -244,7 +238,7 @@ function renderNav() {
       <div class="cat-bar">
         <div class="cat-inner">
           <button class="cb${CUR_CAT===null?' on-all':''}" onclick="setCat(null,this)">전체</button>
-          ${cats.map(c=>`<button class="cb${CUR_CAT===c.id?' on-'+CAT[c.id]?.cls:''}" onclick="setCat('${c.id}',this)">${c.name}</button>`).join('')}
+          ${cats.map(c=>`<button class="cb" style="${CUR_CAT===c.id?`background:${c.light};color:${c.color};border-color:${c.color}55`:''}" onclick="setCat('${c.id}',this)">${c.name}</button>`).join('')}
         </div>
       </div>`;
   } else {
@@ -252,7 +246,7 @@ function renderNav() {
     el.innerHTML = `
       <div class="fcat-bar">
         <div class="fcat-inner">
-          ${groups.map(g=>`<button class="fcat-btn${CUR_FCAT===g.id?' on-'+CAT[g.id]?.cls:''}" onclick="setFcat('${g.id}',this)">
+          ${groups.map(g=>`<button class="fcat-btn" style="${CUR_FCAT===g.id?`background:${g.color}18;color:${g.color};border-color:${g.color}55`:''}" onclick="setFcat('${g.id}',this)">
             ${g.name}
             <span class="fc-stars">${g.stars}</span>
             <span class="fc-cnt">${g.count}회 출제</span>
@@ -271,15 +265,23 @@ function setYear(y, btn) {
 
 function setCat(c, btn) {
   CUR_CAT = c;
-  document.querySelectorAll('.cb').forEach(b=>b.className='cb');
-  btn.className = 'cb '+(c===null?'on-all':'on-'+(CAT[c]?.cls||''));
+  document.querySelectorAll('.cb').forEach(b=>{b.className='cb';b.removeAttribute('style');});
+  if (c===null) {
+    btn.className = 'cb on-all';
+  } else {
+    const info = getCatInfo(c);
+    btn.className = 'cb';
+    if (info) btn.style.cssText = `background:${info.light};color:${info.color};border-color:${info.color}55`;
+  }
   renderContent(); setTimeout(()=>renderMath(),80);
 }
 
 function setFcat(c, btn) {
   CUR_FCAT = c;
-  document.querySelectorAll('.fcat-btn').forEach(b=>b.className='fcat-btn');
-  btn.className = 'fcat-btn on-'+(CAT[c]?.cls||'');
+  document.querySelectorAll('.fcat-btn').forEach(b=>{b.className='fcat-btn';b.removeAttribute('style');});
+  const info = getCatInfo(c);
+  btn.className = 'fcat-btn';
+  if (info) btn.style.cssText = `background:${info.color}18;color:${info.color};border-color:${info.color}55`;
   renderContent(); setTimeout(()=>renderMath(),80);
 }
 
@@ -320,17 +322,19 @@ function buildFreq(s) {
 }
 
 // ── card ──
-function catTagCls(cat){return{galois:'t-g',group:'t-gr',ring:'t-r'}[cat]||''}
-function catName(cat){return{galois:'갈루아이론',group:'군론',ring:'환론'}[cat]||cat}
+function catName(cat){ const c=getCatInfo(cat); return c ? c.name : cat; }
 
 function cardHtml(p) {
-  return `<div class="card" id="c-${p.id}" data-cat="${p.cat}">
+  const c = getCatInfo(p.cat);
+  const catColor = c ? c.color : '#888';
+  const catLight = c ? c.light : '#eee';
+  return `<div class="card" id="c-${p.id}" data-cat="${p.cat}" style="border-left-color:${catColor}">
   <div class="card-head" onclick="toggleCard('${p.id}')">
     <div class="card-meta">
       <div class="tags">
         <span class="tag t-yr">${p.year}</span>
         <span class="tag ${p.type==='전공A'?'t-a':'t-b'}">${p.type}</span>
-        <span class="tag ${catTagCls(p.cat)}">${catName(p.cat)}</span>
+        <span class="tag" style="background:${catLight};color:${catColor}">${catName(p.cat)}</span>
         <span class="tag t-pts">${p.pts}점</span>
       </div>
       <div class="card-title">${p.title}</div>
@@ -345,7 +349,7 @@ function cardHtml(p) {
     <div class="sol">
       ${(p.steps||[]).map((st,i)=>`<div class="step">
         <div class="step-hd">
-          <span class="step-num">STEP ${i+1}</span>
+          <span class="step-num" style="background:${catLight};color:${catColor}">STEP ${i+1}</span>
           <span class="step-ttl">${st.title}</span>
         </div>
         <div class="step-body">${st.body}</div>
