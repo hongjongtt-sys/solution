@@ -238,7 +238,7 @@ function renderNav() {
       <div class="cat-bar">
         <div class="cat-inner">
           <button class="cb${CUR_CAT===null?' on-all':''}" onclick="setCat(null,this)">전체</button>
-          ${cats.map(c=>`<button class="cb" style="${CUR_CAT===c.id?`background:${c.light};color:${c.color};border-color:${c.color}55`:''}" onclick="setCat('${c.id}',this)">${c.name}</button>`).join('')}
+          ${cats.map(c=>`<button class="cb" style="${CUR_CAT===c.id?`background:${c.light};color:${c.color};border-color:${c.color}55`:''}" onclick="setCat('${c.id}',this)">${esc(c.name)}</button>`).join('')}
         </div>
       </div>`;
   } else {
@@ -247,8 +247,8 @@ function renderNav() {
       <div class="fcat-bar">
         <div class="fcat-inner">
           ${groups.map(g=>`<button class="fcat-btn" style="${CUR_FCAT===g.id?`background:${g.color}18;color:${g.color};border-color:${g.color}55`:''}" onclick="setFcat('${g.id}',this)">
-            ${g.name}
-            <span class="fc-stars">${g.stars}</span>
+            ${esc(g.name)}
+            <span class="fc-stars">${esc(g.stars)}</span>
             <span class="fc-cnt">${g.count}회 출제</span>
           </button>`).join('')}
         </div>
@@ -322,6 +322,13 @@ function buildFreq(s) {
 }
 
 // ── card ──
+// LaTeX/문제 텍스트에 '<', '>', '&'가 그대로 들어가면(예: "0<x<1") 브라우저가
+// innerHTML 파싱 시 이를 HTML 태그 시작으로 오인해 카드 구조가 깨지고
+// 뒤따르는 카드들까지 하나로 합쳐져 보이는 버그가 있었음. 렌더링 직전에 이스케이프 처리.
+function esc(str) {
+  if (str == null) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
 function catName(cat){ const c=getCatInfo(cat); return c ? c.name : cat; }
 
 function cardHtml(p) {
@@ -334,33 +341,33 @@ function cardHtml(p) {
       <div class="tags">
         <span class="tag t-yr">${p.year}</span>
         <span class="tag ${p.type==='전공A'?'t-a':'t-b'}">${p.type}</span>
-        <span class="tag" style="background:${catLight};color:${catColor}">${catName(p.cat)}</span>
+        <span class="tag" style="background:${catLight};color:${catColor}">${esc(catName(p.cat))}</span>
         <span class="tag t-pts">${p.pts}점</span>
       </div>
-      <div class="card-title">${p.title}</div>
+      <div class="card-title">${esc(p.title)}</div>
     </div>
     <div class="chev"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
   </div>
   <div class="card-body">
     <div class="prob-box">
       <div class="box-lbl">문제</div>
-      <div class="prob-text">${p.problem}</div>
+      <div class="prob-text">${esc(p.problem)}</div>
     </div>
     <div class="sol">
       ${(p.steps||[]).map((st,i)=>`<div class="step">
         <div class="step-hd">
           <span class="step-num" style="background:${catLight};color:${catColor}">STEP ${i+1}</span>
-          <span class="step-ttl">${st.title}</span>
+          <span class="step-ttl">${esc(st.title)}</span>
         </div>
-        <div class="step-body">${st.body}</div>
+        <div class="step-body">${esc(st.body)}</div>
       </div>`).join('')}
       <div class="ans-box">
         <div class="ans-lbl">정답</div>
-        <div class="ans-val">${p.answer}</div>
+        <div class="ans-val">${esc(p.answer)}</div>
       </div>
       ${p.footnotes?.length?`<div class="fns">
         <div class="fn-hd">개념 각주</div>
-        ${p.footnotes.map(f=>`<div class="fn-row"><span class="fn-n">${f.n}</span><span class="fn-t">${f.text}</span></div>`).join('')}
+        ${p.footnotes.map(f=>`<div class="fn-row"><span class="fn-n">${esc(f.n)}</span><span class="fn-t">${esc(f.text)}</span></div>`).join('')}
       </div>`:''}
     </div>
   </div>
