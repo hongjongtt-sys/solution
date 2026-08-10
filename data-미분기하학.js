@@ -38,7 +38,7 @@ $$\\beta(s)=\\int_0^s \\boldsymbol{N}(t)\\,dt$$
 
 여기서 $\\boldsymbol{N}(t)$는 곡선 $\\alpha$의 주법벡터장(단위주법벡터장, principal normal vector field)이다. 곡선 $\\beta$의 곡률과 비틀림률을 각각 $\\kappa_\\beta(>0),\\ \\tau_\\beta$라 할 때, $\\kappa_\\beta+\\tau_\\beta$의 값을 구하시오.`,
   steps:[
-    {num:'Step 1', title:'β\'와 β\'\'을 프레네 공식으로 전개',
+    {num:'Step 1', title:'$β\'$와 $β\'\'$을 프레네 공식으로 전개',
      body:`$\\beta'(s)=\\boldsymbol{N}(s)$이므로 $\\beta$도 단위속력곡선.
 
 프레네 공식 ① ($\\kappa=1,\\ \\tau$는 상수): $\\boldsymbol{N}'=-\\kappa\\boldsymbol{T}+\\tau\\boldsymbol{B}=-\\boldsymbol{T}+\\tau\\boldsymbol{B}$이므로:
@@ -50,7 +50,7 @@ $$\\beta''(s)=\\boldsymbol{N}'(s)=-\\boldsymbol{T}(s)+\\tau\\boldsymbol{B}(s)$$`
 $$\\kappa_\\beta=|-\\boldsymbol{T}+\\tau\\boldsymbol{B}|=\\sqrt{1+\\tau^2}$$
 
 ($\\boldsymbol{T}\\perp\\boldsymbol{B}$, 둘 다 단위벡터이므로)`},
-    {num:'Step 3', title:'β\'\'\'을 구하고 τ_β 계산',
+    {num:'Step 3', title:'$β\'\'\'$을 구하고 $τ_β$ 계산',
      body:`$$\\beta'''(s)=-\\boldsymbol{T}'+\\tau\\boldsymbol{B}'=-\\kappa\\boldsymbol{N}+\\tau(-\\tau\\boldsymbol{N})=-(1+\\tau^2)\\boldsymbol{N}$$
 
 단위속력곡선의 비틀림률 공식 ②: $\\tau_\\beta=\\dfrac{(\\beta'\\times\\beta'')\\cdot\\beta'''}{|\\beta''|^2}$.
@@ -104,7 +104,7 @@ $(\\beta'\\times\\beta'')\\cdot\\beta'''=(\\boldsymbol{B}+\\tau\\boldsymbol{T})\
      body:`$u=0$은 곡면의 꼭짓점(원점) 하나로 축퇴되므로, $\\partial S$는 $v=0$과 $v=\\pi$의 자오선 두 개(원점을 지나며 매끄럽게 이어짐, 실제로는 하나의 포물선)와 $u=1$의 호(반원)로 이루어집니다.
 
 두 자오선은 원점에서 매끄럽게 연결되므로 실제 모서리(꼭짓점)는 $u=1$에서 자오선과 호가 만나는 **두 점**뿐입니다.`},
-    {num:'Step 2', title:'가우스곡률 K(u) 계산',
+    {num:'Step 2', title:'가우스곡률 $K(u)$ 계산',
      body:`$X_u=(\\cos v,\\sin v,u),\\ X_v=(-u\\sin v,u\\cos v,0)$에서 $E=1+u^2,\\ F=0,\\ G=u^2$.
 
 $X_u\\times X_v=(-u^2\\cos v,-u^2\\sin v,u)$이고 단위법선은 이를 $u\\sqrt{u^2+1}$로 나눈 것.
@@ -112,7 +112,7 @@ $X_u\\times X_v=(-u^2\\cos v,-u^2\\sin v,u)$이고 단위법선은 이를 $u\\sq
 $e=\\dfrac1{\\sqrt{u^2+1}},\\ f=0,\\ g=\\dfrac{u^2}{\\sqrt{u^2+1}}$이므로:
 
 $$K(u)=\\frac{eg-f^2}{EG-F^2}=\\frac{u^2/(u^2+1)}{u^2(1+u^2)}=\\frac1{(1+u^2)^2}$$`},
-    {num:'Step 3', title:'∬K dA 계산',
+    {num:'Step 3', title:'$∬K dA$ 계산',
      body:`$dA=\\sqrt{EG-F^2}\\,du\\,dv=u\\sqrt{1+u^2}\\,du\\,dv$이므로:
 
 $$\\iint_SK\\,dA=\\int_0^\\pi dv\\int_0^1\\frac{u}{(1+u^2)^{3/2}}du=\\pi\\left[1-\\frac1{\\sqrt2}\\right]$$
@@ -137,7 +137,7 @@ $$\\oint_{\\partial S}\\kappa_g\\,ds=2\\pi-\\pi-\\pi\\left(1-\\frac1{\\sqrt2}\\r
 // ───────────────────────────────────────
 {
   id:'2015a7', year:2015, type:'전공A', cat:'curve', pts:2,
-  title:'두 곡선이 합동이 되는 a,b: 속력·곡률 일치로 결정',
+  title:'두 곡선이 합동이 되는 $a,b:$ 속력·곡률 일치로 결정',
   problem:`좌표공간 $\\mathbb{R}^3$에서 두 곡선 $\\alpha(t)=(2t,\\,t^2,\\,at^3),\\ \\beta(t)=(t,\\,bt,\\,t^2)$이 합동이 되도록 하는 두 상수 $a,\\,b$에 대하여, $a^2+b^2$의 값을 구하시오.`,
   steps:[
     {num:'Step 1', title:'속력이 일치해야 함',
@@ -146,7 +146,7 @@ $$\\oint_{\\partial S}\\kappa_g\\,ds=2\\pi-\\pi-\\pi\\left(1-\\frac1{\\sqrt2}\\r
 $|\\alpha'(t)|^2=4+4t^2+9a^2t^4,\\quad|\\beta'(t)|^2=1+b^2+4t^2$
 
 $t^4$항 비교: $9a^2=0\\Rightarrow a=0$. 상수항 비교: $4=1+b^2\\Rightarrow b^2=3$.`},
-    {num:'Step 2', title:'a=0일 때 β의 비틀림률이 항상 0임을 확인',
+    {num:'Step 2', title:'$a=0$일 때 $β$의 비틀림률이 항상 0임을 확인',
      body:`$\\beta'''=(0,0,0)$이므로 임의의 $b$에 대해 $\\tau_\\beta\\equiv0$ (평면곡선, $y=bx$ 평면 위에 놓임).
 
 합동이려면 $\\alpha$도 $\\tau_\\alpha\\equiv0$이어야 하는데, $\\alpha'''=(0,0,6a)$이므로 $\\tau_\\alpha=0\\iff a=0$과 일치 ②.`},
@@ -167,7 +167,7 @@ $\\kappa_\\alpha=\\kappa_\\beta$ 확인됨. 두 조건 모두 만족하므로 �
 },
 {
   id:'2015b3', year:2015, type:'전공B', cat:'fund', pts:5,
-  title:'회전면의 주곡률과 법곡률 ab 값',
+  title:'회전면의 주곡률과 법곡률 $ab$ 값',
   problem:`곡면 $M=\\{(x,y,z)\\in\\mathbb{R}^3\\mid4x=(y^2+z^2)^2\\}$ 위의 점 $p=\\left(\\dfrac14u^4,\\,u,\\,0\\right)\\,(u>0)$에서의 접평면(tangent plane)을 $T_p(M)=\\{\\mathbf{v}_p\\in\\mathbb{R}^3\\mid\\mathbf{v}_p$는 $p$에서의 곡면 $M$의 접벡터$\\}$라 하고 이 점에서의 주곡률(principal curvature)을 각각 $k_1(u),\\,k_2(u)$라 하자. 또, $T_p(M)$에 속하는 두 개의 단위접벡터(unit tangent vector) $\\mathbf{w}_p$와 $(0,0,1)_p$가 이루는 각이 $\\dfrac\\pi6$이라고 하자. 점 $p$에서 곡면 $M$의 가우스 곡률 $K(u)$를 풀이 과정과 함께 쓰고, $\\mathbf{w}_p$ 방향으로의 법곡률(normal curvature) $k(\\mathbf{w}_p)$를 $ak_1(u)+bk_2(u)$ ($a,b$는 상수)로 나타낼 때 $ab$의 값을 풀이 과정과 함께 쓰시오.`,
   steps:[
     {num:'Step 1', title:'회전면으로 매개변수화',
@@ -178,7 +178,7 @@ $f(r)=r^4/4$, $f'(r)=r^3,\\ f''(r)=3r^2$.`},
      body:`회전면(profile $x=f(r)$) 표준 공식 ①: $k_r=\\dfrac{f''}{(1+f'^2)^{3/2}},\\ k_\\theta=\\dfrac{f'}{r\\sqrt{1+f'^2}}$이고, $F=0$이므로 이 두 방향이 바로 주방향.
 
 $$k_1(u)=\\frac{3u^2}{(1+u^6)^{3/2}},\\qquad k_2(u)=\\frac{u^2}{\\sqrt{1+u^6}}$$`},
-    {num:'Step 3', title:'가우스곡률 K(u)',
+    {num:'Step 3', title:'가우스곡률 $K(u)$',
      body:`$$K(u)=k_1(u)k_2(u)=\\frac{3u^2}{(1+u^6)^{3/2}}\\cdot\\frac{u^2}{\\sqrt{1+u^6}}=\\frac{3u^4}{(1+u^6)^2}$$`},
     {num:'Step 4', title:'주방향과 (0,0,1)의 관계, 오일러 공식',
      body:`$X_\\theta(u,0)=(0,0,u)$이므로 단위접벡터는 $(0,0,1)$—바로 $k_2$의 주방향과 일치 ②!
@@ -186,7 +186,7 @@ $$k_1(u)=\\frac{3u^2}{(1+u^6)^{3/2}},\\qquad k_2(u)=\\frac{u^2}{\\sqrt{1+u^6}}$$
 $\\mathbf{w}_p$가 $(0,0,1)$(즉 $k_2$방향)과 이루는 각이 $\\pi/6$이므로, $k_1$방향과 이루는 각은 $\\pi/2-\\pi/6=\\pi/3$.
 
 오일러 공식 ③: $k(\\mathbf{w}_p)=k_1\\cos^2\\dfrac\\pi3+k_2\\sin^2\\dfrac\\pi3=\\dfrac14k_1+\\dfrac34k_2$`},
-    {num:'Step 5', title:'ab 계산',
+    {num:'Step 5', title:'$ab$ 계산',
      body:`$a=\\dfrac14,\\ b=\\dfrac34$이므로:
 
 $$ab=\\frac14\\times\\frac34=\\frac3{16}$$`}
@@ -204,14 +204,14 @@ $$ab=\\frac14\\times\\frac34=\\frac3{16}$$`}
 // ───────────────────────────────────────
 {
   id:'2016a6', year:2016, type:'전공A', cat:'curve', pts:2,
-  title:'곡률로부터 α(t)=γ(t)+γ\'(t)의 길이 계산',
+  title:'곡률로부터 $α(t)=γ(t)+γ\'(t)$의 길이 계산',
   problem:`3차원 유클리드 공간 $\\mathbb{R}^3$에서 단위속력곡선(unit speed curve) $\\gamma:\\mathbb{R}\\to\\mathbb{R}^3$의 점 $\\gamma(s)$에서의 곡률(curvature) $\\kappa(s)$는 $\\kappa(s)=\\sqrt{s^4+4s^2+3}$이다. 곡선 $\\alpha:\\mathbb{R}\\to\\mathbb{R}^3$을 $\\alpha(t)=\\gamma(t)+\\gamma'(t)$로 정의할 때, $t=0$에서 $t=1$까지 곡선 $\\alpha$의 길이를 구하시오.`,
   steps:[
-    {num:'Step 1', title:'α\'(t)를 프레네 공식으로 표현',
+    {num:'Step 1', title:'$α\'(t)$를 프레네 공식으로 표현',
      body:`$\\alpha'(t)=\\gamma'(t)+\\gamma''(t)=\\boldsymbol{T}(t)+\\kappa(t)\\boldsymbol{N}(t)$ ①
 
 ($\\gamma$가 단위속력이므로 $\\gamma'=\\boldsymbol{T},\\ \\gamma''=\\kappa\\boldsymbol{N}$)`},
-    {num:'Step 2', title:'|α\'(t)| 계산',
+    {num:'Step 2', title:'$|α\'(t)|$ 계산',
      body:`$\\boldsymbol{T}\\perp\\boldsymbol{N}$이므로:
 
 $$|\\alpha'(t)|^2=1+\\kappa(t)^2=1+t^4+4t^2+3=t^4+4t^2+4=(t^2+2)^2$$
@@ -260,7 +260,7 @@ $$|\\alpha'(t)|=t^2+2$$`},
     <text x="394" y="270" font-size="11" fill="var(--t2)" text-anchor="middle">펼친 부채꼴 (측지선 = 직선)</text>
   </svg>`,
   steps:[
-    {num:'Step 1', title:'주곡률 κ1, κ2 계산',
+    {num:'Step 1', title:'주곡률 $κ1, κ2$ 계산',
      body:`꼭짓점 반각 $\\alpha$: $\\sin\\alpha=\\dfrac{\\text{밑면 반지름}}{\\text{모선}}=\\dfrac14$, $\\cos\\alpha=\\dfrac{\\sqrt{15}}4$.
 
 모선(직선) 방향은 곡면 위 직선이므로 법곡률 $0$: $\\kappa_1=0$ ①.
@@ -304,18 +304,18 @@ $$\\kappa=\\frac{16\\sqrt{15}}{75}$$`}
 // ───────────────────────────────────────
 {
   id:'2017a8', year:2017, type:'전공A', cat:'curve', pts:2,
-  title:'평면곡선 조건과 β의 길이로 γ의 곡률 구하기',
+  title:'평면곡선 조건과 $β$의 길이로 $γ$의 곡률 구하기',
   problem:`3차원 유클리드 공간 $\\mathbb{R}^3$의 한 평면에 있고 곡률(curvature)이 양인 단위속력곡선(unit speed curve) $\\gamma:\\mathbb{R}\\to\\mathbb{R}^3$에 대하여, 점 $\\gamma(s)$에서의 접선벡터(tangent vector)를 $\\boldsymbol{T}(s)$, 주법선벡터(principal normal vector)를 $\\boldsymbol{N}(s)$라 하자. 곡선 $\\beta:\\mathbb{R}\\to\\mathbb{R}^3$을 $\\beta(s)=\\dfrac12\\boldsymbol{T}(s)+\\boldsymbol{N}(s)$로 정의할 때, 모든 양수 $t$에 대하여 $s=0$에서 $s=t$까지 곡선 $\\beta$의 길이는 $3t$이다. $s=1$일 때, 곡선 $\\gamma$의 곡률을 구하시오.`,
   steps:[
-    {num:'Step 1', title:'γ가 평면곡선이므로 τ=0',
+    {num:'Step 1', title:'$γ$가 평면곡선이므로 $τ=0$',
      body:`$\\gamma$가 한 평면에 있으므로 비틀림률 $\\tau(s)\\equiv0$ ①.`},
-    {num:'Step 2', title:'β\'(s) 계산',
+    {num:'Step 2', title:'$β\'(s)$ 계산',
      body:`프레네 공식($\\tau=0$): $\\boldsymbol{T}'=\\kappa\\boldsymbol{N},\\ \\boldsymbol{N}'=-\\kappa\\boldsymbol{T}$이므로:
 
 $$\\beta'(s)=\\frac12\\kappa\\boldsymbol{N}+(-\\kappa\\boldsymbol{T})=-\\kappa\\boldsymbol{T}+\\frac\\kappa2\\boldsymbol{N}$$
 
 $$|\\beta'(s)|^2=\\kappa^2+\\frac{\\kappa^2}4=\\frac54\\kappa(s)^2$$`},
-    {num:'Step 3', title:'길이 조건으로 κ 결정',
+    {num:'Step 3', title:'길이 조건으로 $κ$ 결정',
      body:`길이 $=\\displaystyle\\int_0^t|\\beta'(s)|ds=3t$가 모든 $t>0$에서 성립하므로 양변을 $t$로 미분하면 $|\\beta'(t)|=3$ (상수) ②.
 
 $$\\frac54\\kappa(t)^2=9\\ \\Rightarrow\\ \\kappa(t)^2=\\frac{36}5\\ \\Rightarrow\\ \\kappa(t)=\\frac6{\\sqrt5}\\quad(\\because\\kappa>0)$$
@@ -354,19 +354,19 @@ $\\kappa$가 상수이므로 $s=1$에서도 동일.`}
     <text x="150" y="240" font-size="11" fill="var(--t2)" text-anchor="middle">원기둥 S₂를 위에서 본 밑원: x=1+cosθ, y=sinθ</text>
   </svg>`,
   steps:[
-    {num:'Step 1', title:'원기둥 S₂로 매개변수화',
+    {num:'Step 1', title:'원기둥 $S₂$로 매개변수화',
      body:`$S_2$: $x=1+\\cos\\theta,\\ y=\\sin\\theta$. $S_1$에 대입: $z^2=4-(1+\\cos\\theta)^2-\\sin^2\\theta=2-2\\cos\\theta=4\\sin^2(\\theta/2)$.
 
 $z>0$이므로 $z=2\\sin(\\theta/2)$ ($0<\\theta<2\\pi$에서 양수).
 
 $$\\gamma(\\theta)=(1+\\cos\\theta,\\ \\sin\\theta,\\ 2\\sin(\\theta/2))$$`},
-    {num:'Step 2', title:'점 (0,0,2)의 θ값과 γ\', γ\'\'',
+    {num:'Step 2', title:'점 (0,0,2)의 $θ$값과 $γ\', γ\'\'$',
      body:`$1+\\cos\\theta=0,\\sin\\theta=0\\Rightarrow\\theta=\\pi$. 확인: $z=2\\sin(\\pi/2)=2$ ✓.
 
 $\\gamma'(\\theta)=(-\\sin\\theta,\\cos\\theta,\\cos(\\theta/2))$, $\\gamma''(\\theta)=(-\\cos\\theta,-\\sin\\theta,-\\tfrac12\\sin(\\theta/2))$
 
 $\\theta=\\pi$: $\\gamma'(\\pi)=(0,-1,0)$, $\\gamma''(\\pi)=(1,0,-\\tfrac12)$. $|\\gamma'(\\pi)|=1$.`},
-    {num:'Step 3', title:'공간곡선 곡률 κ 계산',
+    {num:'Step 3', title:'공간곡선 곡률 $κ$ 계산',
      body:`$\\gamma'\\times\\gamma''=(0,-1,0)\\times(1,0,-\\tfrac12)=\\left(\\dfrac12,0,1\\right)$
 
 $$\\kappa=\\frac{|\\gamma'\\times\\gamma''|}{|\\gamma'|^3}=\\sqrt{\\frac14+1}=\\frac{\\sqrt5}2$$`},
@@ -388,10 +388,10 @@ $$\\kappa_g^2=\\frac54-\\frac14=1\\ \\Rightarrow\\ |\\kappa_g|=1$$`}
 // ───────────────────────────────────────
 {
   id:'2018a6', year:2018, type:'전공A', cat:'curve', pts:2,
-  title:'적분으로 정의된 β\'\'과 α\'의 직교조건으로 곡률 구하기',
+  title:'적분으로 정의된 $β\'\'$과 $α\'$의 직교조건으로 곡률 구하기',
   problem:`3차원 유클리드 공간 $\\mathbb{R}^3$에서 $\\alpha(2)=(0,0,0)$인 단위속력곡선(unit speed curve) $\\alpha:\\mathbb{R}\\to\\mathbb{R}^3$에 대하여 곡선 $\\beta:\\mathbb{R}\\to\\mathbb{R}^3$을 $\\beta(t)=\\displaystyle\\int_2^t\\bigl(\\alpha(s)+s^2\\boldsymbol{N}(s)\\bigr)ds$라 하자. 두 벡터 $\\alpha'(2),\\,\\beta''(2)$가 서로 수직일 때, $t=2$에서 $\\alpha$의 곡률(curvature) $\\kappa$의 값을 구하시오. (단, $\\boldsymbol{N}(s)$는 곡선 $\\alpha$의 주법벡터장(principal normal vector field)이다.)`,
   steps:[
-    {num:'Step 1', title:'β\'와 β\'\' 계산',
+    {num:'Step 1', title:'$β\'$와 $β\'\'$ 계산',
      body:`미적분학의 기본정리: $\\beta'(t)=\\alpha(t)+t^2\\boldsymbol{N}(t)$.
 
 $$\\beta''(t)=\\alpha'(t)+2t\\boldsymbol{N}(t)+t^2\\boldsymbol{N}'(t)=\\boldsymbol{T}(t)+2t\\boldsymbol{N}(t)+t^2(-\\kappa(t)\\boldsymbol{T}(t)+\\tau(t)\\boldsymbol{B}(t))$$
@@ -405,7 +405,7 @@ $$\\alpha'(2)\\cdot\\beta''(2)=\\boldsymbol{T}(2)\\cdot\\bigl[(1-4\\kappa(2))\\b
 $\\boldsymbol{T}\\perp\\boldsymbol{N},\\ \\boldsymbol{T}\\perp\\boldsymbol{B}$이므로 나머지 항은 모두 $0$:
 
 $$=1-4\\kappa(2)=0$$`},
-    {num:'Step 3', title:'κ(2) 결정',
+    {num:'Step 3', title:'$κ(2)$ 결정',
      body:`$$\\kappa(2)=\\frac14$$`}
   ],
   answer:'$\\dfrac14$',
@@ -431,7 +431,7 @@ $k_1>k_2$이므로 $k_1=\\dfrac{\\sqrt2}2,\\ k_2=-\\dfrac{\\sqrt2}2$.`},
      body:`$X_u(1,0)=(\\cos0,\\sin0,h'(1))=(1,0,-1)$, $X_v(1,0)=(0,1,0)$.
 
 단위화: $\\mathbf{e}_1=\\dfrac{(1,0,-1)}{\\sqrt2},\\quad\\mathbf{e}_2=(0,1,0)$`},
-    {num:'Step 3', title:'w를 e1,e2로 분해',
+    {num:'Step 3', title:'$w$를 $e1,e2$로 분해',
      body:`$\\mathbf{w}\\cdot\\mathbf{e}_1=\\dfrac{(1,1,-1)}{\\sqrt3}\\cdot\\dfrac{(1,0,-1)}{\\sqrt2}=\\dfrac2{\\sqrt6}$
 
 $\\mathbf{w}\\cdot\\mathbf{e}_2=\\dfrac1{\\sqrt3}$
@@ -451,10 +451,10 @@ $\\mathbf{w}\\cdot\\mathbf{e}_2=\\dfrac1{\\sqrt3}$
 // ───────────────────────────────────────
 {
   id:'2019a6', year:2019, type:'전공A', cat:'curve', pts:2,
-  title:'평면곡선의 비틀림률(항상 0)과 곡률=3이 되는 a',
+  title:'평면곡선의 비틀림률(항상 0)과 곡률=3이 되는 $a$',
   problem:`3차원 유클리드 공간 $\\mathbb{R}^3$에서 곡선 $C$가 $C=\\{(x,y,z)\\in\\mathbb{R}^3\\mid y=x^3-ax+a,\\,z=x-1\\}$일 때, 이 곡선의 비틀림률(열률, 꼬임률, torsion) $\\tau$를 구하시오. 또한 점 $(1,1,0)$에서 곡선 $C$의 곡률(curvature)이 $3$이 되도록 하는 $a$의 값을 구하시오. (단, $a$는 상수이다.)`,
   steps:[
-    {num:'Step 1', title:'평면곡선임을 확인하고 τ=0',
+    {num:'Step 1', title:'평면곡선임을 확인하고 $τ=0$',
      body:`$z=x-1$, 즉 $z-x=-1$은 $y$와 무관한 평면 방정식이므로 $C$는 평면 $z-x=-1$ 위에 있는 평면곡선 ①.
 
 따라서 임의의 $a$에 대해:
@@ -462,11 +462,11 @@ $\\mathbf{w}\\cdot\\mathbf{e}_2=\\dfrac1{\\sqrt3}$
 $$\\tau=0$$
 
 (직접 계산해도 $r'''=(0,6,0)$이 $r'\\times r''=(-6t,0,6t)$와 수직이 되어 $\\tau\\equiv0$ 확인됨.)`},
-    {num:'Step 2', title:'매개변수화와 t=1 확인',
+    {num:'Step 2', title:'매개변수화와 $t=1$ 확인',
      body:`$t=x$로 매개변수화: $r(t)=(t,\\,t^3-at+a,\\,t-1)$.
 
 $(1,1,0)$: $t=1$에서 $y=1-a+a=1$ ✓ (모든 $a$에서 성립), $z=0$ ✓.`},
-    {num:'Step 3', title:'곡률 계산 및 a 결정',
+    {num:'Step 3', title:'곡률 계산 및 $a$ 결정',
      body:`$r'(t)=(1,3t^2-a,1),\\ r''(t)=(0,6t,0)$. $t=1$: $r'(1)=(1,3-a,1),\\ r''(1)=(0,6,0)$.
 
 $r'\\times r''=(-6,0,6)$, $|r'\\times r''|=6\\sqrt2$.
@@ -489,11 +489,11 @@ $$2+(3-a)^2=2\\ \\Rightarrow\\ (3-a)^2=0\\ \\Rightarrow\\ a=3$$`}
      body:`$f(x,y)=\\dfrac14(x^4+y^4)$, $f_x=x^3,\\,f_y=y^3$. $M$의 법선 방향 $(f_x,f_y,-1)=(x_0^3,y_0^3,-1)$이 $H$의 법선 $(1,1,-1)$과 평행 ①해야 하므로 ($z$성분이 이미 일치):
 
 $$x_0^3=1,\\ y_0^3=1\\ \\Rightarrow\\ x_0=1,\\ y_0=1$$`},
-    {num:'Step 2', title:'접점 p와 d',
+    {num:'Step 2', title:'접점 $p$와 $d$',
      body:`$z_0=f(1,1)=\\dfrac{1+1}4=\\dfrac12$이므로 $p=\\left(1,1,\\dfrac12\\right)$.
 
 $H$가 $p$를 지나므로: $1+1-\\dfrac12=d\\ \\Rightarrow\\ d=\\dfrac32$`},
-    {num:'Step 3', title:'가우스곡률 K 계산',
+    {num:'Step 3', title:'가우스곡률 $K$ 계산',
      body:`몽주 조각(Monge patch) 공식 ②: $K=\\dfrac{f_{xx}f_{yy}-f_{xy}^2}{(1+f_x^2+f_y^2)^2}$
 
 $f_{xx}=3x^2,\\,f_{yy}=3y^2,\\,f_{xy}=0$. $(1,1)$에서 $f_{xx}=3,f_{yy}=3,f_x=1,f_y=1$:
@@ -512,14 +512,14 @@ $$K=\\frac{3\\times3-0}{(1+1+1)^2}=\\frac99=1$$`}
 // ───────────────────────────────────────
 {
   id:'2020a3', year:2020, type:'전공A', cat:'curve', pts:2,
-  title:'접벡터가 평행한 t₀와 그 점에서의 비틀림률',
+  title:'접벡터가 평행한 $t₀$와 그 점에서의 비틀림률',
   problem:`3차원 유클리드 공간 $\\mathbb{R}^3$에서 곡선 $\\gamma(t)=(2t-\\cos t,\\,t+\\sin t,\\,2t+1)\\ (0<t<2\\pi)$ 위의 점 $\\gamma(t_0)$에서의 접벡터(tangent vector)가 벡터 $(6,2,4)$와 평행하다. $t_0$의 값과 $t=t_0$일 때 곡선 $\\gamma$의 비틀림률(열률, 꼬임률, torsion)을 각각 구하시오.`,
   steps:[
-    {num:'Step 1', title:'t₀ 결정',
+    {num:'Step 1', title:'$t₀$ 결정',
      body:`$\\gamma'(t)=(2+\\sin t,\\,1+\\cos t,\\,2)$. $(6,2,4)=2(3,1,2)$와 평행: $z$성분 비교 $2=2k\\Rightarrow k=1$.
 
 $2+\\sin t=3\\Rightarrow\\sin t=1$, $1+\\cos t=1\\Rightarrow\\cos t=0$. $0<t<2\\pi$에서 $t_0=\\dfrac\\pi2$.`},
-    {num:'Step 2', title:'t=π/2에서 도함수들',
+    {num:'Step 2', title:'$t=π/2$에서 도함수들',
      body:`$\\gamma'\\left(\\dfrac\\pi2\\right)=(3,1,2)$, $\\gamma''(t)=(\\cos t,-\\sin t,0)\\Rightarrow\\gamma''\\left(\\dfrac\\pi2\\right)=(0,-1,0)$
 
 $\\gamma'''(t)=(-\\sin t,-\\cos t,0)\\Rightarrow\\gamma'''\\left(\\dfrac\\pi2\\right)=(-1,0,0)$`},
@@ -536,7 +536,7 @@ $$\\tau=\\frac{(\\gamma'\\times\\gamma'')\\cdot\\gamma'''}{|\\gamma'\\times\\gam
 },
 {
   id:'2020b8', year:2020, type:'전공B', cat:'fund', pts:4,
-  title:'곡면의 접평면 방정식과 평균곡률 H',
+  title:'곡면의 접평면 방정식과 평균곡률 $H$',
   problem:`3차원 유클리드 공간 $\\mathbb{R}^3$에서 곡면 $\\mathbf{x}(u,v)=(u^2+v,\\,u-v^2,\\,uv)$ 위의 $u=1,\\,v=2$인 점 P에서의 접평면(tangent plane)의 방정식을 구하시오. 또한 점 P에서 곡면 $\\mathbf{x}$의 평균곡률(mean curvature) $H$의 값을 풀이 과정과 함께 쓰시오.`,
   steps:[
     {num:'Step 1', title:'접평면 방정식',
@@ -565,20 +565,20 @@ $$H=\\frac{\\sqrt2\\times18-2\\times\\left(-\\frac1{\\sqrt2}\\right)\\times0+0\\
 // ───────────────────────────────────────
 {
   id:'2021a4', year:2021, type:'전공A', cat:'curve', pts:2,
-  title:'구면 위 곡선: B·n=상수 조건에서 비틀림률과 곡률',
+  title:'구면 위 곡선$: B·n=$상수 조건에서 비틀림률과 곡률',
   problem:`3차원 유클리드 공간 $\\mathbb{R}^3$에서 구 $M=\\{(x,y,z)\\in\\mathbb{R}^3\\mid x^2+y^2+z^2=1\\}$ 위에 단위속력곡선(arc-length parametrized curve) $\\gamma:[0,1]\\to M$이 있다. 각 $s\\in[0,1]$에 대하여 점 $\\gamma(s)$에서의 $\\gamma$의 종법선벡터(binormal vector)를 $B(s)$, 점 $\\gamma(s)$에서의 $M$의 법선벡터(normal vector)를 $n(s)$라 하자. 모든 $s\\in[0,1]$에 대하여 $B(s)\\cdot n(s)=\\dfrac12$을 만족할 때, $\\gamma(s)$의 비틀림률(열률, 꼬임률, torsion) $a(s)$와 곡률(curvature) $b(s)$를 구하시오.`,
   steps:[
     {num:'Step 1', title:'구면 법선과 곡률의 관계식',
      body:`단위구에서 $n(s)=\\gamma(s)$. $\\gamma\\cdot\\gamma=1$을 미분: $\\gamma\\cdot\\boldsymbol{T}=0$. 다시 미분: $1+\\kappa(\\gamma\\cdot\\boldsymbol{N})=0$이므로:
 
 $$\\gamma\\cdot\\boldsymbol{N}=-\\frac1\\kappa\\quad\\text{①}$$`},
-    {num:'Step 2', title:'B·γ=1/2를 미분하여 τ=0 유도',
+    {num:'Step 2', title:'$B·γ=1/2$를 미분하여 $τ=0$ 유도',
      body:`$B(s)\\cdot\\gamma(s)=\\dfrac12$ (상수)를 미분: $B'\\cdot\\gamma+B\\cdot\\gamma'=0$.
 
 $B'=-\\tau\\boldsymbol{N}$, $\\gamma'=\\boldsymbol{T}$, $B\\cdot\\boldsymbol{T}=0$이므로:
 
 $$-\\tau(\\boldsymbol{N}\\cdot\\gamma)=0\\ \\Rightarrow\\ -\\tau\\left(-\\frac1\\kappa\\right)=0\\ \\Rightarrow\\ \\tau(s)=0$$`},
-    {num:'Step 3', title:'τ=0 ⟹ 평면원, 곡률 결정',
+    {num:'Step 3', title:'$τ=0 ⟹$ 평면원, 곡률 결정',
      body:`$\\tau=0$이므로 $B$는 상수벡터, $\\gamma$는 평면 $B\\cdot x=\\dfrac12$ 위에 놓이는 **평면곡선**이며 구면 위에 있으므로 원.
 
 원점에서 이 평면까지 거리 $d=\\dfrac12$ ($B$가 단위벡터이므로), 원의 반지름 $r=\\sqrt{1-d^2}=\\sqrt{1-\\tfrac14}=\\dfrac{\\sqrt3}2$ ②.
@@ -610,11 +610,11 @@ $$-\\tau(\\boldsymbol{N}\\cdot\\gamma)=0\\ \\Rightarrow\\ -\\tau\\left(-\\frac1\
     <text x="130" y="255" font-size="11" fill="var(--t2)" text-anchor="middle">S: 회전면에서 -1≤z≤1인 띠 영역 (색칠), r\'(±1)=0</text>
   </svg>`,
   steps:[
-    {num:'Step 1', title:'회전면 매개변수화, K(u) 공식',
+    {num:'Step 1', title:'회전면 매개변수화$, K(u)$ 공식',
      body:`반지름 $r(u)=u^4-2u^2+5$ (항상 양수), 높이 $z=u$인 회전면. 표준 공식 ①:
 
 $$K(u)=\\frac{-r''(u)}{r(u)(1+r'(u)^2)^2}$$`},
-    {num:'Step 2', title:'∬KdA를 원함수로 변형',
+    {num:'Step 2', title:'$∬KdA$를 원함수로 변형',
      body:`$dA=r\\sqrt{1+r'^2}\\,du\\,d\\theta$이므로:
 
 $$\\iint_SK\\,dA=2\\pi\\int_{-1}^1\\frac{-r''}{(1+r'^2)^{3/2}}\\,du$$
@@ -622,7 +622,7 @@ $$\\iint_SK\\,dA=2\\pi\\int_{-1}^1\\frac{-r''}{(1+r'^2)^{3/2}}\\,du$$
 피적분함수는 정확히 $\\dfrac{d}{du}\\left[\\dfrac{-r'}{\\sqrt{1+r'^2}}\\right]$의 도함수 ②이므로:
 
 $$=2\\pi\\left[\\frac{-r'(u)}{\\sqrt{1+r'(u)^2}}\\right]_{-1}^1$$`},
-    {num:'Step 3', title:'r\'(±1) 계산',
+    {num:'Step 3', title:'$r\'(±1)$ 계산',
      body:`$r'(u)=4u^3-4u=4u(u-1)(u+1)$이므로:
 
 $$r'(1)=4-4=0,\\qquad r'(-1)=-4+4=0$$
@@ -652,7 +652,7 @@ $$r'(1)=4-4=0,\\qquad r'(-1)=-4+4=0$$
 $$|\\beta'(t)|^2=\\tau_\\alpha(t)^2+\\kappa_\\alpha(t)^2\\ge\\kappa_\\alpha(t)^2>0$$
 
 ($\\kappa_\\alpha\\ne0$이므로) 따라서 $\\beta'(t)\\ne0$이고 $\\beta$는 정칙곡선. $\\blacksquare$`},
-    {num:'Step 2', title:'β\'\'을 계산, N성분이 소거됨',
+    {num:'Step 2', title:'$β\'\'$을 계산$, N$성분이 소거됨',
      body:`$$\\beta''=\\tau_\\alpha'T+\\tau_\\alpha(\\kappa_\\alpha N)+\\kappa_\\alpha'B+\\kappa_\\alpha(-\\tau_\\alpha N)=\\tau_\\alpha'T+\\kappa_\\alpha'B$$
 
 ($T'=\\kappa_\\alpha N,\\ B'=-\\tau_\\alpha N$이고 $\\tau_\\alpha\\kappa_\\alpha-\\kappa_\\alpha\\tau_\\alpha=0$으로 $N$성분 소거)`},
@@ -680,13 +680,13 @@ $$=\\frac{\\sqrt3\\times2}{4^{3/2}}=\\frac{2\\sqrt3}8=\\frac{\\sqrt3}4$$`}
   title:'법곡률 적분과 가우스곡률로 주곡률 모두 구하기',
   problem:`3차원 유클리드 공간 $\\mathbb{R}^3$에 놓인 곡면 $M$ 위의 점 $\\mathbf{p}$에서 모든 접벡터(tangent vector)의 집합을 $T_{\\mathbf{p}}(M)$, $\\mathbf{p}$에서의 주벡터(principal vector) 중 하나를 $\\mathbf{e}$라 하자. $T_{\\mathbf{p}}(M)$에 속하는 단위접벡터(unit tangent vector) $\\mathbf{v}$와 $\\mathbf{e}$의 사잇각을 $\\theta$라 할 때, $\\mathbf{p}$에서 $\\mathbf{v}$ 방향으로의 법곡률(normal curvature) $\\kappa_n(\\theta)$가 $\\displaystyle\\int_0^\\pi\\kappa_n(\\theta)\\,d\\theta=\\dfrac{11\\pi}8$를 만족한다고 하자. 점 $\\mathbf{p}$에서 곡면 $M$의 가우스곡률(Gaussian curvature)이 $\\dfrac32$일 때, $\\mathbf{p}$에서 $M$의 주곡률(principal curvature)의 값을 모두 쓰시오. (단, 주벡터는 주곡률방향(주방향, principal direction)의 단위접벡터이다.)`,
   steps:[
-    {num:'Step 1', title:'오일러 공식을 θ에 대해 적분',
+    {num:'Step 1', title:'오일러 공식을 $θ$에 대해 적분',
      body:`$\\mathbf{e}$가 주방향이므로 오일러 공식 ①: $\\kappa_n(\\theta)=k_1\\cos^2\\theta+k_2\\sin^2\\theta$.
 
 $$\\int_0^\\pi\\kappa_n(\\theta)d\\theta=k_1\\int_0^\\pi\\cos^2\\theta\\,d\\theta+k_2\\int_0^\\pi\\sin^2\\theta\\,d\\theta=\\frac\\pi2(k_1+k_2)$$
 
 $$\\frac\\pi2(k_1+k_2)=\\frac{11\\pi}8\\ \\Rightarrow\\ k_1+k_2=\\frac{11}4$$`},
-    {num:'Step 2', title:'K=k1k2와 연립하여 이차방정식',
+    {num:'Step 2', title:'$K=k1k2$와 연립하여 이차방정식',
      body:`$k_1k_2=K=\\dfrac32$이므로 $k_1,k_2$는 $x^2-\\dfrac{11}4x+\\dfrac32=0$, 즉 $4x^2-11x+6=0$의 두 근.
 
 $$x=\\frac{11\\pm\\sqrt{121-96}}8=\\frac{11\\pm5}8$$`},
@@ -733,17 +733,17 @@ $$C=(2,1)+\\frac8{-12}(2,2)=(2,1)+\\left(-\\frac43,-\\frac43\\right)=\\left(\\fr
   title:'교선의 측지곡률·법곡률을 뫼니에 정리로 분리',
   problem:`3차원 유클리드 공간 $\\mathbb{R}^3$에서 두 곡면 $M,\\,N$을 $M=\\{(x,y,z)\\in\\mathbb{R}^3\\mid x^2-y^2-z=0\\},\\ N=\\{(x,y,z)\\in\\mathbb{R}^3\\mid x+y+z=1\\}$이라 하고, 곡선 $\\gamma$를 $M$과 $N$의 교선이라 하자. 곡면 $M$에 놓인 곡선으로서 $\\gamma$의 점 $p=\\left(\\dfrac12,\\dfrac12,0\\right)$에서의 측지곡률(geodesic curvature)과 법곡률(normal curvature)을 풀이 과정과 함께 쓰시오.`,
   steps:[
-    {num:'Step 1', title:'매개변수화 (s=x+y 이용)',
+    {num:'Step 1', title:'매개변수화 $(s=x+y$ 이용)',
      body:`$z=x^2-y^2=(x-y)(x+y)$와 $z=1-x-y$를 연립: $(x-y)(x+y)=1-(x+y)$.
 
 $s=x+y,\\ d=x-y$로 치환: $ds=1-s\\Rightarrow d=\\dfrac{1-s}s$ ($p$에서 $s=1,d=0$, 일치 확인).
 
 $$x(s)=\\frac{s+d}2,\\quad y(s)=\\frac{s-d}2,\\quad z(s)=1-s,\\qquad d(s)=\\frac1s-1$$`},
-    {num:'Step 2', title:'s=1에서 도함수',
+    {num:'Step 2', title:'$s=1$에서 도함수',
      body:`$d'(s)=-1/s^2,\\ d''(s)=2/s^3$. $x'=(1-1/s^2)/2,\\ y'=(1+1/s^2)/2,\\ z'=-1$.
 
 $s=1$: $r'(1)=(0,1,-1)$, $r''(1)=(1,-1,0)$ ($x''=1/s^3,\\,y''=-1/s^3$에서).`},
-    {num:'Step 3', title:'공간곡선 곡률 κ',
+    {num:'Step 3', title:'공간곡선 곡률 $κ$',
      body:`$r'\\times r''=(0,1,-1)\\times(1,-1,0)=(-1,-1,-1)$, $|r'\\times r''|=\\sqrt3$.
 
 $$\\kappa=\\frac{\\sqrt3}{|r'|^3}=\\frac{\\sqrt3}{(\\sqrt2)^3}=\\frac{\\sqrt3}{2\\sqrt2}=\\frac{\\sqrt6}4$$`},
@@ -765,10 +765,10 @@ $$\\kappa=\\frac{\\sqrt3}{|r'|^3}=\\frac{\\sqrt3}{(\\sqrt2)^3}=\\frac{\\sqrt3}{2
 // ───────────────────────────────────────
 {
   id:'2024a4', year:2024, type:'전공A', cat:'curve', pts:2,
-  title:'yz평면 교점에서의 접선 조건으로 a²+b²과 곡률',
+  title:'$yz$평면 교점에서의 접선 조건으로 $a²+b²$과 곡률',
   problem:`3차원 유클리드 공간 $\\mathbb{R}^3$에서 곡선 $C$를 $C=\\{(x,y,z)\\in\\mathbb{R}^3\\mid y=e^{ax},\\,yz=b\\}$ (단, $a,\\,b$는 상수)라 하자. 곡선 $C$와 $yz$평면의 교점 P에서 곡선 $C$의 접선(tangent line)이 점 $(2\\sqrt2,3,-1)$을 지날 때, $a^2+b^2$의 값과 점 P에서의 곡률(curvature)을 순서대로 구하시오.`,
   steps:[
-    {num:'Step 1', title:'교점 P와 매개변수화',
+    {num:'Step 1', title:'교점 $P$와 매개변수화',
      body:`$x=0$: $y=1$, $z=b$. $P=(0,1,b)$. $x$로 매개변수화: $r(x)=(x,\\,e^{ax},\\,be^{-ax})$.
 
 $r'(x)=(1,\\,ae^{ax},\\,-abe^{-ax})$, $r'(0)=(1,a,-ab)$.`},
@@ -778,9 +778,9 @@ $r'(x)=(1,\\,ae^{ax},\\,-abe^{-ax})$, $r'(0)=(1,a,-ab)$.`},
 $x$성분: $\\lambda=2\\sqrt2$. $y$성분: $2=2\\sqrt2\\,a\\Rightarrow a=\\dfrac1{\\sqrt2}=\\dfrac{\\sqrt2}2$.
 
 $z$성분: $-1-b=2\\sqrt2(-ab)=-2b\\ \\Rightarrow\\ b=1$`},
-    {num:'Step 3', title:'a²+b² 계산',
+    {num:'Step 3', title:'$a²+b²$ 계산',
      body:`$$a^2+b^2=\\frac12+1=\\frac32$$`},
-    {num:'Step 4', title:'P에서의 곡률',
+    {num:'Step 4', title:'$P$에서의 곡률',
      body:`$r''(x)=(0,a^2e^{ax},a^2be^{-ax})$. $x=0$: $r'(0)=\\left(1,\\dfrac{\\sqrt2}2,-\\dfrac{\\sqrt2}2\\right)$, $r''(0)=\\left(0,\\dfrac12,\\dfrac12\\right)$.
 
 $r'\\times r''=\\left(\\dfrac{\\sqrt2}2,-\\dfrac12,\\dfrac12\\right)$, $|r'\\times r''|=1$. $|r'(0)|^2=2$.
@@ -798,11 +798,11 @@ $$\\kappa=\\frac1{(\\sqrt2)^3}=\\frac{\\sqrt2}4$$`}
   title:'회전타원면의 가우스곡률과 전곡률 적분',
   problem:`3차원 유클리드 공간 $\\mathbb{R}^3$에서 곡면 $M:x^2+4y^2+4z^2=4,\\ 0<x<\\dfrac{4\\sqrt5}5,\\ 0<z<\\sqrt3y$ 위의 점 $\\left(\\sqrt2,\\dfrac12,\\dfrac12\\right)$에서의 가우스곡률(Gaussian curvature) $K$를 구하시오. 또한, 곡면 $M$에서의 가우스 곡률합(가우스 전곡률, total Gaussian curvature) $\\displaystyle\\iint_MK\\,dA$를 풀이 과정과 함께 쓰시오. (단, $dA$는 곡면 $M$의 면적소(area element)이다.)`,
   steps:[
-    {num:'Step 1', title:'x축 회전 타원면으로 파악',
+    {num:'Step 1', title:'$x$축 회전 타원면으로 파악',
      body:`$\\dfrac{x^2}4+y^2+z^2=1$: $x$축에 대한 회전면 ($y,z$ 계수 같음). $\\rho(x)=\\sqrt{y^2+z^2}=\\sqrt{1-x^2/4}$.
 
 $\\rho\\rho'=-x/4$이고 이를 다시 미분해 $\\rho\\rho''=-\\dfrac14-\\rho'^2$.`},
-    {num:'Step 2', title:'주어진 점에서 K 계산',
+    {num:'Step 2', title:'주어진 점에서 $K$ 계산',
      body:`$x_0=\\sqrt2$: $\\rho=\\sqrt{1/2}=\\dfrac{\\sqrt2}2$, $\\rho'=-x_0/(4\\rho)=-\\dfrac12$, $\\rho\\rho''=-\\dfrac14-\\dfrac14=-\\dfrac12\\Rightarrow\\rho''=-\\dfrac{\\sqrt2}2$.
 
 회전면 공식 $K=\\dfrac{-\\rho''}{\\rho(1+\\rho'^2)^2}$:
@@ -849,7 +849,7 @@ $$y+z=2\\sqrt2$$`},
 $u=0,v=\\pi/4$: $X_{uu}=(0,\\sqrt2,\\sqrt2)$, $X_{uv}=(0,0,0)$, $X_{vv}=(0,-\\sqrt2,-\\sqrt2)$. 단위법선 $\\mathbf{n}=(0,-1,-1)/\\sqrt2$.
 
 $E=4,\\,F=0,\\,G=4$; $e=-2,\\,f=0,\\,g=2$`},
-    {num:'Step 4', title:'K, H 계산',
+    {num:'Step 4', title:'$K, H$ 계산',
      body:`$$K=\\frac{eg-f^2}{EG-F^2}=\\frac{-4}{16}=-\\frac14$$
 
 $$H=\\frac{eG-2fF+gE}{2(EG-F^2)}=\\frac{-8+8}{32}=0$$
@@ -872,7 +872,7 @@ $$H=\\frac{eG-2fF+gE}{2(EG-F^2)}=\\frac{-8+8}{32}=0$$
      body:`$r'=\\sin\\varphi$. $r^2+r'^2=(1-\\cos\\varphi)^2+\\sin^2\\varphi=2-2\\cos\\varphi=4\\sin^2(\\varphi/2)$.
 
 $$L=\\int_0^{2\\pi}2\\sin(\\varphi/2)\\,d\\varphi=\\Bigl[-4\\cos(\\varphi/2)\\Bigr]_0^{2\\pi}=4+4=8$$`},
-    {num:'Step 3', title:'극좌표 곡률 공식으로 κ ds 정리',
+    {num:'Step 3', title:'극좌표 곡률 공식으로 $κ ds$ 정리',
      body:`극좌표 곡률 공식 ②: $\\kappa\\,ds=\\dfrac{r^2+2r'^2-rr''}{r^2+r'^2}\\,d\\varphi$
 
 $r''=\\cos\\varphi$이므로 분자 $=(1-\\cos\\varphi)^2+2\\sin^2\\varphi-(1-\\cos\\varphi)\\cos\\varphi=3(1-\\cos\\varphi)=3r$
@@ -899,22 +899,22 @@ $$\\kappa\\,ds=\\frac{3r}{2r}\\,d\\varphi=\\frac32\\,d\\varphi$$
 // ───────────────────────────────────────
 {
   id:'2026a4', year:2026, type:'전공A', cat:'curve', pts:2,
-  title:'α·N=-2s² 조건과 α(1)·B(1)로 곡률·비틀림률 구하기',
+  title:'$α·N=-2s²$ 조건과 $α(1)·B(1)$로 곡률·비틀림률 구하기',
   problem:`3차원 유클리드 공간 $\\mathbb{R}^3$에서 단위속력곡선(unit speed curve) $\\alpha:(0,2)\\to\\mathbb{R}^3$이 모든 $s\\in(0,2)$에 대하여 $\\alpha(s)\\cdot\\alpha'(s)=0,\\ \\alpha(s)\\cdot N(s)=-2s^2$을 만족시킨다. $\\alpha(1)\\cdot B(1)=12$일 때, 곡선 $\\alpha(s)$의 $s=1$에서의 곡률(curvature) $\\kappa(1)$과 비틀림률(열률, 꼬임률, torsion)의 절댓값 $|\\tau(1)|$을 순서대로 구하시오. (단, $N(s)$는 점 $\\alpha(s)$에서의 법선벡터(normal vector)이고, $B(s)$는 점 $\\alpha(s)$에서의 종법선벡터(binormal vector)이다.)`,
   steps:[
-    {num:'Step 1', title:'α·N=-2s²에서 κ(s) 직접 결정',
+    {num:'Step 1', title:'$α·N=-2s²$에서 $κ(s)$ 직접 결정',
      body:`$\\alpha\\cdot\\alpha'=0$은 $\\alpha\\cdot T=0$. 이를 미분: $T\\cdot T+\\alpha\\cdot(\\kappa N)=0\\Rightarrow\\alpha\\cdot N=-\\dfrac1\\kappa$ ①.
 
 주어진 조건과 비교: $-\\dfrac1{\\kappa(s)}=-2s^2\\ \\Rightarrow\\ \\kappa(s)=\\dfrac1{2s^2}$.
 
 $$\\kappa(1)=\\frac12$$`},
-    {num:'Step 2', title:'α·N=-2s²을 다시 미분',
+    {num:'Step 2', title:'$α·N=-2s²$을 다시 미분',
      body:`$\\alpha'\\cdot N+\\alpha\\cdot N'=-4s$. $\\alpha'\\cdot N=T\\cdot N=0$. $N'=-\\kappa T+\\tau B$이므로:
 
 $$\\alpha\\cdot N'=-\\kappa(\\alpha\\cdot T)+\\tau(\\alpha\\cdot B)=\\tau(\\alpha\\cdot B)$$
 
 따라서 $\\tau(s)\\bigl(\\alpha(s)\\cdot B(s)\\bigr)=-4s$.`},
-    {num:'Step 3', title:'s=1에서 τ(1) 계산',
+    {num:'Step 3', title:'$s=1$에서 $τ(1)$ 계산',
      body:`$s=1$: $\\tau(1)\\times12=-4\\ \\Rightarrow\\ \\tau(1)=-\\dfrac13$
 
 $$|\\tau(1)|=\\frac13$$`}
@@ -926,7 +926,7 @@ $$|\\tau(1)|=\\frac13$$`}
 },
 {
   id:'2026b11', year:2026, type:'전공B', cat:'gauss', pts:4,
-  title:'세 평행원의 측지곡률 조건으로 f(0)과 가우스곡률 결정',
+  title:'세 평행원의 측지곡률 조건으로 $f(0)$과 가우스곡률 결정',
   problem:`최고차항의 계수가 $2$인 삼차함수 $f(x)$가 $-1<x<2$에서 $f(x)>0$이다. 3차원 유클리드 공간 $\\mathbb{R}^3$에서 곡선 $y=f(x),\\,z=0\\,(-1<x<2)$를 $x$축 둘레로 $360^\\circ$ 회전시켜 얻은 회전면(surface of revolution)을 $M$이라 하고, 곡면 $M$이 평면 $x=0$과 만나서 생기는 원을 $\\alpha$, 평면 $x=\\dfrac23$와 만나서 생기는 원을 $\\beta$, 평면 $x=1$과 만나서 생기는 원을 $\\gamma$라 하자. 곡면 $M$에 놓인 곡선으로서 $\\alpha,\\,\\beta,\\,\\gamma$의 측지곡률(geodesic curvature)이 각각 $0,\\,0,\\,\\dfrac25$이다. $f(0)$의 값과 곡선 $\\alpha$ 위의 점에서 $M$의 가우스 곡률(Gaussian curvature)을 풀이 과정과 함께 쓰시오.`,
   diagram:`<svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" style="font-family:'Noto Sans KR',sans-serif">
     <line x1="15" y1="100" x2="305" y2="100" stroke="var(--t3)" stroke-width="1" stroke-dasharray="3 3"/>
@@ -952,7 +952,7 @@ $$|\\tau(1)|=\\frac13$$`}
 $$\\kappa_g(x_0)=\\frac{|f'(x_0)|}{f(x_0)\\sqrt{1+f'(x_0)^2}}$$
 
 ($\\because$ 평행원의 공간곡선 곡률은 $1/f(x_0)$이고, 법곡률과 뫼니에 정리로 분리하면 위 식이 유도됨.)`},
-    {num:'Step 2', title:'α, β의 측지곡률=0에서 f\'의 두 근',
+    {num:'Step 2', title:'$α, β$의 측지곡률=0에서 $f\'$의 두 근',
      body:`$\\kappa_g=0\\iff f'(x_0)=0$이므로 $f'(0)=0,\\ f'(2/3)=0$.
 
 $f$가 삼차(최고차항 계수 $2$)이므로 $f'(x)=6x^2+\\cdots$는 이차식. 두 근이 $0,\\,2/3$이므로:
@@ -960,7 +960,7 @@ $f$가 삼차(최고차항 계수 $2$)이므로 $f'(x)=6x^2+\\cdots$는 이차�
 $$f'(x)=6x(x-\\tfrac23)=6x^2-4x$$
 
 적분: $f(x)=2x^3-2x^2+C$ (단, $C=f(0)$, 우리가 구하려는 값).`},
-    {num:'Step 3', title:'γ의 조건으로 C 결정',
+    {num:'Step 3', title:'$γ$의 조건으로 $C$ 결정',
      body:`$f(1)=2-2+C=C$ (즉 $f(1)=f(0)=C$). $f'(1)=6-4=2$.
 
 $$\\kappa_g(1)=\\frac{|f'(1)|}{f(1)\\sqrt{1+f'(1)^2}}=\\frac2{C\\sqrt5}=\\frac25$$
@@ -968,7 +968,7 @@ $$\\kappa_g(1)=\\frac{|f'(1)|}{f(1)\\sqrt{1+f'(1)^2}}=\\frac2{C\\sqrt5}=\\frac25
 $$C\\sqrt5=5\\ \\Rightarrow\\ C=\\sqrt5$$
 
 $$f(0)=\\sqrt5$$`},
-    {num:'Step 4', title:'α 위의 점에서 가우스곡률',
+    {num:'Step 4', title:'$α$ 위의 점에서 가우스곡률',
      body:`$f''(x)=12x-4$이므로 $f''(0)=-4$.
 
 회전면 공식: $K(x)=\\dfrac{-f''(x)}{f(x)(1+f'(x)^2)^2}$. $x=0$: $f(0)=\\sqrt5,\\,f'(0)=0$:
