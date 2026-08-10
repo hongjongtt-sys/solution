@@ -31,16 +31,16 @@ window.SUBJECTS['복소해석학'] = {
 // ───────────────────────────────────────
 {
   id:'2014b2', year:2014, type:'전공B', cat:'residue', pts:10,
-  title:'선형사상 T(f)=∮f(z)dz의 핵과 T⁻¹(2) 구하기',
+  title:'선형사상 $T(f)=∮f(z)dz$의 핵과 $T⁻¹(2)$ 구하기',
   problem:`다음 4개의 복소함수 $f_1(z)=z,\\ f_2(z)=\\bar z,\\ f_3(z)=e^z,\\ f_4(z)=e^{\\bar z}$로 생성되는 복소 벡터 공간 $\\{a_1f_1+a_2f_2+a_3f_3+a_4f_4\\mid a_1,a_2,a_3,a_4\\in\\mathbb{C}\\}$를 $V$라 하자. 여기서 $\\bar z$는 $z$의 켤레복소수이다. 복소평면 $\\mathbb{C}$ 상의 시계반대방향의 단위원 $C:|z|=1$에 대하여 사상 $T:V\\to\\mathbb{C}$를 $T(f)=\\displaystyle\\int_C f(z)\\,dz$로 정의하자. $T$가 선형사상임을 증명하시오. 선형사상 $T$의 핵 $\\ker(T)$의 기저를 구하고, $\\ker(T)$를 이용하여 $T^{-1}(2)=\\{f\\in V\\mid T(f)=2\\}$를 나타내시오.`,
   steps:[
-    {num:'Step 1', title:'T의 선형성',
+    {num:'Step 1', title:'$T$의 선형성',
      body:`적분은 선형연산이므로 임의의 $f,g\\in V$, $\\alpha\\in\\mathbb{C}$에 대하여:
 
 $$T(\\alpha f+g)=\\int_C(\\alpha f+g)\\,dz=\\alpha\\int_C f\\,dz+\\int_C g\\,dz=\\alpha T(f)+T(g)$$
 
 따라서 $T$는 선형사상이다. $\\blacksquare$`},
-    {num:'Step 2', title:'기저별 T값 계산',
+    {num:'Step 2', title:'기저별 $T$값 계산',
      body:`$C:|z|=1$에서 각 기저함수의 적분을 계산합니다.
 
 $T(f_1)=\\displaystyle\\int_C z\\,dz=0$ ($z$는 정함수이므로 코시의 적분정리 ①에 의해).
@@ -52,7 +52,7 @@ $T(f_2)=\\displaystyle\\int_C\\bar z\\,dz$: $|z|=1$이면 $\\bar z=1/z$이므로
 $T(f_4)=\\displaystyle\\int_C e^{\\bar z}\\,dz=\\int_C e^{1/z}\\,dz$: $e^{1/z}=\\sum_{n=0}^\\infty\\frac{1}{n!z^n}$의 $z^{-1}$ 계수(유수)는 $1$이므로 ③:
 
 $$T(f_4)=2\\pi i\\cdot1=2\\pi i$$`},
-    {num:'Step 3', title:'T(f)의 일반식과 ker(T)',
+    {num:'Step 3', title:'$T(f)$의 일반식과 $ker(T)$',
      body:`$$T(a_1f_1+a_2f_2+a_3f_3+a_4f_4)=2\\pi i(a_2+a_4)$$
 
 $\\ker(T)=\\{a_1f_1+a_2f_2+a_3f_3+a_4f_4\\mid a_2+a_4=0\\}$이므로 $a_4=-a_2$를 대입하면:
@@ -60,7 +60,7 @@ $\\ker(T)=\\{a_1f_1+a_2f_2+a_3f_3+a_4f_4\\mid a_2+a_4=0\\}$이므로 $a_4=-a_2$�
 $$\\ker(T)=\\text{span}\\{f_1,\\,f_3,\\,f_2-f_4\\}=\\text{span}\\{z,\\ e^z,\\ \\bar z-e^{\\bar z}\\}$$
 
 기저는 $\\{z,\\ e^z,\\ \\bar z-e^{\\bar z}\\}$ (선형독립이며 $\\dim\\ker T=4-\\text{rank}(T)=4-1=3$).`},
-    {num:'Step 4', title:'T⁻¹(2) 구하기',
+    {num:'Step 4', title:'$T⁻¹(2)$ 구하기',
      body:`$T(f)=2\\iff2\\pi i(a_2+a_4)=2\\iff a_2+a_4=\\dfrac{1}{\\pi i}=-\\dfrac{i}{\\pi}$.
 
 특수해로 $a_2=-\\dfrac{i}{\\pi},\\,a_4=0$을 택하면 $f_p=-\\dfrac{i}{\\pi}\\bar z$이고 $T(f_p)=2\\pi i\\cdot\\left(-\\dfrac{i}{\\pi}\\right)=2$.
@@ -117,17 +117,17 @@ $$\\int_{-\\infty}^{\\infty}\\frac{xe^{ibx}}{x^2+a^2}dx=2\\pi i\\cdot\\frac{e^{-
   title:'$e^z/(e^{2z}+1)$의 테일러 급수 홀수항 소멸과 유수 계산',
   problem:`복소함수 $f(z)=\\dfrac{e^z}{e^{2z}+1}$ ($|z|<\\dfrac{\\pi}{2}$)의 점 $z_0=0$에 관한 테일러 급수 전개를 $f(z)=\\displaystyle\\sum_{n=0}^\\infty a_nz^n$이라 하자. 음이 아닌 모든 정수 $n$에 대하여 $a_{2n+1}=0$임을 보이시오. 또한 복소평면에서 시계반대방향의 단위원 $C:|z|=1$에 대하여 $\\displaystyle\\int_C\\frac{f(z)}{z^3}\\,dz$의 값을 풀이 과정과 함께 쓰시오.`,
   steps:[
-    {num:'Step 1', title:'f(z)를 쌍곡코시컨트 함수로 정리',
+    {num:'Step 1', title:'$f(z)$를 쌍곡코시컨트 함수로 정리',
      body:`분모를 $e^z$로 묶으면:
 
 $$f(z)=\\frac{e^z}{e^{2z}+1}=\\frac{1}{e^z+e^{-z}}=\\frac{1}{2\\cosh z}$$`},
-    {num:'Step 2', title:'f가 우함수임을 보여 홀수항 소멸 증명',
+    {num:'Step 2', title:'$f$가 우함수임을 보여 홀수항 소멸 증명',
      body:`$\\cosh(-z)=\\cosh z$이므로 $f(-z)=\\dfrac{1}{2\\cosh(-z)}=\\dfrac{1}{2\\cosh z}=f(z)$, 즉 $f$는 우함수 ①.
 
 $f(z)=\\sum a_nz^n$에서 $f(-z)=\\sum a_n(-1)^nz^n=f(z)=\\sum a_nz^n$이므로 모든 $n$에 대해 $a_n((-1)^n-1)=0$.
 
 $n$이 홀수이면 $(-1)^n-1=-2\\ne0$이므로 $a_n=0$. 즉 $a_{2n+1}=0$. $\\blacksquare$`},
-    {num:'Step 3', title:'a₂ 계수 계산',
+    {num:'Step 3', title:'$a₂$ 계수 계산',
      body:`$\\text{sech}(z)=\\dfrac1{\\cosh z}=1-\\dfrac{z^2}{2}+\\dfrac{5z^4}{24}-\\cdots$ (표준 전개) ②이므로:
 
 $$f(z)=\\frac12\\text{sech}(z)=\\frac12-\\frac{z^2}{4}+\\frac{5z^4}{48}-\\cdots$$
@@ -150,10 +150,10 @@ $$\\int_C\\frac{f(z)}{z^3}dz=2\\pi i\\cdot a_2=2\\pi i\\left(-\\frac14\\right)=-
 // ───────────────────────────────────────
 {
   id:'2017a6', year:2017, type:'전공A', cat:'entire', pts:2,
-  title:'z=1에서 해석적이 되는 자연수 n과 f\'(1) 구하기',
+  title:'$z=1$에서 해석적이 되는 자연수 $n$과 $f\'(1)$ 구하기',
   problem:`복소수 $z=x+iy$ ($x,y$는 실수)에 대한 함수 $f(z)=(x^ny+xy^n+x+y)+iv(x,y)$가 $z=1$에서 해석적(analytic)이 되도록 하는 자연수 $n$의 값과 이때의 $f'(1)$의 값을 각각 구하시오. (단, $v(x,y)$는 실숫값 함수이다.)`,
   steps:[
-    {num:'Step 1', title:'u가 조화함수가 되는 n 결정',
+    {num:'Step 1', title:'$u$가 조화함수가 되는 $n$ 결정',
      body:`$u=x^ny+xy^n+x+y$에서:
 
 $$u_{xx}=n(n-1)x^{n-2}y,\\qquad u_{yy}=n(n-1)xy^{n-2}$$
@@ -161,7 +161,7 @@ $$u_{xx}=n(n-1)x^{n-2}y,\\qquad u_{yy}=n(n-1)xy^{n-2}$$
 해석적이려면 $u$가 조화함수 ①여야 하므로 $u_{xx}+u_{yy}=n(n-1)[x^{n-2}y+xy^{n-2}]=0$이 항등적으로 성립해야 합니다.
 
 $n(n-1)=0$이어야 하고 $n$은 자연수이므로 $n=1$.`},
-    {num:'Step 2', title:'n=1일 때 u와 CR 방정식',
+    {num:'Step 2', title:'$n=1$일 때 $u$와 $CR$ 방정식',
      body:`$n=1$: $u=xy+xy+x+y=2xy+x+y$.
 
 $u_x=2y+1,\\quad u_y=2x+1$. 코시-리만 방정식 ②: $v_y=u_x=2y+1,\\ v_x=-u_y=-2x-1$.
@@ -169,7 +169,7 @@ $u_x=2y+1,\\quad u_y=2x+1$. 코시-리만 방정식 ②: $v_y=u_x=2y+1,\\ v_x=-u
 $v_y=2y+1$을 $y$에 대해 적분: $v=y^2+y+g(x)$. $v_x=g'(x)=-2x-1\\Rightarrow g(x)=-x^2-x+C$.
 
 $$v=y^2+y-x^2-x+C$$`},
-    {num:'Step 3', title:'f\'(1) 계산',
+    {num:'Step 3', title:'$f\'(1)$ 계산',
      body:`$f'(z)=u_x+iv_x=(2y+1)+i(-2x-1)$.
 
 $z=1$ ($x=1,y=0$)에서:
@@ -184,10 +184,10 @@ $$f'(1)=(0+1)+i(-2-1)=1-3i$$`}
 },
 {
   id:'2017a11', year:2017, type:'전공A', cat:'entire', pts:4,
-  title:'로그형 부등식으로 제거가능 특이점 증명, 최대계수원리로 f 결정',
+  title:'로그형 부등식으로 제거가능 특이점 증명, 최대계수원리로 $f$ 결정',
   problem:`복소평면 $\\mathbb{C}$의 영역 $D=\\{z\\in\\mathbb{C}\\mid0<|z|<1\\}$에 대하여 함수 $f:D\\to\\mathbb{C}$는 해석적(analytic)이다. 임의의 $z\\in D$에 대하여 함수 $f(z)$가 부등식 $|f(z)|\\le1+\\ln\\left(\\dfrac{1+|z|}{2|z|}\\right)$를 만족시킨다. $z=0$은 함수 $f(z)$의 제거 가능 특이점(없앨 수 있는 특이점, removable singular point)임을 보이고, $f\\left(\\dfrac12\\right)=1$일 때 $f\\left(\\dfrac{1+i}{3}\\right)$의 값을 풀이 과정과 함께 쓰시오.`,
   steps:[
-    {num:'Step 1', title:'zf(z)→0 임을 보이고 g=zf 확장',
+    {num:'Step 1', title:'$zf(z)→0$ 임을 보이고 $g=zf$ 확장',
      body:`$\\varphi(r):=1+\\ln\\dfrac{1+r}{2r}$이라 하면 $|f(z)|\\le\\varphi(|z|)$.
 
 $$|zf(z)|\\le|z|\\varphi(|z|)=|z|+|z|\\ln(1+|z|)-|z|\\ln(2|z|)$$
@@ -195,11 +195,11 @@ $$|zf(z)|\\le|z|\\varphi(|z|)=|z|+|z|\\ln(1+|z|)-|z|\\ln(2|z|)$$
 $|z|\\to0$일 때 $|z|\\to0$, $|z|\\ln(1+|z|)\\to0$(∵$\\ln(1+|z|)\\sim|z|$), $|z|\\ln(2|z|)\\to0$(∵표준 극한 $t\\ln t\\to0$) ①이므로 $zf(z)\\to0$.
 
 따라서 $g(z):=zf(z)$는 $0<|z|<1$에서 해석적이고 $0$ 근방에서 유계(사실 극한 $0$)이므로, 리만의 제거가능 특이점 정리에 의해 $g$는 $z=0$까지 해석적으로 확장되고 $g(0)=0$.`},
-    {num:'Step 2', title:'f 자체의 확장',
+    {num:'Step 2', title:'$f$ 자체의 확장',
      body:`$g$는 $|z|<1$에서 해석적이고 $g(0)=0$이므로 $g(z)=z\\,k(z)$ ($k$는 $|z|<1$에서 해석적) ②로 인수분해됩니다.
 
 $z\\ne0$에서 $k(z)=g(z)/z=f(z)$이므로, $f(0):=k(0)$으로 정의하면 $f$는 $|z|<1$ 전체에서 해석적으로 확장됩니다. 즉 $z=0$은 제거가능 특이점. $\\blacksquare$`},
-    {num:'Step 3', title:'최대계수원리로 |f|≤1 증명',
+    {num:'Step 3', title:'최대계수원리로 $|f|≤1$ 증명',
      body:`$\\varphi(r)$은 $r$에 대해 감소함수 ($\\varphi'(r)=\\frac1{1+r}-\\frac1r<0$)이고 $\\varphi(r)\\to1$ as $r\\to1^-$.
 
 임의의 $z_0\\in D$와 $|z_0|<\\rho<1$에 대해, 확장된 $f$가 닫힌원판 $|z|\\le\\rho$에서 해석적이므로 최대계수원리 ③에 의해:
@@ -207,7 +207,7 @@ $z\\ne0$에서 $k(z)=g(z)/z=f(z)$이므로, $f(0):=k(0)$으로 정의하면 $f$�
 $$|f(z_0)|\\le\\max_{|z|=\\rho}|f(z)|\\le\\varphi(\\rho)$$
 
 $\\rho\\to1^-$로 보내면 $|f(z_0)|\\le1$. $z_0$는 임의였으므로 $D$ 전체(및 확장된 $z=0$)에서 $|f(z)|\\le1$.`},
-    {num:'Step 4', title:'등호조건으로 f 상수 결정',
+    {num:'Step 4', title:'등호조건으로 $f$ 상수 결정',
      body:`$f(1/2)=1$은 $|f|\\le1$의 등호가 **내부점** $z=1/2$에서 달성됨을 의미합니다.
 
 최대계수원리의 등호조건 ④: $|f|$가 정의역 내부에서 최댓값을 가지면 $f$는 상수함수.
@@ -226,14 +226,14 @@ $$f\\!\\left(\\frac{1+i}{3}\\right)=1$$`}
 },
 {
   id:'2018a5', year:2018, type:'전공A', cat:'series', pts:2,
-  title:'세 점의 상으로 일차분수변환 T(2i) 구하기',
+  title:'세 점의 상으로 일차분수변환 $T(2i)$ 구하기',
   problem:`확장 복소평면(extended complex plane) $\\mathbb{C}\\cup\\{\\infty\\}$에서 정의된 일차분수변환(선형분수변환, linear fractional transformation, bilinear transformation) $T$가 $T(0)=2,\\ T(1)=2i,\\ T(\\infty)=-2$를 만족시킬 때, $T(2i)$의 값을 구하시오.`,
   steps:[
-    {num:'Step 1', title:'T(z) 결정 (T(∞)=-2 이용)',
+    {num:'Step 1', title:'$T(z)$ 결정 $(T(∞)=-2$ 이용)',
      body:`$T(z)=\\dfrac{az+b}{cz+d}$로 놓으면 $T(\\infty)=\\dfrac{a}{c}=-2$ ①이므로 $a=-2c$. $c=1$로 정규화하면 $a=-2$.
 
 $T(0)=\\dfrac{b}{d}=2\\Rightarrow b=2d$.`},
-    {num:'Step 2', title:'T(1)=2i로 나머지 계수 결정',
+    {num:'Step 2', title:'$T(1)=2i$로 나머지 계수 결정',
      body:`$T(1)=\\dfrac{a+b}{c+d}=\\dfrac{-2+2d}{1+d}=2i$
 
 $$-2+2d=2i(1+d)\\ \\Rightarrow\\ 2d(1-i)=2(1+i)\\ \\Rightarrow\\ d=\\frac{1+i}{1-i}=\\frac{(1+i)^2}{2}=\\frac{2i}{2}=i$$
@@ -241,7 +241,7 @@ $$-2+2d=2i(1+d)\\ \\Rightarrow\\ 2d(1-i)=2(1+i)\\ \\Rightarrow\\ d=\\frac{1+i}{1
 $d=i,\\ b=2i,\\ c=1,\\ a=-2$이므로:
 
 $$T(z)=\\frac{-2z+2i}{z+i}$$`},
-    {num:'Step 3', title:'T(2i) 계산',
+    {num:'Step 3', title:'$T(2i)$ 계산',
      body:`$$T(2i)=\\frac{-2(2i)+2i}{2i+i}=\\frac{-4i+2i}{3i}=\\frac{-2i}{3i}=-\\frac23$$`}
   ],
   answer:'$-\\dfrac23$',
@@ -251,7 +251,7 @@ $$T(z)=\\frac{-2z+2i}{z+i}$$`},
 },
 {
   id:'2018b4', year:2018, type:'전공B', cat:'entire', pts:4,
-  title:'정함수의 부등식과 리우빌 정리로 f\'(0) 구하기',
+  title:'정함수의 부등식과 리우빌 정리로 $f\'(0)$ 구하기',
   problem:`정함수(entire function) $f(z)$가 모든 복소수 $z$에 대하여 부등식 $|f(z)|\\le|e^z-1|$을 만족시킨다. $f(1)=1$일 때, $f'(0)$의 값을 풀이 과정과 함께 쓰시오.`,
   steps:[
     {num:'Step 1', title:'$g(z)=f(z)/(e^z-1)$의 제거가능 특이점',
@@ -264,11 +264,11 @@ $e^z-1$은 이 점들에서 단순영점 ($\\frac{d}{dz}(e^z-1)=e^z\\ne0$)이므
      body:`$e^z-1\\ne0$인 곳에서는 $|g(z)|=|f(z)|/|e^z-1|\\le1$이 직접 성립하고, 특이점에서도 극한으로 $|g|\\le1$.
 
 따라서 $g$는 유계 정함수이므로 리우빌 정리 ①에 의해 $g(z)\\equiv c$ (상수).`},
-    {num:'Step 2', title:'상수 c 결정 및 f 구하기',
+    {num:'Step 2', title:'상수 $c$ 결정 및 $f$ 구하기',
      body:`$f(1)=1$에서 $g(1)=\\dfrac{f(1)}{e-1}=\\dfrac{1}{e-1}=c$.
 
 $$f(z)=c(e^z-1)=\\frac{e^z-1}{e-1}$$`},
-    {num:'Step 3', title:'f\'(0) 계산',
+    {num:'Step 3', title:'$f\'(0)$ 계산',
      body:`$f'(z)=\\dfrac{e^z}{e-1}$이므로:
 
 $$f'(0)=\\frac{1}{e-1}$$`}
@@ -284,18 +284,18 @@ $$f'(0)=\\frac{1}{e-1}$$`}
 // ───────────────────────────────────────
 {
   id:'2019a5', year:2019, type:'전공A', cat:'residue', pts:2,
-  title:'z²-iz̄ 형태로 변형해 닫힌곡선 위 선적분 계산',
+  title:'$z²-iz̄$ 형태로 변형해 닫힌곡선 위 선적분 계산',
   problem:`복소평면에서 곡선 $C$가 $z(t)=\\begin{cases}e^{i\\pi t}, & 0\\le t\\le1\\\\ t-2, & 1<t\\le3\\end{cases}$일 때, 복소적분 $\\displaystyle\\int_C(x^2-y^2-y)+i(2xy-x)\\,dz$의 값을 구하시오. (단, $x,y$는 실수이고 $z=x+iy$는 복소수이다.)`,
   steps:[
-    {num:'Step 1', title:'곡선 C 파악 및 피적분함수 변형',
+    {num:'Step 1', title:'곡선 $C$ 파악 및 피적분함수 변형',
      body:`$t\\in[0,1]$: 상반 단위원(1에서 $-1$까지, CCW). $t\\in(1,3]$: 실수선 $-1$에서 $1$까지. $z(0)=1=z(3)$이므로 $C$는 닫힌곡선.
 
 $z^2=(x^2-y^2)+2ixy$, $i\\bar z=i(x-iy)=y+ix$이므로:
 
 $$f(z)=(x^2-y^2-y)+i(2xy-x)=z^2-i\\bar z$$`},
-    {num:'Step 2', title:'∮z² dz = 0',
+    {num:'Step 2', title:'$∮z² dz = 0$',
      body:`$z^2$은 정함수이고 $C$는 닫힌곡선이므로 코시의 적분정리에 의해 $\\displaystyle\\int_Cz^2dz=0$.`},
-    {num:'Step 3', title:'∮z̄ dz 직접 계산',
+    {num:'Step 3', title:'$∮z̄ dz$ 직접 계산',
      body:`반원 구간: $z=e^{i\\pi t}$, $\\bar z=e^{-i\\pi t}$, $dz=i\\pi e^{i\\pi t}dt$:
 
 $$\\int_0^1\\bar z\\,dz=\\int_0^1i\\pi\\,dt=i\\pi$$
@@ -316,10 +316,10 @@ $$\\int_C\\bar z\\,dz=i\\pi+0=i\\pi$$`},
 },
 {
   id:'2019b4', year:2019, type:'전공B', cat:'entire', pts:4,
-  title:'평균값 성질로 f(0)과 조화함수 u(x,y) 결정',
+  title:'평균값 성질로 $f(0)$과 조화함수 $u(x,y)$ 결정',
   problem:`실숫값을 갖는 두 함수 $u(x,y),\\ v(x,y)=e^{-y}(x\\cos x-y\\sin x)$와 복소수 $z=x+iy$ ($x,y$는 실수)에 대하여, $f(z)=u(x,y)+iv(x,y)$가 정함수(entire function)이다. 곡선 $C$가 $x=\\cos t,\\ y=\\sin t$ ($0\\le t\\le2\\pi$)로 정의된 원일 때, $\\displaystyle\\int_C-yu(x,y)\\,dx+xu(x,y)\\,dy=6\\pi$이다. $f(0)$의 값과 함수 $u(x,y)$를 각각 풀이 과정과 함께 쓰시오.`,
   steps:[
-    {num:'Step 1', title:'코시-리만 방정식으로 u 구하기',
+    {num:'Step 1', title:'코시-리만 방정식으로 $u$ 구하기',
      body:`$v_x=e^{-y}[\\cos x-x\\sin x-y\\cos x]$, $v_y=e^{-y}[-x\\cos x+y\\sin x-\\sin x]$.
 
 $u_x=v_y$를 $x$에 대해 적분하고 $u_y=-v_x$를 확인하면 (상수항 제외 시행착오 대신 직접 대입 검산):
@@ -327,15 +327,15 @@ $u_x=v_y$를 $x$에 대해 적분하고 $u_y=-v_x$를 확인하면 (상수항 �
 $$u(x,y)=C-e^{-y}(x\\sin x+y\\cos x)$$
 
 가 $u_x=v_y,\\ u_y=-v_x$를 모두 만족함을 대입으로 확인할 수 있습니다 (단, $C$는 실수 상수) ①.`},
-    {num:'Step 2', title:'f(z)의 닫힌 형태',
+    {num:'Step 2', title:'$f(z)$의 닫힌 형태',
      body:`$z e^{iz}=(x+iy)e^{-y}(\\cos x+i\\sin x)=e^{-y}(x\\cos x-y\\sin x)+ie^{-y}(x\\sin x+y\\cos x)$이므로:
 
 $$f(z)=C+ize^{iz}$$`},
-    {num:'Step 3', title:'x dy - y dx = dθ 이용',
+    {num:'Step 3', title:'$x dy - y dx = dθ$ 이용',
      body:`단위원 위에서 $x\\,dy-y\\,dx=(\\cos t)(\\cos t\\,dt)-(\\sin t)(-\\sin t\\,dt)=dt$이므로:
 
 $$\\int_C u(x\\,dy-y\\,dx)=\\int_0^{2\\pi}u(\\cos t,\\sin t)\\,dt=6\\pi$$`},
-    {num:'Step 4', title:'평균값 성질로 C 결정',
+    {num:'Step 4', title:'평균값 성질로 $C$ 결정',
      body:`$u$는 조화함수이므로 평균값 성질 ②:
 
 $$\\int_0^{2\\pi}u(\\cos t,\\sin t)\\,dt=2\\pi\\,u(0,0)$$
@@ -377,18 +377,18 @@ $z^{-1}$항은 $n=3$일 때이므로 유수는 $a_3=5/3$.`},
 },
 {
   id:'2020b10', year:2020, type:'전공B', cat:'entire', pts:4,
-  title:'정함수 조건과 원 위 최대·최소값으로 |f(i)| 최댓값',
+  title:'정함수 조건과 원 위 최대·최소값으로 $|f(i)|$ 최댓값',
   problem:`다음 조건을 만족시키는 정함수(entire function) $f(z)$에 대하여 $|f(i)|$의 최솟값을 풀이 과정과 함께 쓰시오. (가) 모든 복소수 $z$에 대하여 $|f(z)+z^2|\\ge3$이다. (나) $|f(2)|=3$.`,
   steps:[
-    {num:'Step 1', title:'조건(가)로 f(z)+z²의 형태 결정',
+    {num:'Step 1', title:'조건(가)로 $f(z)+z²$의 형태 결정',
      body:`$|f(z)+z^2|\\ge3>0$이므로 $f(z)+z^2$는 어디서도 $0$이 되지 않습니다. 따라서 $g(z):=\\dfrac1{f(z)+z^2}$는 정함수이고 $|g(z)|\\le\\dfrac13$로 유계.
 
 리우빌 정리 ①에 의해 $g$는 상수이므로 $f(z)+z^2=c$ (상수, $|c|\\ge3$), 즉:
 
 $$f(z)=c-z^2$$`},
-    {num:'Step 2', title:'조건(나)로 c의 조건',
+    {num:'Step 2', title:'조건(나)로 $c$의 조건',
      body:`$f(2)=c-4$이고 $|f(2)|=3$이므로 $|c-4|=3$, 즉 $c$는 중심 $4$, 반지름 $3$인 원 위에 있습니다.`},
-    {num:'Step 3', title:'|f(i)| 최댓값을 기하적으로 계산',
+    {num:'Step 3', title:'$|f(i)|$ 최댓값을 기하적으로 계산',
      body:`$f(i)=c-i^2=c+1$이므로 $|f(i)|=|c+1|$은 $c$에서 $-1$까지의 거리.
 
 $c$가 원 $|c-4|=3$ 위를 움직일 때 $|c-(-1)|$의 최댓값은 중심에서 $-1$까지 거리에 반지름을 더한 값 ②:
@@ -403,14 +403,14 @@ $$|4-(-1)|+3=5+3=8$$`}
 },
 {
   id:'2021a2', year:2021, type:'전공A', cat:'entire', pts:2,
-  title:'|z|=2 위에서 f(z)=(z+1/z)/2의 최댓값·최솟값',
+  title:'$|z|=2$ 위에서 $f(z)=(z+1/z)/2$의 최댓값·최솟값',
   problem:`복소함수 $f(z)=\\dfrac12\\left(z+\\dfrac1z\\right)$에 대하여, 집합 $\\{z\\in\\mathbb{C}\\mid|z|=2\\}$에서 $|f(z)|$의 최댓값과 최솟값을 구하시오.`,
   steps:[
     {num:'Step 1', title:'매개변수화',
      body:`$z=2e^{i\\theta}$로 놓으면:
 
 $$f(z)=\\frac12\\left(2e^{i\\theta}+\\frac12e^{-i\\theta}\\right)=e^{i\\theta}+\\frac14e^{-i\\theta}=\\frac54\\cos\\theta+i\\cdot\\frac34\\sin\\theta$$`},
-    {num:'Step 2', title:'|f(z)|² 계산',
+    {num:'Step 2', title:'$|f(z)|²$ 계산',
      body:`$$|f(z)|^2=\\frac{25}{16}\\cos^2\\theta+\\frac9{16}\\sin^2\\theta=\\frac9{16}+\\cos^2\\theta$$
 
 ($\\because\\frac{25}{16}\\cos^2\\theta+\\frac9{16}\\sin^2\\theta=\\frac9{16}(\\cos^2\\theta+\\sin^2\\theta)+\\cos^2\\theta$)`},
@@ -429,16 +429,16 @@ $$|f(z)|^2_{\\min}=\\frac9{16}\\Rightarrow|f(z)|_{\\min}=\\frac34$$`}
 },
 {
   id:'2021b8', year:2021, type:'전공B', cat:'residue', pts:4,
-  title:'편각원리로 z³f\'(z)/f(z) 선적분 계산',
+  title:'편각원리로 $z³f\'(z)/f(z)$ 선적분 계산',
   problem:`복소함수 $f(z)=z^6-1$에 대하여 $\\displaystyle\\int_C\\frac{z^3f'(z)}{f(z)}\\,dz$의 값을 풀이 과정과 함께 쓰시오. 여기서 $C$는 복소평면에서 점 $\\left(\\dfrac12,0\\right)$을 중심으로 하고 반지름의 길이가 $1$인 원을 시계반대방향으로 한 바퀴 도는 곡선이다.`,
   steps:[
-    {num:'Step 1', title:'f의 영점과 C 내부 판별',
+    {num:'Step 1', title:'$f$의 영점과 $C$ 내부 판별',
      body:`$f(z)=z^6-1=0$의 근은 6제곱근의 단위근 $z_k=e^{i\\pi k/3}$ ($k=0,\\ldots,5$): $1,\\ \\frac12\\pm\\frac{\\sqrt3}2i,\\ -1,\\ -\\frac12\\pm\\frac{\\sqrt3}2i$.
 
 $C:|z-\\tfrac12|=1$ 내부 판별: $|1-\\tfrac12|=0.5<1$✓, $|\\tfrac12\\pm\\tfrac{\\sqrt3}2i-\\tfrac12|=\\tfrac{\\sqrt3}2\\approx0.87<1$✓, $|-1-\\tfrac12|=1.5>1$✗, $|-\\tfrac12\\pm\\tfrac{\\sqrt3}2i-\\tfrac12|=\\sqrt{1+0.75}\\approx1.32>1$✗.
 
 내부의 근: $z=1,\\ e^{i\\pi/3},\\ e^{-i\\pi/3}$ (3개, 모두 단순근).`},
-    {num:'Step 2', title:'z³f\'(z)/f(z)의 유수',
+    {num:'Step 2', title:'$z³f\'(z)/f(z)$의 유수',
      body:`$f$가 단순영점을 가지므로 $\\dfrac{f'(z)}{f(z)}$는 각 영점 $z_k$에서 유수 $1$을 갖는 단순극 ①. 따라서 $z^3\\dfrac{f'(z)}{f(z)}$의 $z_k$에서의 유수는 $z_k^3$.`},
     {num:'Step 3', title:'유수 합산',
      body:`$1^3=1$, $(e^{i\\pi/3})^3=e^{i\\pi}=-1$, $(e^{-i\\pi/3})^3=e^{-i\\pi}=-1$이므로:
@@ -456,10 +456,10 @@ $$\\int_C\\frac{z^3f'(z)}{f(z)}dz=2\\pi i(1-1-1)=2\\pi i(-1)=-2\\pi i$$`}
 // ───────────────────────────────────────
 {
   id:'2022a10', year:2022, type:'전공A', cat:'residue', pts:4,
-  title:'유수정리와 ∮z̄dz=2iA 공식을 함께 이용한 선적분',
+  title:'유수정리와 $∮z̄dz=2iA$ 공식을 함께 이용한 선적분',
   problem:`복소평면에서 중심이 $i$이고 반지름의 길이가 $2$인 원을 시계반대방향으로 한 바퀴 도는 곡선 $C$에 대하여 선적분 $\\displaystyle\\int_C\\left\\{\\frac{4e^{-iz}}{(z+6i)(z-2i)}+\\bar z\\right\\}dz$의 값을 풀이 과정과 함께 쓰시오. (단, $\\bar z$는 $z$의 켤레복소수이다.)`,
   steps:[
-    {num:'Step 1', title:'유수항 처리: C 내부의 극점 판별',
+    {num:'Step 1', title:'유수항 처리$: C$ 내부의 극점 판별',
      body:`$C:|z-i|=2$. $z=2i$: $|2i-i|=1<2$ ✓ 내부. $z=-6i$: $|-6i-i|=7>2$ ✗ 외부.
 
 $z=2i$에서의 유수:
@@ -467,7 +467,7 @@ $z=2i$에서의 유수:
 $$\\text{Res}_{z=2i}\\frac{4e^{-iz}}{(z+6i)(z-2i)}=\\frac{4e^{-i(2i)}}{2i+6i}=\\frac{4e^2}{8i}=\\frac{e^2}{2i}$$`},
     {num:'Step 2', title:'유수항 적분값',
      body:`$$\\int_C\\frac{4e^{-iz}}{(z+6i)(z-2i)}dz=2\\pi i\\cdot\\frac{e^2}{2i}=\\pi e^2$$`},
-    {num:'Step 3', title:'∮z̄dz = 2iA 공식',
+    {num:'Step 3', title:'$∮z̄dz = 2iA$ 공식',
      body:`단위원에서 $\\oint\\bar z\\,dz=2\\pi i$ (직접 계산 시 $A=\\pi$이므로 $2i\\pi=2\\pi i$)이 성립하듯, 반지름 $r$인 원(CCW)에서 일반적으로:
 
 $$\\oint_C\\bar z\\,dz=2i\\cdot(\\text{둘러싸인 넓이})$$①
@@ -483,10 +483,10 @@ $$\\oint_C\\bar z\\,dz=2i\\cdot(\\text{둘러싸인 넓이})$$①
 },
 {
   id:'2022b11', year:2022, type:'전공B', cat:'entire', pts:4,
-  title:'조화함수 조건으로 a,b 결정 후 f\'\'(π/2) 계산',
+  title:'조화함수 조건으로 $a,b$ 결정 후 $f\'\'(π/2)$ 계산',
   problem:`복소수 $z=x+iy$ ($x,y$는 실수)에 대한 함수 $f(z)=e^{-3y}\\cos(ax)+bx^2-4y^2+iv(x,y)$가 정함수(entire function)가 되도록 하는 양의 실수 $a,b$의 값과, 이 때의 $f''\\left(\\dfrac{\\pi}2\\right)$의 값을 각각 풀이 과정과 함께 쓰시오. (단, $v(x,y)$는 실숫값 함수이다.)`,
   steps:[
-    {num:'Step 1', title:'u가 조화함수가 되는 a,b',
+    {num:'Step 1', title:'$u$가 조화함수가 되는 $a,b$',
      body:`$u=e^{-3y}\\cos(ax)+bx^2-4y^2$에서:
 
 $$u_{xx}=-a^2e^{-3y}\\cos(ax)+2b,\\qquad u_{yy}=9e^{-3y}\\cos(ax)-8$$
@@ -494,17 +494,17 @@ $$u_{xx}=-a^2e^{-3y}\\cos(ax)+2b,\\qquad u_{yy}=9e^{-3y}\\cos(ax)-8$$
 $u_{xx}+u_{yy}=(9-a^2)e^{-3y}\\cos(ax)+2b-8=0$이 항등적으로 성립해야 하므로:
 
 $$9-a^2=0,\\ 2b-8=0\\ \\Rightarrow\\ a=3\\ (양수),\\ b=4$$`},
-    {num:'Step 2', title:'CR 방정식으로 v 구하기',
+    {num:'Step 2', title:'$CR$ 방정식으로 $v$ 구하기',
      body:`$u=e^{-3y}\\cos3x+4x^2-4y^2$에서 $v_y=u_x=-3e^{-3y}\\sin3x+8x$, $v_x=-u_y=3e^{-3y}\\cos3x+8y$.
 
 $v_y$를 적분: $v=e^{-3y}\\sin3x+8xy+g(x)$. $v_x=3e^{-3y}\\cos3x+8y+g'(x)$가 요구값과 일치하려면 $g'(x)=0$.
 
 $$v=e^{-3y}\\sin3x+8xy$$`},
-    {num:'Step 3', title:'f(z)의 닫힌 형태',
+    {num:'Step 3', title:'$f(z)$의 닫힌 형태',
      body:`$e^{-3y}\\cos3x+ie^{-3y}\\sin3x=e^{-3y}(\\cos3x+i\\sin3x)=e^{i3x-3y}=e^{3iz}$이고, $4x^2-4y^2+i8xy=4z^2$이므로:
 
 $$f(z)=e^{3iz}+4z^2$$`},
-    {num:'Step 4', title:'f\'\'(π/2) 계산',
+    {num:'Step 4', title:'$f\'\'(π/2)$ 계산',
      body:`$f'(z)=3ie^{3iz}+8z$, $f''(z)=-9e^{3iz}+8$.
 
 $$f''\\left(\\frac\\pi2\\right)=-9e^{3i\\pi/2}+8=-9(-i)+8=8+9i$$`}
@@ -524,7 +524,7 @@ $$f''\\left(\\frac\\pi2\\right)=-9e^{3i\\pi/2}+8=-9(-i)+8=8+9i$$`}
   title:'평균값 성질로 원둘레 적분 계산, 이차형식 최솟값',
   problem:`실수 $a$에 대하여 함수 $u:\\mathbb{R}^2\\to\\mathbb{R}$를 $u(x,y)=x^2-2xy+ay^2+4x-6y$라 하자. $a=-1$일 때 적분 $\\displaystyle\\int_0^{2\\pi}u(1+2\\cos\\theta,2\\sin\\theta)\\,d\\theta$의 값을 풀이 과정과 함께 쓰시오. 또한 $a=2$일 때 $u(x,y)$의 최솟값을 풀이 과정과 함께 쓰시오.`,
   steps:[
-    {num:'Step 1', title:'a=-1일 때 u가 조화함수',
+    {num:'Step 1', title:'$a=-1$일 때 $u$가 조화함수',
      body:`$a=-1$: $u=x^2-2xy-y^2+4x-6y$. $u_{xx}=2$, $u_{yy}=-2a=2\\cdot(-(-1))$... 직접 계산: $u_y=-2x-2y-6$, $u_{yy}=-2$.
 
 $u_{xx}+u_{yy}=2+(-2)=0$이므로 $u$는 조화함수 ①.`},
@@ -536,7 +536,7 @@ $$\\int_0^{2\\pi}u(1+2\\cos\\theta,2\\sin\\theta)\\,d\\theta=2\\pi\\,u(1,0)$$
 $u(1,0)=1-0+0+4-0=5$ ($a=-1$ 대입)이므로:
 
 $$2\\pi\\times5=10\\pi$$`},
-    {num:'Step 3', title:'a=2일 때 임계점 계산',
+    {num:'Step 3', title:'$a=2$일 때 임계점 계산',
      body:`$u=x^2-2xy+2y^2+4x-6y$. $u_x=2x-2y+4=0,\\ u_y=-2x+4y-6=0$.
 
 첫 식: $y=x+2$. 둘째 식에 대입: $-x+2(x+2)-3=0\\Rightarrow x+1=0\\Rightarrow x=-1,\\ y=1$.`},
@@ -574,7 +574,7 @@ $$z^3-z-4=0\\text{의 근의 개수}=3$$`},
 $$\\text{Res}_{z=3}f+\\sum_i\\text{Res}_{z=z_i}f=0$$
 
 $C$ 내부에는 $h$의 근 $z_i$들만 있고 $z=3$은 $|3|=3>2$로 외부.`},
-    {num:'Step 4', title:'z=3에서의 유수와 최종 계산',
+    {num:'Step 4', title:'$z=3$에서의 유수와 최종 계산',
      body:`$$\\text{Res}_{z=3}f=\\frac1{h(3)}=\\frac1{27-3-4}=\\frac1{20}$$
 
 $$\\sum_i\\text{Res}_{z=z_i}f=-\\frac1{20}$$
@@ -593,7 +593,7 @@ $$\\int_C\\frac1{(z-3)(z^3-z-4)}dz=2\\pi i\\left(-\\frac1{20}\\right)=-\\frac{\\
 // ───────────────────────────────────────
 {
   id:'2024a2', year:2024, type:'전공A', cat:'residue', pts:2,
-  title:'|z|=1 위에서 z̄=1/z 대입으로 선적분 계산',
+  title:'$|z|=1$ 위에서 $z̄=1/z$ 대입으로 선적분 계산',
   problem:`복소평면에서 중심이 원점이고 반지름의 길이가 $1$인 원을 시계 반대방향으로 한 바퀴 도는 곡선 $C$에 대하여 적분 $\\displaystyle\\int_C\\bar z\\,dz-\\frac1{\\bar z}\\,d\\bar z$의 값을 구하시오. (단, $\\bar z$는 $z$의 켤레복소수이다.)`,
   steps:[
     {num:'Step 1', title:'매개변수화',
@@ -616,7 +616,7 @@ $$\\int_C\\frac1{(z-3)(z^3-z-4)}dz=2\\pi i\\left(-\\frac1{20}\\right)=-\\frac{\\
   title:'CR방정식과 부등식으로 $f(z)=-e^{\\pi z}$ 결정 후 비율 계산',
   problem:`실숫값을 갖는 두 함수 $u(x,y),\\ v(x,y)$와 복소수 $z=x+iy$ ($x,y$는 실수)에 대하여 복소함수 $f(z)=u(x,y)+iv(x,y)$는 정함수(전해석함수, entire function)이다. $\\overline{f(\\bar z)}$가 정함수임을 보이시오. 또한, $f'(i)=\\pi,\\ f(-i)=1$이고 모든 실수 $x,y$에 대하여 $\\dfrac{\\partial u}{\\partial x}(x,y)\\dfrac{\\partial v}{\\partial y}(x,y)-\\dfrac{\\partial u}{\\partial y}(x,y)\\dfrac{\\partial v}{\\partial x}(x,y)>(u(x,-y))^2+(v(x,-y))^2$일 때, $\\dfrac{f'(1-i)}{f(1+i)}$의 값을 풀이 과정과 함께 쓰시오. (단, $\\bar z$는 $z$의 켤레복소수이다.)`,
   steps:[
-    {num:'Step 1', title:'g(z)=conj(f(z̄))가 정함수임을 증명',
+    {num:'Step 1', title:'$g(z)=conj(f(z̄))$가 정함수임을 증명',
      body:`$g(z)=\\overline{f(\\bar z)}$라 하면 $g(z)=u(x,-y)-iv(x,-y)=:U+iV$ ($U(x,y)=u(x,-y),\\ V(x,y)=-v(x,-y)$).
 
 연쇄법칙: $U_x=u_x(x,-y),\\ U_y=-u_y(x,-y),\\ V_x=-v_x(x,-y),\\ V_y=v_y(x,-y)$.
@@ -624,7 +624,7 @@ $$\\int_C\\frac1{(z-3)(z^3-z-4)}dz=2\\pi i\\left(-\\frac1{20}\\right)=-\\frac{\\
 $f$의 CR방정식 $u_x=v_y,\\ u_y=-v_x$를 $(x,-y)$에서 적용하면 $U_x=u_x(x,-y)=v_y(x,-y)=V_y$이고 $U_y=-u_y(x,-y)=v_x(x,-y)=-V_x$.
 
 $U,V$가 CR방정식을 만족하고 연속인 편도함수를 가지므로 $g$는 정함수. $\\blacksquare$`},
-    {num:'Step 2', title:'부등식을 |f\'(z)|²>|f(z̄)|²로 재해석',
+    {num:'Step 2', title:'부등식을 $|f\'(z)|²>|f(z̄)|²$로 재해석',
      body:`CR방정식 $v_y=u_x,\\ v_x=-u_y$를 이용하면:
 
 $$u_xv_y-u_yv_x=u_x^2+u_y^2=|f'(z)|^2$$
@@ -632,7 +632,7 @@ $$u_xv_y-u_yv_x=u_x^2+u_y^2=|f'(z)|^2$$
 또한 $u(x,-y)^2+v(x,-y)^2=|f(\\bar z)|^2=|\\overline{f(\\bar z)}|^2=|g(z)|^2$.
 
 따라서 조건은 $|f'(z)|^2>|g(z)|^2$, 즉 $|f'(z)|>|g(z)|$가 **모든** $z$에서 성립.`},
-    {num:'Step 3', title:'리우빌 정리로 g=f\'/π 도출',
+    {num:'Step 3', title:'리우빌 정리로 $g=f\'/π$ 도출',
      body:`$|f'(z)|>|g(z)|\\ge0$이므로 $f'$은 영점을 갖지 않고, $\\varphi(z):=g(z)/f'(z)$는 정함수이며 $|\\varphi(z)|<1$ (유계) ①.
 
 리우빌 정리에 의해 $\\varphi\\equiv c$ (상수, $|c|<1$), 즉 $g(z)=c\\,f'(z)$.
@@ -640,7 +640,7 @@ $$u_xv_y-u_yv_x=u_x^2+u_y^2=|f'(z)|^2$$
 $z=i$에서: $g(i)=\\overline{f(-i)}=\\overline1=1$이고 $g(i)=c\\,f'(i)=c\\pi$이므로 $c=1/\\pi$.
 
 $$\\overline{f(\\bar z)}=\\frac1\\pi f'(z)\\quad\\text{(모든 }z\\text{에서)}\\qquad(*)$$`},
-    {num:'Step 4', title:'급수 전개로 f(z) 결정',
+    {num:'Step 4', title:'급수 전개로 $f(z)$ 결정',
      body:`$f(z)=\\sum a_nz^n$이면 $\\overline{f(\\bar z)}=\\sum\\bar a_nz^n$이므로 $(*)$: $\\bar a_n=\\dfrac{(n+1)a_{n+1}}\\pi$, 즉 $a_{n+1}=\\dfrac{\\pi\\bar a_n}{n+1}$.
 
 이 점화식으로 $a_{2k}=\\dfrac{\\pi^{2k}a_0}{(2k)!},\\ a_{2k+1}=\\dfrac{\\pi^{2k+1}\\bar a_0}{(2k+1)!}$을 얻고:
@@ -650,7 +650,7 @@ $$f(z)=a_0\\cosh(\\pi z)+\\bar a_0\\sinh(\\pi z)$$
 $f(-i)=-a_0=1\\Rightarrow a_0=-1$ (실수, $\\bar a_0=-1$도 만족 및 $f'(i)=-\\pi\\bar a_0=\\pi$와도 일치 확인 ②).
 
 $$f(z)=-\\cosh(\\pi z)-\\sinh(\\pi z)=-e^{\\pi z}$$`},
-    {num:'Step 5', title:'f\'(1-i)/f(1+i) 계산',
+    {num:'Step 5', title:'$f\'(1-i)/f(1+i)$ 계산',
      body:`$f'(z)=-\\pi e^{\\pi z}$.
 
 $$f'(1-i)=-\\pi e^{\\pi(1-i)}=-\\pi e^\\pi e^{-i\\pi}=-\\pi e^\\pi(-1)=\\pi e^\\pi$$
@@ -671,20 +671,20 @@ $$\\frac{f'(1-i)}{f(1+i)}=\\frac{\\pi e^\\pi}{e^\\pi}=\\pi$$`}
 // ───────────────────────────────────────
 {
   id:'2025a7', year:2025, type:'전공A', cat:'series', pts:4,
-  title:'세 점으로 T(z) 결정, 원의 상(직선)과 점 사이 최소거리',
+  title:'세 점으로 $T(z)$ 결정, 원의 상(직선)과 점 사이 최소거리',
   problem:`확장 복소평면(extended complex plane) $\\mathbb{C}\\cup\\{\\infty\\}$에서 정의된 일차분수변환(선형분수변환, linear fractional transformation, bilinear transformation) $T$가 $T(0)=-1,\\ T(i)=-i,\\ T(2)=3$을 만족시킬 때, $T(z)$를 풀이 과정과 함께 쓰시오. 또한 $W=\\{T(z)\\mid|z|=1,\\,z\\in\\mathbb{C}\\}$라고 할 때, $W$의 원소와 복소수 $1+i$ 사이의 거리의 최솟값을 풀이 과정과 함께 쓰시오.`,
   steps:[
-    {num:'Step 1', title:'T(z) 계수 결정',
+    {num:'Step 1', title:'$T(z)$ 계수 결정',
      body:`$T(z)=\\dfrac{az+b}{cz+d}$, $d=1$로 정규화. $T(0)=b=-1$.
 
 $T(i)=-i$: $\\dfrac{ai-1}{ci+1}=-i\\Rightarrow ai-1=-i(ci+1)=c-i\\Rightarrow$ 실부: $-1=c$, 허부: $a=-1$.
 
 $T(2)$ 검산: $\\dfrac{2a+b}{2c+d}=\\dfrac{-2-1}{-2+1}=\\dfrac{-3}{-1}=3$ ✓`},
-    {num:'Step 2', title:'T(z) 정리',
+    {num:'Step 2', title:'$T(z)$ 정리',
      body:`$$T(z)=\\frac{-z-1}{-z+1}=\\frac{z+1}{z-1}$$
 
 검산: $T(0)=1/(-1)=-1$✓, $T(2)=3/1=3$✓, $T(i)=(i+1)/(i-1)=-i$✓ (분모유리화로 확인).`},
-    {num:'Step 3', title:'단위원의 상 W 결정',
+    {num:'Step 3', title:'단위원의 상 $W$ 결정',
      body:`$z=1$은 $T$의 극이고 단위원 $|z|=1$이 $z=1$을 지나므로, $W$는 원이 아니라 **직선**이 됩니다 ①.
 
 세 점의 상을 계산: $T(-1)=0/(-2)=0$, $T(i)=-i$, $T(-i)=(1-i)/(-1-i)=i$ (분모유리화).
@@ -692,7 +692,7 @@ $T(2)$ 검산: $\\dfrac{2a+b}{2c+d}=\\dfrac{-2-1}{-2+1}=\\dfrac{-3}{-1}=3$ ✓`}
 세 점 $0,-i,i$가 모두 허수축 위에 있으므로:
 
 $$W=\\{iy\\mid y\\in\\mathbb{R}\\}\\ (\\text{허수축})$$`},
-    {num:'Step 4', title:'점 1+i까지의 최소거리',
+    {num:'Step 4', title:'점 $1+i$까지의 최소거리',
      body:`허수축(직선 $\\text{Re}(w)=0$)과 점 $1+i=(1,1)$ 사이의 최소거리는 수평거리:
 
 $$|1-0|=1$$`}
@@ -707,13 +707,13 @@ $$|1-0|=1$$`}
   title:'$f(z)=e^{-z}$ 결정 후 essential singularity 유수로 $f(1/z)$ 적분',
   problem:`복소수 $z=x+iy$ ($x,y$는 실수)에 대한 함수 $f(z)=e^{-x}\\cos y+iv(x,y)$ (단, $v(x,y)$는 실숫값 함수)가 정함수(전해석함수, entire function)이고 $f(0)=1$을 만족시킬 때, $f(z)$를 풀이 과정과 함께 쓰시오. 또한 복소평면에서 중심이 원점이고 반지름의 길이가 $1$인 원을 시계반대방향으로 한 바퀴 도는 곡선 $C$에 대하여 선적분 $\\displaystyle\\int_Cf\\!\\left(\\frac1z\\right)dz$의 값을 풀이 과정과 함께 쓰시오.`,
   steps:[
-    {num:'Step 1', title:'CR방정식으로 v 구하기',
+    {num:'Step 1', title:'$CR$방정식으로 $v$ 구하기',
      body:`$u=e^{-x}\\cos y$에서 $v_y=u_x=-e^{-x}\\cos y$, $v_x=-u_y=e^{-x}\\sin y$.
 
 $v_y$ 적분: $v=-e^{-x}\\sin y+g(x)$. $v_x=e^{-x}\\sin y+g'(x)$가 요구값과 같으려면 $g'(x)=0$.
 
 $$v(x,y)=-e^{-x}\\sin y+C$$`},
-    {num:'Step 2', title:'f(z)의 닫힌 형태',
+    {num:'Step 2', title:'$f(z)$의 닫힌 형태',
      body:`$$f(z)=e^{-x}\\cos y-ie^{-x}\\sin y+iC=e^{-x}(\\cos y-i\\sin y)+iC=e^{-x-iy}+iC=e^{-z}+iC$$
 
 $f(0)=1+iC=1\\Rightarrow C=0$. 따라서:
@@ -738,7 +738,7 @@ $z^{-1}$항($n=1$)의 계수(유수)는 $-1$.`},
 // ───────────────────────────────────────
 {
   id:'2026a3', year:2026, type:'전공A', cat:'residue', pts:2,
-  title:'편각원리로 f\'/f 선적분, 반지름별 Z=P 개수 세기',
+  title:'편각원리로 $f\'/f$ 선적분, 반지름별 $Z=P$ 개수 세기',
   problem:`복소함수 $f(z)=\\dfrac{(z-i+1)^5(z+1+i)^4}{z^6(z-1+4i)^3(z-9+2i)^5}e^z$과 복소평면에 중심이 원점이고 반지름의 길이가 $r$인 원을 시계반대방향으로 한 바퀴 도는 곡선 $C(r)$이 있다. 선적분 $\\displaystyle\\int_{C(2)}\\frac{f'(z)}{f(z)}\\,dz$의 값을 구하시오. 또한 $\\displaystyle\\int_{C(r)}\\frac{f'(z)}{f(z)}\\,dz=0$을 만족시키는 양의 정수 $r$의 개수를 구하시오.`,
   steps:[
     {num:'Step 1', title:'영점과 극점의 위치·차수',
@@ -747,13 +747,13 @@ $z^{-1}$항($n=1$)의 계수(유수)는 $-1$.`},
 극점: $z=0$ (6차), $z=1-4i$ (3차, $|z|=\\sqrt{17}\\approx4.12$), $z=9-2i$ (5차, $|z|=\\sqrt{85}\\approx9.22$).
 
 ($e^z$는 영점·극점 없음.)`},
-    {num:'Step 2', title:'편각원리로 C(2) 적분',
+    {num:'Step 2', title:'편각원리로 $C(2)$ 적분',
      body:`$|z|<2$ 내부: 두 영점 ($\\sqrt2<2$, 총 차수 $5+4=9$)과 원점 극점 ($6$차)만 포함. 나머지 극점은 $\\sqrt{17},\\sqrt{85}>2$로 외부.
 
 편각원리 ①: $\\displaystyle\\int_{C(r)}\\frac{f'}{f}dz=2\\pi i(Z-P)$
 
 $$\\int_{C(2)}\\frac{f'(z)}{f(z)}dz=2\\pi i(9-6)=6\\pi i$$`},
-    {num:'Step 3', title:'r에 따른 Z(r), P(r) 변화',
+    {num:'Step 3', title:'$r$에 따른 $Z(r), P(r)$ 변화',
      body:`특이점의 크기 순서: $0<\\sqrt2\\approx1.41<\\sqrt{17}\\approx4.12<\\sqrt{85}\\approx9.22$ (모두 정수가 아님, 정수 반지름과 겹치지 않음).
 
 | $r$ | 포함된 영점(Z) | 포함된 극점(P) | $Z-P$ |
@@ -762,7 +762,7 @@ $$\\int_{C(2)}\\frac{f'(z)}{f(z)}dz=2\\pi i(9-6)=6\\pi i$$`},
 | $2,3,4$ | $9$ | $6$ | $3$ |
 | $5,6,7,8,9$ | $9$ | $6+3=9$ | $\\mathbf0$ |
 | $10,11,\\ldots$ | $9$ | $6+3+5=14$ | $-5$ |`},
-    {num:'Step 4', title:'조건을 만족하는 r의 개수',
+    {num:'Step 4', title:'조건을 만족하는 $r$의 개수',
      body:`$Z(r)-P(r)=0$을 만족하는 양의 정수 $r$은 $5,6,7,8,9$로 총 **5개**.`}
   ],
   answer:'$\\displaystyle\\int_{C(2)}\\frac{f\'(z)}{f(z)}dz=6\\pi i$, 조건을 만족하는 $r$의 개수 $=5$',
@@ -775,7 +775,7 @@ $$\\int_{C(2)}\\frac{f'(z)}{f(z)}dz=2\\pi i(9-6)=6\\pi i$$`},
   title:'CR방정식으로 $a,b,c,d$ 결정, $e^{1/z}f(z)$의 $a_{-1}$ 계수',
   problem:`복소수 $z=x+iy$ ($x,y$는 실수)에 대한 함수 $f(z)=\\dfrac{x+ay}{x^2+y^2}+x^2+by^2+i\\left(\\dfrac{cy}{x^2+y^2}+dxy\\right)$가 영역 $\\mathbb{C}-\\{0\\}$에서 해석적(analytic)이 되도록 하는 실수 $a,b,c,d$의 값을 풀이 과정과 함께 쓰시오. 또한 $e^{\\frac1z}f(z)$의 $z=0$을 중심으로 하는 로랑 급수(Laurent series)를 $\\displaystyle\\sum_{n=-\\infty}^\\infty a_nz^n$이라 할 때, $a_{-1}$의 값을 풀이 과정과 함께 쓰시오.`,
   steps:[
-    {num:'Step 1', title:'특이항을 1/z와 비교해 a,c 결정',
+    {num:'Step 1', title:'특이항을 $1/z$와 비교해 $a,c$ 결정',
      body:`$\\dfrac1z=\\dfrac{\\bar z}{|z|^2}=\\dfrac{x-iy}{x^2+y^2}$이므로 실부 $\\dfrac x{x^2+y^2}$, 허부 $\\dfrac{-y}{x^2+y^2}$.
 
 $u$의 특이항 $\\dfrac{x+ay}{x^2+y^2}$과 $v$의 특이항 $\\dfrac{cy}{x^2+y^2}$이 $k/z$ 형태($k=k_1+ik_2$)와 같으려면:
@@ -785,13 +785,13 @@ $u$의 특이항 $\\dfrac{x+ay}{x^2+y^2}$과 $v$의 특이항 $\\dfrac{cy}{x^2+y
 $$k_2=0\\Rightarrow a=0,\\qquad k_1=1\\Rightarrow c=-1$$
 
 즉 특이항은 정확히 $1/z$ ①.`},
-    {num:'Step 2', title:'다항식부에 CR방정식 적용',
+    {num:'Step 2', title:'다항식부에 $CR$방정식 적용',
      body:`나머지 $u_{poly}=x^2+by^2,\\ v_{poly}=dxy$도 $\\mathbb{C}-\\{0\\}$ 전체(사실상 전체)에서 해석적이어야 하므로 CR방정식 만족:
 
 $u_{poly,x}=2x=v_{poly,y}=dx\\Rightarrow d=2$
 
 $u_{poly,y}=2by=-v_{poly,x}=-dy\\Rightarrow2b=-d=-2\\Rightarrow b=-1$`},
-    {num:'Step 3', title:'f(z) 닫힌 형태 확인',
+    {num:'Step 3', title:'$f(z)$ 닫힌 형태 확인',
      body:`$a=0,b=-1,c=-1,d=2$일 때 $u_{poly}=x^2-y^2,\\ v_{poly}=2xy$이므로 $u_{poly}+iv_{poly}=z^2$.
 
 $$f(z)=\\frac1z+z^2$$`},
