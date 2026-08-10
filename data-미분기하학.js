@@ -195,7 +195,7 @@ $$ab=\\frac14\\times\\frac34=\\frac3{16}$$`}
   footnotes:[
     {n:'①',text:'회전면 $X(r,θ)=(f(r),rcosθ,rsinθ)$의 자오선방향$(r)$ 주곡률$: f\'\'/(1+f\'²)^{3/2},$ 위선방향$(θ)$ 주곡률$: f\'/(r√(1+f\'²)).$'},
     {n:'②',text:'$X_θ(u,0)=(0,-usin0,ucos0)=(0,0,u),$ 크기로 나누면 정확히 (0,0,1) — 계산을 크게 단순화시켜주는 우연.'},
-    {n:'③',text:'오일러 공식: 주방향 $e1,e2$에서 각 $φ$만큼 회전한 단위접벡터 방향의 법곡률 $= k1cos²φ+k2sin²φ.$'}
+    {n:'③',text:'오일러 공식: 주방향 $e_1,e_2$에서 각 $φ$만큼 회전한 단위접벡터 방향의 법곡률 $= k_1\\cos^2\\varphi+k_2\\sin^2\\varphi.$'}
   ]
 },
 
@@ -260,7 +260,7 @@ $$|\\alpha'(t)|=t^2+2$$`},
     <text x="394" y="270" font-size="11" fill="var(--t2)" text-anchor="middle">펼친 부채꼴 (측지선 = 직선)</text>
   </svg>`,
   steps:[
-    {num:'Step 1', title:'주곡률 $κ1, κ2$ 계산',
+    {num:'Step 1', title:'주곡률 $κ_1, κ_2$ 계산',
      body:`꼭짓점 반각 $\\alpha$: $\\sin\\alpha=\\dfrac{\\text{밑면 반지름}}{\\text{모선}}=\\dfrac14$, $\\cos\\alpha=\\dfrac{\\sqrt{15}}4$.
 
 모선(직선) 방향은 곡면 위 직선이므로 법곡률 $0$: $\\kappa_1=0$ ①.
@@ -431,7 +431,7 @@ $k_1>k_2$이므로 $k_1=\\dfrac{\\sqrt2}2,\\ k_2=-\\dfrac{\\sqrt2}2$.`},
      body:`$X_u(1,0)=(\\cos0,\\sin0,h'(1))=(1,0,-1)$, $X_v(1,0)=(0,1,0)$.
 
 단위화: $\\mathbf{e}_1=\\dfrac{(1,0,-1)}{\\sqrt2},\\quad\\mathbf{e}_2=(0,1,0)$`},
-    {num:'Step 3', title:'$w$를 $e1,e2$로 분해',
+    {num:'Step 3', title:'$w$를 $e_1,e_2$로 분해',
      body:`$\\mathbf{w}\\cdot\\mathbf{e}_1=\\dfrac{(1,1,-1)}{\\sqrt3}\\cdot\\dfrac{(1,0,-1)}{\\sqrt2}=\\dfrac2{\\sqrt6}$
 
 $\\mathbf{w}\\cdot\\mathbf{e}_2=\\dfrac1{\\sqrt3}$
@@ -556,7 +556,7 @@ $$H=\\frac{\\sqrt2\\times18-2\\times\\left(-\\frac1{\\sqrt2}\\right)\\times0+0\\
   ],
   answer:'접평면: $x-z=1$, $H=\\dfrac{\\sqrt2}{18}$',
   footnotes:[
-    {n:'①',text:'평균곡률$: H=(eG-2fF+gE)/(2(EG-F²)) = (k1+k2)/2.$'}
+    {n:'①',text:'평균곡률$: H=(eG-2fF+gE)/(2(EG-F²)) = (k_1+k_2)/2.$'}
   ]
 },
 
@@ -686,7 +686,7 @@ $$=\\frac{\\sqrt3\\times2}{4^{3/2}}=\\frac{2\\sqrt3}8=\\frac{\\sqrt3}4$$`}
 $$\\int_0^\\pi\\kappa_n(\\theta)d\\theta=k_1\\int_0^\\pi\\cos^2\\theta\\,d\\theta+k_2\\int_0^\\pi\\sin^2\\theta\\,d\\theta=\\frac\\pi2(k_1+k_2)$$
 
 $$\\frac\\pi2(k_1+k_2)=\\frac{11\\pi}8\\ \\Rightarrow\\ k_1+k_2=\\frac{11}4$$`},
-    {num:'Step 2', title:'$K=k1k2$와 연립하여 이차방정식',
+    {num:'Step 2', title:'$K=k_1k_2$와 연립하여 이차방정식',
      body:`$k_1k_2=K=\\dfrac32$이므로 $k_1,k_2$는 $x^2-\\dfrac{11}4x+\\dfrac32=0$, 즉 $4x^2-11x+6=0$의 두 근.
 
 $$x=\\frac{11\\pm\\sqrt{121-96}}8=\\frac{11\\pm5}8$$`},
@@ -695,7 +695,7 @@ $$x=\\frac{11\\pm\\sqrt{121-96}}8=\\frac{11\\pm5}8$$`},
   ],
   answer:'$2$와 $\\dfrac34$',
   footnotes:[
-    {n:'①',text:'오일러 공식: 주방향 $e($주곡률 $k1)$에서 각 $θ$ 회전한 방향의 법곡률 $κ_n(θ)=k1cos²θ+k2sin²θ.$'}
+    {n:'①',text:'오일러 공식: 주방향 $e$(주곡률 $k_1$)에서 각 $θ$ 회전한 방향의 법곡률 $κ_n(θ)=k_1\\cos^2θ+k_2\\sin^2θ.$'}
   ]
 },
 
@@ -977,7 +977,7 @@ $$K(0)=\\frac{-(-4)}{\\sqrt5\\times1^2}=\\frac4{\\sqrt5}=\\frac{4\\sqrt5}5$$`}
   ],
   answer:'$f(0)=\\sqrt5$, $\\alpha$ 위에서 가우스곡률 $=\\dfrac{4\\sqrt5}5$',
   footnotes:[
-    {n:'①',text:'회전면의 위선(평행원)은 공간곡선으로서 곡률이 $1/r(x0)$인 원이며, 뫼니에 정리로 측지곡률·법곡률로 분리하면 $κ_g=|r\'|/(r√(1+r\'²))$가 나온다.'}
+    {n:'①',text:'회전면의 위선(평행원)은 공간곡선으로서 곡률이 $1/r(x_0)$인 원이며, 뫼니에 정리로 측지곡률·법곡률로 분리하면 $κ_g=|r\'|/(r√(1+r\'²))$가 나온다.'}
   ]
 }
 
