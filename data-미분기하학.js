@@ -31,7 +31,7 @@ window.SUBJECTS['미분기하학'] = {
 // ───────────────────────────────────────
 {
   id:'2014a11', year:2014, type:'전공A', cat:'curve', pts:2,
-  title:'주법벡터 적분으로 정의된 곡선 β의 κ_β+τ_β',
+  title:'주법벡터 적분으로 정의된 곡선 $\\beta$의 $\\kappa_\\beta+\\tau_\\beta$',
   problem:`3차원 유클리드 공간 $\\mathbb{R}^3$에서 비틀림률(열률, 꼬임률, torsion)과 곡률(curvature)이 각각 상수 $\\tau,\\ 1$인 단위속력 곡선 $\\alpha$에 대하여, 곡선 $\\beta$를 다음과 같이 정의하자.
 
 $$\\beta(s)=\\int_0^s \\boldsymbol{N}(t)\\,dt$$
@@ -44,7 +44,7 @@ $$\\beta(s)=\\int_0^s \\boldsymbol{N}(t)\\,dt$$
 프레네 공식 ① ($\\kappa=1,\\ \\tau$는 상수): $\\boldsymbol{N}'=-\\kappa\\boldsymbol{T}+\\tau\\boldsymbol{B}=-\\boldsymbol{T}+\\tau\\boldsymbol{B}$이므로:
 
 $$\\beta''(s)=\\boldsymbol{N}'(s)=-\\boldsymbol{T}(s)+\\tau\\boldsymbol{B}(s)$$`},
-    {num:'Step 2', title:'κ_β 계산',
+    {num:'Step 2', title:'$\\kappa_\\beta$ 계산',
      body:`$\\beta$는 단위속력이므로 $\\kappa_\\beta=|\\beta''(s)|$:
 
 $$\\kappa_\\beta=|-\\boldsymbol{T}+\\tau\\boldsymbol{B}|=\\sqrt{1+\\tau^2}$$
@@ -282,7 +282,7 @@ $$\\kappa_2=\\frac{\\sqrt{15}/4}{3\\times1/4}=\\frac{\\sqrt{15}}3$$`},
 $$\\cos\\psi=(0,1)\\cdot\\frac{(-4,3)}5=\\frac35,\\qquad\\sin^2\\psi=\\frac{16}{25}$$
 
 ($\\psi$: 측지선과 모선(=$\\kappa_1$ 주방향) 사이의 각)`},
-    {num:'Step 4', title:'오일러 공식 + 측지선(κ_g=0) 조건',
+    {num:'Step 4', title:'오일러 공식 + 측지선($\\kappa_g=0$) 조건',
      body:`오일러 공식: $\\kappa_n=\\kappa_1\\cos^2\\psi+\\kappa_2\\sin^2\\psi=0\\times\\dfrac9{25}+\\dfrac{\\sqrt{15}}3\\times\\dfrac{16}{25}=\\dfrac{16\\sqrt{15}}{75}$
 
 측지선은 $\\kappa_g=0$이므로 뫼니에 정리 ⑤에 의해 $\\kappa=|\\kappa_n|$:
@@ -643,7 +643,7 @@ $$r'(1)=4-4=0,\\qquad r'(-1)=-4+4=0$$
 // ───────────────────────────────────────
 {
   id:'2022a9', year:2022, type:'전공A', cat:'curve', pts:4,
-  title:'τT+κB로 정의된 β가 정칙곡선임을 보이고 τ_α(1)κ_β(1) 계산',
+  title:'$\\tau T+\\kappa B$로 정의된 $\\beta$가 정칙곡선임을 보이고 $\\tau_\\alpha(1)\\kappa_\\beta(1)$ 계산',
   problem:`단위속력곡선(unit speed curve) $\\alpha:\\mathbb{R}\\to\\mathbb{R}^3$에 대하여 점 $\\alpha(t)$에서의 곡률(curvature)과 비틀림률(열률, 꼬임률, torsion)을 각각 $\\kappa_\\alpha(t),\\,\\tau_\\alpha(t)$라 할 때, $\\kappa_\\alpha(t)\\ne0\\ (t\\in\\mathbb{R})$이고 함수 $f:\\mathbb{R}\\to\\mathbb{R}$는 $\\tau_\\alpha(t)=f(t)\\kappa_\\alpha(t),\\ f(1)=\\sqrt3,\\ f'(1)=-2$를 만족한다. 점 $\\alpha(t)$에서 곡선 $\\alpha$의 단위접벡터장(unit tangent vector field) $T(t)$와 단위종법벡터장(unit binormal vector field) $B(t)$에 대하여 곡선 $\\beta:\\mathbb{R}\\to\\mathbb{R}^3$을 $\\beta(t)=\\displaystyle\\int_0^t\\{\\tau_\\alpha(s)T(s)+\\kappa_\\alpha(s)B(s)\\}ds$로 정의하고, 이 곡선 위의 점 $\\beta(t)$에서의 곡률을 $\\kappa_\\beta(t)$라 하자. 이 때, 곡선 $\\beta$가 정칙곡선(정규곡선, regular curve)임을 보이고, $\\tau_\\alpha(1)\\kappa_\\beta(1)$의 값을 풀이 과정과 함께 쓰시오.`,
   steps:[
     {num:'Step 1', title:'정칙성 증명',
@@ -656,13 +656,13 @@ $$|\\beta'(t)|^2=\\tau_\\alpha(t)^2+\\kappa_\\alpha(t)^2\\ge\\kappa_\\alpha(t)^2
      body:`$$\\beta''=\\tau_\\alpha'T+\\tau_\\alpha(\\kappa_\\alpha N)+\\kappa_\\alpha'B+\\kappa_\\alpha(-\\tau_\\alpha N)=\\tau_\\alpha'T+\\kappa_\\alpha'B$$
 
 ($T'=\\kappa_\\alpha N,\\ B'=-\\tau_\\alpha N$이고 $\\tau_\\alpha\\kappa_\\alpha-\\kappa_\\alpha\\tau_\\alpha=0$으로 $N$성분 소거)`},
-    {num:'Step 3', title:'κ_β 공식 유도',
+    {num:'Step 3', title:'$\\kappa_\\beta$ 공식 유도',
      body:`$\\beta'\\times\\beta''=(\\tau_\\alpha T+\\kappa_\\alpha B)\\times(\\tau_\\alpha'T+\\kappa_\\alpha'B)=(\\kappa_\\alpha\\tau_\\alpha'-\\tau_\\alpha\\kappa_\\alpha')N$
 
 $\\tau_\\alpha=f\\kappa_\\alpha$ 대입: $\\kappa_\\alpha\\tau_\\alpha'-\\tau_\\alpha\\kappa_\\alpha'=f'\\kappa_\\alpha^2$ (직접 대입하면 소거 확인).
 
 $$\\kappa_\\beta=\\frac{|f'|\\kappa_\\alpha^2}{[\\kappa_\\alpha^2(f^2+1)]^{3/2}}=\\frac{|f'|}{\\kappa_\\alpha(f^2+1)^{3/2}}$$`},
-    {num:'Step 4', title:'τ_α(1)κ_β(1)에서 κ_α 소거',
+    {num:'Step 4', title:'$\\tau_\\alpha(1)\\kappa_\\beta(1)$에서 $\\kappa_\\alpha$ 소거',
      body:`$$\\tau_\\alpha(1)\\kappa_\\beta(1)=f(1)\\kappa_\\alpha(1)\\times\\frac{|f'(1)|}{\\kappa_\\alpha(1)(f(1)^2+1)^{3/2}}=\\frac{f(1)|f'(1)|}{(f(1)^2+1)^{3/2}}$$
 
 $\\kappa_\\alpha(1)$이 소거되어 값이 정해집니다!
@@ -747,7 +747,7 @@ $s=1$: $r'(1)=(0,1,-1)$, $r''(1)=(1,-1,0)$ ($x''=1/s^3,\\,y''=-1/s^3$에서).`},
      body:`$r'\\times r''=(0,1,-1)\\times(1,-1,0)=(-1,-1,-1)$, $|r'\\times r''|=\\sqrt3$.
 
 $$\\kappa=\\frac{\\sqrt3}{|r'|^3}=\\frac{\\sqrt3}{(\\sqrt2)^3}=\\frac{\\sqrt3}{2\\sqrt2}=\\frac{\\sqrt6}4$$`},
-    {num:'Step 4', title:'법곡률 κ_n 계산',
+    {num:'Step 4', title:'법곡률 $\\kappa_n$ 계산',
      body:`$M$의 법선방향: $\\nabla(x^2-y^2-z)=(2x,-2y,-1)$, $p$에서 $(1,-1,-1)$, 단위법선 $\\mathbf{n}=(1,-1,-1)/\\sqrt3$.
 
 일반매개변수의 법곡률 ①: $\\kappa_n=\\dfrac{r''\\cdot\\mathbf{n}}{|r'|^2}=\\dfrac{(1,-1,0)\\cdot(1,-1,-1)/\\sqrt3}2=\\dfrac{2/\\sqrt3}2=\\dfrac1{\\sqrt3}=\\dfrac{\\sqrt3}3$`},
@@ -833,7 +833,7 @@ $$\\iint_MK\\,dA=\\frac\\pi3\\times\\frac1{\\sqrt2}=\\frac{\\sqrt2\\pi}6$$`}
   title:'현수면(카테노이드)의 접평면·가우스곡률·평균곡률',
   problem:`3차원 유클리드 공간 $\\mathbb{R}^3$에서 곡면 $X(u,v)=(1+2u,\\,2\\cosh u\\cos v,\\,2\\cosh u\\sin v)$ 위의 $u=0,\\,v=\\dfrac\\pi4$인 점 P에서 접평면(tangent plane)의 방정식을 풀이 과정과 함께 쓰시오. 또한 점 P에서 곡면 $X$의 가우스곡률(Gaussian curvature) $K$와 평균곡률(mean curvature) $H$의 값을 각각 풀이 과정과 함께 쓰시오.`,
   steps:[
-    {num:'Step 1', title:'X_u, X_v와 법선 계산',
+    {num:'Step 1', title:'$X_u, X_v$와 법선 계산',
      body:`$X_u=(2,2\\sinh u\\cos v,2\\sinh u\\sin v)$, $X_v=(0,-2\\cosh u\\sin v,2\\cosh u\\cos v)$.
 
 $u=0,v=\\pi/4$: $\\sinh0=0,\\cosh0=1$이므로 $X_u=(2,0,0)$, $X_v=(0,-\\sqrt2,\\sqrt2)$.
