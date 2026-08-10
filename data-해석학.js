@@ -32,15 +32,15 @@ window.SUBJECTS['해석학'] = {
   title:'멱급수(거듭제곱급수)의 수렴구간',
   problem:`거듭제곱급수(멱급수, power series) $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{(-1)^n x^n}{5^n\\sqrt{n}}$의 수렴구간을 구하시오.`,
   steps:[
-    {num:'Step 1', title:'수렴반경 R 결정',
+    {num:'Step 1', title:'수렴반경 $R$ 결정',
      body:`코시-아다마르 공식 ①: $a_n = \\dfrac{(-1)^n}{5^n\\sqrt{n}}$이면
 
 $$\\frac{1}{R} = \\limsup_{n\\to\\infty}|a_n|^{1/n} = \\lim_{n\\to\\infty}\\frac{1}{5 \\cdot n^{1/(2n)}} = \\frac{1}{5}$$
 
 따라서 $R = 5$. 즉 $|x| < 5$에서 절대수렴.`},
-    {num:'Step 2', title:'끝점 x=5 검토',
+    {num:'Step 2', title:'끝점 $x=5$ 검토',
      body:`$\\displaystyle\\sum_{n=1}^{\\infty}\\frac{(-1)^n}{\\sqrt{n}}$: 교대급수 ②. $1/\\sqrt{n}$은 단조감소하여 $0$으로 수렴 → **수렴**.`},
-    {num:'Step 3', title:'끝점 x=-5 검토',
+    {num:'Step 3', title:'끝점 $x=-5$ 검토',
      body:`$\\displaystyle\\sum_{n=1}^{\\infty}\\frac{1}{\\sqrt{n}}$: $p$-급수 ③ ($p=1/2<1$) → **발산**.`},
     {num:'Step 4', title:'수렴구간',
      body:`$$\\boxed{-5 < x \\leq 5}$$`}
@@ -156,7 +156,7 @@ $$\\int_1^{\\infty} a^t\\,dt = \\left[\\frac{a^t}{\\ln a}\\right]_1^{\\infty}$$
 $a<1$이면 $a^t\\to 0$으로 수렴: 값 $=\\dfrac{-a}{\\ln a}=\\dfrac{a}{\\ln(1/a)}$.
 
 $a\\geq 1$이면 발산 → $a_n=0$.`},
-    {num:'Step 2', title:'수렴하는 n 찾기',
+    {num:'Step 2', title:'수렴하는 $n$ 찾기',
      body:`$\\frac{1}{2}(n-10)^2 < 1 \\iff (n-10)^2 < 2 \\iff |n-10| < \\sqrt{2} \\approx 1.41$
 
 양의 정수 $n$: $n\\in\\{9, 10, 11\\}$.
@@ -211,7 +211,7 @@ $\\therefore f'(c)=1$. 그런데 $|f'(c)|\\leq M<1$. 모순. $\\blacksquare$`}
   title:'함수급수의 균등수렴과 미분가능성',
   problem:`양의 정수 $n$에 대하여 $f_n:[-1,1]\\to\\mathbb{R}$를 $f_n(x)=e^{x/n^2}-\\cos(x/n^2)$로 정의할 때, $\\displaystyle\\sum_{n=1}^{\\infty}f_n(x)$가 $[-1,1]$에서 미분가능한 함수로 균등수렴함을 보이시오.`,
   steps:[
-    {num:'Step 1', title:'각 항의 균등 상계 (Mₙ)',
+    {num:'Step 1', title:'각 항의 균등 상계 $(Mₙ)$',
      body:`$|x|\\leq 1$, $t=x/n^2$으로 놓으면 $|t|\\leq 1/n^2$.
 
 $$|e^t-1| \\leq |t|e^{|t|} \\leq \\frac{1}{n^2}\\cdot e^{1/n^2} \\leq \\frac{2}{n^2}$$
@@ -219,7 +219,7 @@ $$|e^t-1| \\leq |t|e^{|t|} \\leq \\frac{1}{n^2}\\cdot e^{1/n^2} \\leq \\frac{2}{
 $$|1-\\cos t| \\leq \\frac{t^2}{2} \\leq \\frac{1}{2n^4}$$
 
 $$|f_n(x)| \\leq |e^t-1| + |1-\\cos t| \\leq \\frac{2}{n^2}+\\frac{1}{2n^4} \\leq \\frac{3}{n^2} =: M_n$$`},
-    {num:'Step 2', title:'Weierstrass M-판정법',
+    {num:'Step 2', title:'$Weierstrass M-$판정법',
      body:`$\\displaystyle\\sum_{n=1}^{\\infty}M_n = 3\\sum_{n=1}^{\\infty}\\frac{1}{n^2} = \\frac{\\pi^2}{2} < \\infty$
 
 Weierstrass M-판정법 ①에 의해 $\\sum f_n(x)$는 $[-1,1]$에서 균등수렴.`},
@@ -273,13 +273,13 @@ $$\\lim_{n\\to\\infty}\\int_0^1 g_n(x)\\,dx = \\int_0^1 f'(x)\\,dx = f(1)-f(0)\\
   steps:[
     {num:'Step 1', title:'집합이 무한이라고 가정 (귀류법)',
      body:`$S=\\{x\\mid f(x)=0,|x|<1\\}$이 무한집합이라 가정. 그러면 $S$는 $[-1,1]$ (컴팩트)의 무한 부분집합이므로, 볼차노-바이어슈트라스 정리에 의해 수렴하는 부분수열 $\\{x_k\\}\\subset S$, $x_k\\to c\\in[-1,1]$이 존재.`},
-    {num:'Step 2', title:'모든 도함수가 c에서 0임을 보임',
+    {num:'Step 2', title:'모든 도함수가 $c$에서 0임을 보임',
      body:`$f(x_k)=0$이고 $x_k\\to c$, $f$ 연속 → $f(c)=0$.
 
 $f'(c)=\\lim_k \\dfrac{f(x_k)-f(c)}{x_k-c}=\\lim_k \\dfrac{0-0}{x_k-c}=0$.
 
 이를 귀납적으로 반복하면: $f^{(n)}(c)=0$ (모든 $n\\geq 0$) ①.`},
-    {num:'Step 3', title:'f≡0 모순 도출',
+    {num:'Step 3', title:'$f≡0$ 모순 도출',
      body:`테일러 나머지 정리 (라그랑주 형태) ②:
 
 $$f(x) = \\sum_{k=0}^{n-1}\\frac{f^{(k)}(c)}{k!}(x-c)^k + \\frac{f^{(n)}(t_x)}{n!}(x-c)^n = \\frac{f^{(n)}(t_x)}{n!}(x-c)^n$$
@@ -300,16 +300,16 @@ $$|f(x)| \\leq \\frac{|f^{(n)}(t_x)|}{n!}\\cdot 4^n \\leq \\frac{n^2(|t_x|+2)}{n
 // ─── 2018 ───
 {
   id:'2018a3', year:2018, type:'전공A', cat:'uniform', pts:2,
-  title:'함수열의 적분 극한: lim∫fₙ와 ∫lim fₙ의 값',
+  title:'함수열의 적분 극한$: lim∫fₙ$와 $∫lim fₙ$의 값',
   problem:`$f_n:[0,\\infty)\\to\\mathbb{R}$를 $f_n(x)=\\max\\left\\{0,\\,\\dfrac{1}{n}\\left(1-\\dfrac{1}{n}|x-2n|\\right)\\right\\}$로 정의할 때, $\\displaystyle\\lim_{n\\to\\infty}\\int_0^{\\infty}f_n(x)\\,dx + \\int_0^{\\infty}\\left(\\lim_{n\\to\\infty}f_n(x)\\right)dx$의 값을 구하시오.`,
   steps:[
-    {num:'Step 1', title:'∫fₙ dx 계산',
+    {num:'Step 1', title:'$∫fₙ dx$ 계산',
      body:`$f_n$은 $2n$을 중심으로 높이 $1/n$, 밑변 $2n$인 삼각형 모양 ①.
 
 $$\\int_0^{\\infty}f_n(x)\\,dx = \\frac{1}{2}\\cdot 2n\\cdot\\frac{1}{n} = 1$$
 
 따라서 $\\displaystyle\\lim_{n\\to\\infty}\\int_0^{\\infty}f_n(x)\\,dx = 1$.`},
-    {num:'Step 2', title:'점별극한 lim fₙ(x)',
+    {num:'Step 2', title:'점별극한 $lim fₙ(x)$',
      body:`고정된 $x\\geq 0$에 대해 $n\\to\\infty$이면 $|x-2n|\\to\\infty$이므로 $f_n(x)\\to 0$ for all $x$.
 
 $$\\lim_{n\\to\\infty}f_n(x) = 0 \\quad (\\text{모든 }x\\geq 0)$$`},
@@ -328,7 +328,7 @@ $$1 + 0 = \\boxed{1}$$
 },
 {
   id:'2018a11', year:2018, type:'전공A', cat:'diff', pts:4,
-  title:'f(0)=f\'(0)=0일 때 g(x)=f(x)cos(1/x²)의 미분가능성',
+  title:'$f(0)=f\'(0)=0$일 때 $g(x)=f(x)cos(1/x²)$의 미분가능성',
   problem:`$f(0)=f'(0)=0$인 함수 $f:\\mathbb{R}\\to\\mathbb{R}$에 대하여 $g(x)=\\begin{cases}f(x)\\cos\\dfrac{1}{x^2},&x\\neq 0\\\\0,&x=0\\end{cases}$이라 하자. $g$가 $x=0$에서 미분가능함을 보이고 $g'(0)$의 값을 구하시오.`,
   steps:[
     {num:'Step 1', title:"g'(0) 계산",
@@ -384,16 +384,16 @@ $$|f(x)-f(y)| \\leq \\sum_{n=1}^{\\infty}\\frac{1}{n}\\cdot\\frac{|x-y|}{n} = |x
 // ─── 2019 ───
 {
   id:'2019a11', year:2019, type:'전공A', cat:'uniform', pts:4,
-  title:'h(x)의 극한값과 함수열의 균등수렴 판별',
+  title:'$h(x)$의 극한값과 함수열의 균등수렴 판별',
   problem:`$h(x)=\\begin{cases}\\displaystyle\\int_0^1\\frac{x^2}{x^4+t^2}dt,&x\\neq 0\\\\0,&x=0\\end{cases}$일 때, $\\displaystyle\\lim_{x\\to 0}h(x)$를 구하시오. 또한 $h_n(x)=\\displaystyle\\sum_{k=1}^n\\frac{nx^2}{n^2x^4+k^2}$일 때, $\\{h_n\\}$이 $h$로 균등수렴하는지 판별하시오.`,
   steps:[
-    {num:'Step 1', title:'lim h(x) 계산',
+    {num:'Step 1', title:'$lim h(x)$ 계산',
      body:`$u=t/x^2$ 로 치환: $t=x^2 u$, $dt=x^2\\,du$.
 
 $$h(x)=\\int_0^1\\frac{x^2}{x^4+t^2}dt = \\int_0^{1/x^2}\\frac{x^2}{x^4+x^4u^2}\\cdot x^2\\,du = \\int_0^{1/x^2}\\frac{1}{1+u^2}du = \\tan^{-1}\\left(\\frac{1}{x^2}\\right)$$
 
 $$\\lim_{x\\to 0}h(x) = \\lim_{x\\to 0}\\tan^{-1}\\left(\\frac{1}{x^2}\\right) = \\frac{\\pi}{2}$$`},
-    {num:'Step 2', title:'h(x)의 불연속성',
+    {num:'Step 2', title:'$h(x)$의 불연속성',
      body:`$h(0)=0$이지만 $\\lim_{x\\to 0}h(x)=\\pi/2\\neq 0$.
 
 따라서 $h$는 $x=0$에서 불연속.`},
@@ -441,15 +441,15 @@ $[1,2]$에서 유일한 실수근 $L=t^*$. $\\{a_n\\}\\to L$.`}
 // ─── 2020 ───
 {
   id:'2020a12', year:2020, type:'전공A', cat:'diff', pts:4,
-  title:'명제 P의 대우명제와 증명',
+  title:'명제 $P$의 대우명제와 증명',
   problem:`$f:\\mathbb{R}\\to\\mathbb{R}$가 미분가능하고 $S=\\{x\\mid f(x)=0,\\,-1\\leq x\\leq 1\\}$이라 하자. 명제 $P$의 대우명제를 쓰고 $P$를 증명하시오.
   [$P$: 모든 $x\\in\\mathbb{R}$에 대하여 $f(x)\\neq 0$이거나 $f'(x)\\neq 0$이면 $S$는 유한집합이다.]`,
   steps:[
     {num:'Step 1', title:'대우명제',
      body:`**대우:** $S$가 무한집합이면, $f(x)=0$이고 $f'(x)=0$인 $x\\in\\mathbb{R}$이 존재한다.`},
-    {num:'Step 2', title:'극한점 존재 (BW 정리)',
+    {num:'Step 2', title:'극한점 존재 $(BW$ 정리)',
      body:`$S\\subset[-1,1]$이 무한집합이면, 볼차노-바이어슈트라스 정리에 의해 $\\{x_k\\}\\subset S$, $x_k\\to c\\in[-1,1]$ ($x_k\\neq c$)인 수렴 부분수열이 존재.`},
-    {num:'Step 3', title:'f(c)=0, f\'(c)=0 증명',
+    {num:'Step 3', title:'$f(c)=0, f\'(c)=0$ 증명',
      body:`$f(x_k)=0$이고 $f$ 연속이므로 $f(c)=\\lim_k f(x_k)=0$.
 
 $$f'(c) = \\lim_{k\\to\\infty}\\frac{f(x_k)-f(c)}{x_k-c} = \\lim_{k\\to\\infty}\\frac{0-0}{x_k-c} = 0$$
@@ -464,7 +464,7 @@ $$f'(c) = \\lim_{k\\to\\infty}\\frac{f(x_k)-f(c)}{x_k-c} = \\lim_{k\\to\\infty}\
 },
 {
   id:'2020b9', year:2020, type:'전공B', cat:'uniform', pts:4,
-  title:'함수열의 균등수렴과 lim aₙ 계산',
+  title:'함수열의 균등수렴과 $lim aₙ$ 계산',
   problem:`$g_n(x)=\\displaystyle\\int_0^x\\{1+(x-y)^n\\sin^n(xy)\\}dy$ ($x\\in[0,1]$)로 정의하고 $a_n=\\displaystyle\\int_0^1g_n(x)dx$라 하자. $\\{g_n\\}$이 어떤 함수 $g$로 균등수렴함을 보이고 $\\lim_{n\\to\\infty}a_n$을 구하시오.`,
   steps:[
     {num:'Step 1', title:'피적분함수의 상계',
@@ -491,16 +491,16 @@ $$\\lim_{n\\to\\infty}a_n = \\int_0^1 g(x)\\,dx = \\int_0^1 x\\,dx = \\frac{1}{2
 // ─── 2021 ───
 {
   id:'2021a12', year:2021, type:'전공A', cat:'uniform', pts:4,
-  title:'∑fₙ(x)의 균등수렴과 합 구하기',
+  title:'$∑fₙ(x)$의 균등수렴과 합 구하기',
   problem:`$f_0(x)=e^x$, $f_n(x)=\\displaystyle\\int_0^x f_{n-1}(t)\\,dt$ $(n\\geq 1)$로 정의할 때, $\\displaystyle\\sum_{n=0}^{\\infty}f_n(x)$가 $[0,1]$에서 균등수렴함을 보이고, 그 합을 구하시오.`,
   steps:[
-    {num:'Step 1', title:'fₙ(x)의 명시적 공식',
+    {num:'Step 1', title:'$fₙ(x)$의 명시적 공식',
      body:`귀납법으로 확인:
 
 $f_1(x)=e^x-1$, $f_2(x)=e^x-x-1$, $f_3(x)=e^x-\\frac{x^2}{2}-x-1$, ...
 
 $$f_n(x) = e^x - \\sum_{k=0}^{n-1}\\frac{x^k}{k!} = R_n(x) \\text{ (테일러 나머지)}$$`},
-    {num:'Step 2', title:'Weierstrass M-판정법',
+    {num:'Step 2', title:'$Weierstrass M-$판정법',
      body:`$x\\in[0,1]$에서 테일러 나머지 ①:
 
 $$|f_n(x)| = R_n(x) \\leq \\frac{e^x\\cdot x^n}{n!} \\leq \\frac{e}{n!} =: M_n$$
@@ -521,7 +521,7 @@ $= \\sum_{k=0}^{\\infty}\\frac{x^k}{k!}\\cdot(k+1) = \\sum_{k=0}^{\\infty}\\frac
 },
 {
   id:'2021b7', year:2021, type:'전공B', cat:'diff', pts:4,
-  title:'연속함수 f:[0,1]→[0,1]의 고정점 유일 존재',
+  title:'연속함수 $f:[0,1]→[0,1]$의 고정점 유일 존재',
   problem:`연속함수 $f:[0,1]\\to[0,1]$은 $(0,1)$에서 미분가능하고 모든 $x\\in(0,1)$에 대해 $f'(x)\\neq 1$일 때, $f(a)=a$ $(0\\leq a\\leq 1)$을 만족하는 $a$가 유일하게 존재함을 증명하시오.`,
   steps:[
     {num:'Step 1', title:'존재성 (사이값 정리)',
@@ -552,14 +552,14 @@ $\\frac{g(b)-g(a)}{b-a} = g'(c) = f'(c)-1 = 0$ (평균값 정리, $c\\in(a,b)\\s
 // ─── 2022 ───
 {
   id:'2022a7', year:2022, type:'전공A', cat:'series', pts:4,
-  title:'멱급수 계수 비율 극한과 ∑n²/3ⁿ',
+  title:'멱급수 계수 비율 극한과 $∑n²/3ⁿ$',
   problem:`$|x|<1$인 실수 $x$에 대하여 $\\dfrac{1}{(1-x)^3}=\\displaystyle\\sum_{n=0}^{\\infty}a_nx^n$, $\\dfrac{x(1+x)}{(1-x)^3}=\\displaystyle\\sum_{n=0}^{\\infty}b_nx^n$일 때, $\\displaystyle\\lim_{n\\to\\infty}\\frac{b_n}{a_n}$을 구하고, 무한급수 $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n^2}{3^n}$의 값을 구하시오.`,
   steps:[
-    {num:'Step 1', title:'aₙ 계산',
+    {num:'Step 1', title:'$aₙ$ 계산',
      body:`$\\dfrac{1}{1-x}=\\sum x^n \\xrightarrow{\\text{미분}}\\dfrac{1}{(1-x)^2}=\\sum(n+1)x^n \\xrightarrow{\\text{미분}} \\dfrac{2}{(1-x)^3}=\\sum(n+1)(n+2)x^n... ①$
 
 정리: $a_n = \\dfrac{(n+1)(n+2)}{2}$`},
-    {num:'Step 2', title:'bₙ 계산',
+    {num:'Step 2', title:'$bₙ$ 계산',
      body:`$\\dfrac{x(1+x)}{(1-x)^3} = \\dfrac{x}{(1-x)^3}+\\dfrac{x^2}{(1-x)^3}$
 
 $\\dfrac{x}{(1-x)^3} = \\sum a_{n-1}x^n$, $\\dfrac{x^2}{(1-x)^3} = \\sum a_{n-2}x^n$ 이므로
@@ -583,10 +583,10 @@ $$\\sum_{n=0}^{\\infty}\\frac{n^2}{3^n} = \\frac{(1/3)(4/3)}{(2/3)^3} = \\frac{4
 },
 {
   id:'2022b10', year:2022, type:'전공B', cat:'uniform', pts:4,
-  title:'함수항 급수의 aₙ 계산과 균등수렴 판별',
+  title:'함수항 급수의 $aₙ$ 계산과 균등수렴 판별',
   problem:`$f_n(x)=\\dfrac{8(\\sin x)^{2n-1}\\cos x}{1+(\\sin x)^{2n}}$으로 정의하고 $a_n=\\displaystyle\\int_0^{\\pi/2}f_n(x)dx$일 때, $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{a_n}{n+2}$의 값을 구하고, $\\displaystyle\\sum f_n(x)$가 $\\left[0,\\frac{\\pi}{2}\\right]$에서 균등수렴하는지 판별하시오.`,
   steps:[
-    {num:'Step 1', title:'aₙ 계산',
+    {num:'Step 1', title:'$aₙ$ 계산',
      body:`$u=(\\sin x)^{2n}$, $du=2n(\\sin x)^{2n-1}\\cos x\\,dx$:
 
 $$a_n = \\int_0^1\\frac{8}{1+u}\\cdot\\frac{du}{2n} = \\frac{4}{n}[\\ln(1+u)]_0^1 = \\frac{4\\ln 2}{n}$$`},
@@ -611,10 +611,10 @@ $$\\sum_{n=1}^{\\infty}a_n = \\sum\\frac{4\\ln 2}{n} = 4\\ln 2\\sum\\frac{1}{n} 
 // ─── 2023 ───
 {
   id:'2023a11', year:2023, type:'전공A', cat:'uniform', pts:4,
-  title:'fₙ의 최댓값 Mₙ으로 만든 멱급수의 수렴반경, ∑fₙ 균등수렴',
+  title:'$fₙ$의 최댓값 $Mₙ$으로 만든 멱급수의 수렴반경$, ∑fₙ$ 균등수렴',
   problem:`$f_n(x)=(nx)^n(1-x)^{n^2}$ $(x\\in[0,1])$이고 $M_n=\\max_{x\\in[0,1]}f_n(x)$일 때, $\\displaystyle\\sum_{n=1}^{\\infty}M_nx^n$의 수렴반경을 구하고, $\\displaystyle\\sum_{n=1}^{\\infty}f_n(x)$가 $[0,1]$에서 균등수렴하는지 판별하시오.`,
   steps:[
-    {num:'Step 1', title:'Mₙ 계산',
+    {num:'Step 1', title:'$Mₙ$ 계산',
      body:`$f_n'(x)=0$: $n\\cdot(nx)^{n-1}\\cdot n\\cdot(1-x)^{n^2} - n^2(nx)^n(1-x)^{n^2-1}=0$
 
 $(1-x)=nx \\implies x_*=\\dfrac{1}{n+1}$
@@ -624,7 +624,7 @@ $$M_n = \\left(\\frac{n}{n+1}\\right)^n\\cdot\\left(\\frac{n}{n+1}\\right)^{n^2}
      body:`코시-아다마르: $\\dfrac{1}{R} = \\limsup M_n^{1/n} = \\lim(e^{-n})^{1/n} = e^{-1}$
 
 $$R = e$$`},
-    {num:'Step 3', title:'균등수렴 (Weierstrass)',
+    {num:'Step 3', title:'균등수렴 $(Weierstrass)$',
      body:`$x\\in[0,1]$에서 $|f_n(x)|\\leq M_n\\sim e^{-n}$.
 
 $\\sum e^{-n} = \\dfrac{1}{e-1}<\\infty$ → Weierstrass M-판정법 ①으로 균등수렴. ✓`}
@@ -636,10 +636,10 @@ $\\sum e^{-n} = \\dfrac{1}{e-1}<\\infty$ → Weierstrass M-판정법 ①으로 �
 },
 {
   id:'2023b7', year:2023, type:'전공B', cat:'series', pts:4,
-  title:'tan역함수 미분과 이상적분',
+  title:'$tan$역함수 미분과 이상적분',
   problem:`구간 $(\\pi/2, 3\\pi/2)$에서 정의된 $f(x)=\\tan x$의 역함수를 $g:\\mathbb{R}\\to(\\pi/2, 3\\pi/2)$라 하자. $\\displaystyle\\lim_{n\\to\\infty}n\\left\\{g\\!\\left(1+\\frac{3}{n}\\right)-g(1)\\right\\}$의 값을 구하고, $\\displaystyle\\int_0^{\\infty}\\frac{g(x)}{1+x^2}\\,dx$의 값을 구하시오.`,
   steps:[
-    {num:'Step 1', title:'g\'(1) 계산',
+    {num:'Step 1', title:'$g\'(1)$ 계산',
      body:`$g'(y) = \\dfrac{1}{f'(g(y))} = \\dfrac{1}{\\sec^2(g(y))} = \\cos^2(g(y)) = \\dfrac{1}{1+y^2}$ ①
 
 $$g'(1) = \\frac{1}{1+1^2} = \\frac{1}{2}$$
@@ -667,7 +667,7 @@ $$= \\left[\\frac{t^2}{2}\\right]_{\\pi}^{3\\pi/2} = \\frac{9\\pi^2}{8} - \\frac
   title:'$\\int(1-x^2)^n$의 점화식과 $\\sum(a_n)^\\alpha$의 수렴 범위',
   problem:`수열 $\\{a_n\\}$이 $a_n=\\displaystyle\\int_0^1(1-x^2)^n\\,dx$일 때, $a_{n+1}=f(n)a_n$을 만족시키는 $f(n)$을 구하고, $\\displaystyle\\sum_{n=1}^{\\infty}(a_n)^{\\alpha}$이 수렴하는 실수 $\\alpha$의 범위를 구하시오.`,
   steps:[
-    {num:'Step 1', title:'f(n) 구하기',
+    {num:'Step 1', title:'$f(n)$ 구하기',
      body:`$a_{n+1}=\\int_0^1(1-x^2)^{n+1}dx = \\int_0^1(1-x^2)(1-x^2)^n dx = a_n - \\int_0^1 x^2(1-x^2)^n dx$
 
 $\\int_0^1 x^2(1-x^2)^n dx$를 부분적분 ①: $u=x$, $dv=x(1-x^2)^n dx$
@@ -679,7 +679,7 @@ $$\\int_0^1 x^2(1-x^2)^n dx = 0 + \\frac{1}{2(n+1)}\\int_0^1(1-x^2)^{n+1}dx = \\
 따라서: $a_{n+1} = a_n - \\frac{a_{n+1}}{2(n+1)}$, 정리하면:
 
 $$f(n) = \\frac{2(n+1)}{2n+3}$$`},
-    {num:'Step 2', title:'aₙ의 점근 거동',
+    {num:'Step 2', title:'$aₙ$의 점근 거동',
      body:`왈리스형 적분 ②: $a_n \\sim \\dfrac{\\sqrt{\\pi}}{2\\sqrt{n}}$ ($n\\to\\infty$)
 
 $(a_n)^{\\alpha} \\sim \\dfrac{C}{n^{\\alpha/2}}$`},
@@ -731,14 +731,14 @@ $f_n(0)=0$이고 $f_n\\to f$ 균등이므로 적분값이 수렴. 답: $\\displa
 // ─── 2025 ───
 {
   id:'2025a12', year:2025, type:'전공A', cat:'diff', pts:4,
-  title:'xᵖcos(1/x)의 x=0에서 연속성과 중간값 정리',
+  title:'$xᵖcos(1/x)$의 $x=0$에서 연속성과 중간값 정리',
   problem:`$f(x)=\\begin{cases}x^p\\cos\\dfrac{1}{x},&x>0\\\\0,&x=0\\end{cases}$에 대해, $p=\\frac{1}{3}$일 때 $f$가 $x=0$에서 연속인지 판별하고, $p=-1$일 때 임의의 양수 $L$에 대해 $f(x_0)=L$인 $x_0$이 존재함을 증명하시오.`,
   steps:[
-    {num:'Step 1', title:'p=1/3: 연속성 판별',
+    {num:'Step 1', title:'$p=1/3:$ 연속성 판별',
      body:`$|f(x)| = x^{1/3}|\\cos(1/x)| \\leq x^{1/3} \\to 0$ ($x\\to 0^+$)
 
 $\\lim_{x\\to 0^+} f(x) = 0 = f(0)$ → **$x=0$에서 연속** ✓`},
-    {num:'Step 2', title:'p=-1: f(x₀)=L 존재 (중간값 정리)',
+    {num:'Step 2', title:'$p=-1: f(x₀)=L$ 존재 (중간값 정리)',
      body:`$f(x) = \\dfrac{\\cos(1/x)}{x}$ ($x>0$).
 
 $x_n = \\dfrac{1}{2n\\pi}$으로 놓으면: $f(x_n) = 2n\\pi\\cdot\\cos(2n\\pi) = 2n\\pi \\to \\infty$.
@@ -759,7 +759,7 @@ $f$는 $(0,\\infty)$에서 연속이고, 사이값 정리 ①에 의해 $f(x_0)=
   title:'복잡한 함수급수의 균등수렴과 급수 합',
   problem:`$f_n(x)=\\begin{cases}-\\frac{x}{(n\\ln2n)^2}+\\frac{1}{n^2\\ln(2n)},&0\\leq x\\leq\\ln(2n)\\\\\\frac{1}{n^2}\\sin\\left(\\frac{2\\pi x}{\\ln(2n)}\\right),&\\ln(2n)<x\\leq 2\\ln(2n)\\\\0,&x>2\\ln(2n)\\end{cases}$일 때, $\\displaystyle\\sum f_n(x)$가 $[0,\\infty)$에서 균등수렴함을 보이고, $a_n=\\displaystyle\\int_0^{\\infty}f_n(x)dx$로 정의된 $\\displaystyle\\sum a_n$의 값을 구하시오. ($\\displaystyle\\sum_{n=1}^{\\infty}\\frac{1}{n^2}=\\frac{\\pi^2}{6}$ 이용)`,
   steps:[
-    {num:'Step 1', title:'균등 상계 Mₙ',
+    {num:'Step 1', title:'균등 상계 $Mₙ$',
      body:`구간별 최댓값:
 
 - $[0,\\ln(2n)]$에서: $|f_n|$은 $x=0$에서 최대 $= \\dfrac{1}{n^2\\ln(2n)}\\leq\\dfrac{1}{n^2}$
@@ -767,11 +767,11 @@ $f$는 $(0,\\infty)$에서 연속이고, 사이값 정리 ①에 의해 $f(x_0)=
 - $(\\ln(2n), 2\\ln(2n)]$에서: $|f_n|\\leq\\dfrac{1}{n^2}$
 
 $$M_n = \\frac{1}{n^2}$$`},
-    {num:'Step 2', title:'균등수렴 (Weierstrass)',
+    {num:'Step 2', title:'균등수렴 $(Weierstrass)$',
      body:`$|f_n(x)|\\leq \\dfrac{1}{n^2}$ (모든 $x\\geq 0$, 모든 $n$).
 
 $\\displaystyle\\sum\\frac{1}{n^2} = \\frac{\\pi^2}{6} < \\infty$ → Weierstrass M-판정법으로 균등수렴. $\\blacksquare$`},
-    {num:'Step 3', title:'∑aₙ 계산',
+    {num:'Step 3', title:'$∑aₙ$ 계산',
      body:`각 구간에서 적분:
 
 $\\int_0^{\\ln(2n)}f_n\\,dx = \\dfrac{1}{n^2}$ (삼각형 넓이와 유사, 계산 생략)
@@ -792,7 +792,7 @@ $\\int_{\\ln(2n)}^{2\\ln(2n)}\\frac{1}{n^2}\\sin\\!\\left(\\frac{2\\pi x}{\\ln(2
   title:'함수급수의 균등수렴과 실수 전체에서의 연속성',
   problem:`$f_n(x)=\\dfrac{x^4+\\sqrt{n}\\,x^3}{n(x^2+2\\sqrt{n}\\,x+2n)}$에 대해, 모든 양의 실수 $L$에 대해 $\\displaystyle\\sum f_n(x)$가 $[-L,L]$에서 균등수렴하는지 판별하고, $\\displaystyle\\sum f_n(x)$가 $\\mathbb{R}$에서 연속인지 판별하시오.`,
   steps:[
-    {num:'Step 1', title:'[-L,L]에서 균등 상계',
+    {num:'Step 1', title:'$[-L,L]$에서 균등 상계',
      body:`$x\\in[-L,L]$에서 분자: $|x^4+\\sqrt{n}\\,x^3|\\leq L^4+\\sqrt{n}\\,L^3$
 
 분모: $n|x^2+2\\sqrt{n}\\,x+2n| = n|(x+\\sqrt{n})^2+n| \\geq n\\cdot n = n^2$
@@ -819,7 +819,7 @@ $$|f_n(x)| \\leq \\frac{L^4+\\sqrt{n}\\,L^3}{n^2} \\leq \\frac{L^4}{n^2}+\\frac{
   title:'$f(x)=e^{-1/x^2}$의 $S$의 상한·하한과 이상적분 극한',
   problem:`$f(x)=\\begin{cases}e^{-1/x^2},&x\\neq 0\\\\0,&x=0\\end{cases}$으로 하고 $S=\\left\\{\\dfrac{f(x)}{x}\\,\\middle|\\,x\\text{는 양의 실수}\\right\\}$라 하자. $S$의 상한과 하한을 구하고, $\\displaystyle\\lim_{s\\to 0^+}\\int_0^1\\frac{f(x)}{s}e^{-x^2/s^2}dx$의 값을 구하시오.`,
   steps:[
-    {num:'Step 1', title:'S의 상한·하한',
+    {num:'Step 1', title:'$S$의 상한·하한',
      body:`$h(x)=\\dfrac{f(x)}{x}=\\dfrac{e^{-1/x^2}}{x}$ ($x>0$).
 
 $h'(x) = e^{-1/x^2}\\cdot\\dfrac{2/x^3\\cdot x - 1}{x^2} = \\dfrac{e^{-1/x^2}(2-x^2)}{x^4}$
