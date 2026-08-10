@@ -664,7 +664,7 @@ $$= \\left[\\frac{t^2}{2}\\right]_{\\pi}^{3\\pi/2} = \\frac{9\\pi^2}{8} - \\frac
 // ─── 2024 ───
 {
   id:'2024a10', year:2024, type:'전공A', cat:'series', pts:4,
-  title:'∫(1-x²)ⁿ의 점화식과 ∑(aₙ)^α의 수렴 범위',
+  title:'$\\int(1-x^2)^n$의 점화식과 $\\sum(a_n)^\\alpha$의 수렴 범위',
   problem:`수열 $\\{a_n\\}$이 $a_n=\\displaystyle\\int_0^1(1-x^2)^n\\,dx$일 때, $a_{n+1}=f(n)a_n$을 만족시키는 $f(n)$을 구하고, $\\displaystyle\\sum_{n=1}^{\\infty}(a_n)^{\\alpha}$이 수렴하는 실수 $\\alpha$의 범위를 구하시오.`,
   steps:[
     {num:'Step 1', title:'f(n) 구하기',
@@ -816,7 +816,7 @@ $$|f_n(x)| \\leq \\frac{L^4+\\sqrt{n}\\,L^3}{n^2} \\leq \\frac{L^4}{n^2}+\\frac{
 },
 {
   id:'2026b10', year:2026, type:'전공B', cat:'diff', pts:4,
-  title:'f(x)=e^{-1/x²}의 S의 상한·하한과 이상적분 극한',
+  title:'$f(x)=e^{-1/x^2}$의 $S$의 상한·하한과 이상적분 극한',
   problem:`$f(x)=\\begin{cases}e^{-1/x^2},&x\\neq 0\\\\0,&x=0\\end{cases}$으로 하고 $S=\\left\\{\\dfrac{f(x)}{x}\\,\\middle|\\,x\\text{는 양의 실수}\\right\\}$라 하자. $S$의 상한과 하한을 구하고, $\\displaystyle\\lim_{s\\to 0^+}\\int_0^1\\frac{f(x)}{s}e^{-x^2/s^2}dx$의 값을 구하시오.`,
   steps:[
     {num:'Step 1', title:'S의 상한·하한',
