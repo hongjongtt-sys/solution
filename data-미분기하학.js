@@ -77,6 +77,28 @@ $(\\beta'\\times\\beta'')\\cdot\\beta'''=(\\boldsymbol{B}+\\tau\\boldsymbol{T})\
   id:'2014a12', year:2014, type:'전공A', cat:'gauss', pts:2,
   title:'가우스-보네 정리로 회전포물면 위 영역의 전측지곡률',
   problem:`3차원 유클리드 공간 $\\mathbb{R}^3$에 놓인 곡면 $M:X(u,v)=\\left(u\\cos v,\\,u\\sin v,\\,\\dfrac12u^2\\right)\\ (u\\ge0,\\ 0\\le v\\le2\\pi)$에 포함되는 영역 $S=\\{X(u,v)\\mid0\\le u\\le1,\\ 0\\le v\\le\\pi\\}$가 있다. $S$의 경계(boundary) $\\partial S$의 측지곡률을 $\\kappa_g$라 할 때, $\\partial S$의 측지곡률합(전측지곡률, total geodesic curvature) $\\displaystyle\\int_{\\partial S}\\kappa_g\\,ds$의 절댓값을 구하시오. (단, $s$는 호의 길이를 나타내는 매개변수이다.)`,
+  diagram:`<svg viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg" style="font-family:'Noto Sans KR',sans-serif">
+    <text x="150" y="18" font-size="11" fill="var(--t2)" text-anchor="middle">매개변수 영역 (u,v) — S = {0≤u≤1, 0≤v≤π}</text>
+    <line x1="60" y1="40" x2="220" y2="40" stroke="var(--acc)" stroke-width="2.2"/>
+    <line x1="220" y1="40" x2="220" y2="190" stroke="var(--t1)" stroke-width="2.2"/>
+    <line x1="220" y1="190" x2="60" y2="190" stroke="var(--acc)" stroke-width="2.2"/>
+    <line x1="60" y1="40" x2="60" y2="190" stroke="var(--t3)" stroke-width="2.2" stroke-dasharray="1 5" stroke-linecap="round"/>
+    <polygon points="145,40 137,36 137,44" fill="var(--acc)"/>
+    <polygon points="220,120 216,112 224,112" fill="var(--t1)"/>
+    <polygon points="140,190 148,186 148,194" fill="var(--acc)"/>
+    <text x="130" y="34" font-size="12" fill="var(--acc)" text-anchor="middle">v=0 (자오선 C₁)</text>
+    <text x="255" y="118" font-size="12" fill="var(--t1)" text-anchor="middle">u=1 (호 C₂)</text>
+    <text x="130" y="205" font-size="12" fill="var(--acc)" text-anchor="middle">v=π (자오선 C₃)</text>
+    <text x="30" y="118" font-size="11" fill="var(--t3)" text-anchor="middle">u=0</text>
+    <text x="30" y="132" font-size="9" fill="var(--t3)" text-anchor="middle">(꼭짓점</text>
+    <text x="30" y="143" font-size="9" fill="var(--t3)" text-anchor="middle">한 점)</text>
+    <circle cx="60" cy="40" r="3" fill="var(--t2)"/>
+    <circle cx="60" cy="190" r="3" fill="var(--t2)"/>
+    <circle cx="220" cy="40" r="3" fill="var(--t1)"/>
+    <circle cx="220" cy="190" r="3" fill="var(--t1)"/>
+    <text x="200" y="35" font-size="10" fill="var(--t3)">u=1,v=0</text>
+    <text x="196" y="205" font-size="10" fill="var(--t3)">u=1,v=π</text>
+  </svg>`,
   steps:[
     {num:'Step 1', title:'경계의 구조 파악',
      body:`$u=0$은 곡면의 꼭짓점(원점) 하나로 축퇴되므로, $\\partial S$는 $v=0$과 $v=\\pi$의 자오선 두 개(원점을 지나며 매끄럽게 이어짐, 실제로는 하나의 포물선)와 $u=1$의 호(반원)로 이루어집니다.
@@ -207,6 +229,36 @@ $$|\\alpha'(t)|=t^2+2$$`},
   id:'2016b5', year:2016, type:'전공B', cat:'gauss', pts:4,
   title:'원뿔의 전개도로 측지선의 곡률 구하기',
   problem:`3차원 유클리드 공간에 밑면이 반지름의 길이가 $1$인 원이고 모선의 길이가 $4$인 원뿔이 있다. 이 원뿔의 옆면에 있는 점 $p$와 밑면에 있는 점 $q$는 같은 모선 위에 있고, 선분 $pq$의 길이는 $1$이다. 점 $q$에서 출발하여 원뿔의 옆면을 돌아 점 $p$를 지나는 측지선(geodesic) $\\gamma$에 대하여, 점 $p$에서 원뿔의 옆면의 주곡률(principal curvature)을 각각 $\\kappa_1,\\ \\kappa_2$라 하고, 점 $p$에서 측지선 $\\gamma$의 곡률(curvature)을 $\\kappa$라 하자. $\\kappa_1,\\ \\kappa_2$의 값을 구하고, 이를 이용하여 $\\kappa$의 값을 풀이 과정과 함께 쓰시오.`,
+  diagram:`<svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" style="font-family:'Noto Sans KR',sans-serif">
+    <!-- 왼쪽: 원뿔 개념도 -->
+    <polygon points="110,20 40,220 180,220" fill="none" stroke="var(--t2)" stroke-width="1.5"/>
+    <ellipse cx="110" cy="220" rx="70" ry="12" fill="none" stroke="var(--t2)" stroke-width="1.5"/>
+    <line x1="110" y1="20" x2="162.5" y2="170" stroke="var(--t1)" stroke-width="2"/>
+    <path d="M180,220 C120,235 90,190 162.5,170" fill="none" stroke="var(--acc)" stroke-width="1.6" stroke-dasharray="4 3"/>
+    <circle cx="180" cy="220" r="3.5" fill="var(--t1)"/>
+    <circle cx="162.5" cy="170" r="3.5" fill="var(--t1)"/>
+    <circle cx="110" cy="20" r="2.5" fill="var(--t1)"/>
+    <text x="188" y="224" font-size="13" fill="var(--t1)">q</text>
+    <text x="145" y="164" font-size="13" fill="var(--t1)">p</text>
+    <text x="98" y="14" font-size="11" fill="var(--t2)">꼭짓점</text>
+    <text x="110" y="252" font-size="11" fill="var(--t2)" text-anchor="middle">원뿔</text>
+    <!-- 구분선 -->
+    <line x1="245" y1="10" x2="245" y2="250" stroke="var(--b2)" stroke-width="1"/>
+    <!-- 오른쪽: 전개도(펼친 부채꼴) -->
+    <path d="M330,230 L458,230 A128,128 0 0 0 330,102 Z" fill="var(--acc-bg)" stroke="var(--t2)" stroke-width="1.5"/>
+    <line x1="330" y1="230" x2="330" y2="134" stroke="var(--t1)" stroke-width="2"/>
+    <line x1="458" y1="230" x2="330" y2="134" stroke="var(--acc)" stroke-width="2"/>
+    <circle cx="330" cy="230" r="2.5" fill="var(--t1)"/>
+    <circle cx="458" cy="230" r="3.5" fill="var(--t1)"/>
+    <circle cx="330" cy="134" r="3.5" fill="var(--t1)"/>
+    <text x="336" y="222" font-size="11" fill="var(--t2)">O</text>
+    <text x="464" y="234" font-size="13" fill="var(--t1)">q</text>
+    <text x="308" y="138" font-size="13" fill="var(--t1)">p</text>
+    <text x="390" y="245" font-size="11" fill="var(--t2)">4</text>
+    <text x="312" y="185" font-size="11" fill="var(--t2)">3</text>
+    <text x="352" y="205" font-size="11" fill="var(--t2)">β=π/2</text>
+    <text x="394" y="270" font-size="11" fill="var(--t2)" text-anchor="middle">펼친 부채꼴 (측지선 = 직선)</text>
+  </svg>`,
   steps:[
     {num:'Step 1', title:'주곡률 κ1, κ2 계산',
      body:`꼭짓점 반각 $\\alpha$: $\\sin\\alpha=\\dfrac{\\text{밑면 반지름}}{\\text{모선}}=\\dfrac14$, $\\cos\\alpha=\\dfrac{\\sqrt{15}}4$.
@@ -280,6 +332,27 @@ $\\kappa$가 상수이므로 $s=1$에서도 동일.`}
   id:'2017b5', year:2017, type:'전공B', cat:'gauss', pts:4,
   title:'두 곡면의 교선 매개변수화와 구 위의 측지곡률',
   problem:`3차원 유클리드 공간 $\\mathbb{R}^3$에서 곡선 $\\gamma$를 두 곡면 $S_1=\\{(x,y,z)\\in\\mathbb{R}^3\\mid x^2+y^2+z^2=4,\\,z>0\\},\\ S_2=\\{(x,y,z)\\in\\mathbb{R}^3\\mid(x-1)^2+y^2=1,\\,z>0\\}$의 교선이라 하자. 각 $\\theta\\,(0<\\theta<2\\pi)$를 매개변수로 하는 곡선 $\\gamma:(0,2\\pi)\\to\\mathbb{R}^3$의 매개변수표현(parametrized representation) $\\gamma(\\theta)$를 하나 구하시오. 또한 곡면 $S_1$ 위에 놓인 곡선으로서 $\\gamma$의 점 $(0,0,2)$에서의 측지곡률(geodesic curvature)의 절댓값을 풀이 과정과 함께 쓰시오.`,
+  diagram:`<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="font-family:'Noto Sans KR',sans-serif">
+    <line x1="20" y1="180" x2="270" y2="180" stroke="var(--t2)" stroke-width="1.2"/>
+    <polygon points="270,180 261,176 261,184" fill="var(--t2)"/>
+    <text x="272" y="184" font-size="12" fill="var(--t2)">x</text>
+    <line x1="60" y1="220" x2="60" y2="20" stroke="var(--t2)" stroke-width="1.2"/>
+    <polygon points="60,20 56,29 64,29" fill="var(--t2)"/>
+    <text x="66" y="24" font-size="12" fill="var(--t2)">y</text>
+    <circle cx="130" cy="180" r="70" fill="none" stroke="var(--acc)" stroke-width="1.8"/>
+    <text x="168" y="120" font-size="11" fill="var(--t2)">(x-1)²+y²=1</text>
+    <line x1="130" y1="180" x2="200" y2="180" stroke="var(--t3)" stroke-width="1" stroke-dasharray="3 2"/>
+    <line x1="130" y1="180" x2="175" y2="126" stroke="var(--t1)" stroke-width="1.6"/>
+    <path d="M 152,180 A 22,22 0 0 0 146,161" fill="none" stroke="var(--t2)" stroke-width="1"/>
+    <text x="152" y="158" font-size="12" fill="var(--t1)">θ</text>
+    <circle cx="60" cy="180" r="3" fill="var(--t1)"/>
+    <text x="42" y="196" font-size="12" fill="var(--t1)">O</text>
+    <circle cx="200" cy="180" r="2.5" fill="var(--t2)"/>
+    <text x="196" y="196" font-size="11" fill="var(--t2)">2</text>
+    <circle cx="130" cy="180" r="2.5" fill="var(--t2)"/>
+    <text x="126" y="196" font-size="11" fill="var(--t2)">1</text>
+    <text x="150" y="240" font-size="11" fill="var(--t2)" text-anchor="middle">원기둥 S₂를 위에서 본 밑원: x=1+cosθ, y=sinθ</text>
+  </svg>`,
   steps:[
     {num:'Step 1', title:'원기둥 S₂로 매개변수화',
      body:`$S_2$: $x=1+\\cos\\theta,\\ y=\\sin\\theta$. $S_1$에 대입: $z^2=4-(1+\\cos\\theta)^2-\\sin^2\\theta=2-2\\cos\\theta=4\\sin^2(\\theta/2)$.
@@ -522,6 +595,20 @@ $$-\\tau(\\boldsymbol{N}\\cdot\\gamma)=0\\ \\Rightarrow\\ -\\tau\\left(-\\frac1\
   id:'2021b10', year:2021, type:'전공B', cat:'gauss', pts:4,
   title:'회전면의 전가우스곡률 (경계 접선이 수평이 되어 0)',
   problem:`3차원 유클리드 공간 $\\mathbb{R}^3$에서 곡선 $\\gamma(u)=(0,\\,u^4-2u^2+5,\\,u)\\ (u\\in\\mathbb{R})$를 $z$축을 중심으로 $360^\\circ$ 회전시켜 얻은 회전체를 $M$이라 하고, $M$의 가우스 곡률(Gaussian curvature)을 $K$라 하자. 영역 $S=\\{(x,y,z)\\in M\\mid-1\\le z\\le1\\}$에 대하여 $\\displaystyle\\iint_SK\\,dA$의 값을 풀이 과정과 함께 쓰시오.`,
+  diagram:`<svg viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg" style="font-family:'Noto Sans KR',sans-serif">
+    <line x1="130" y1="20" x2="130" y2="245" stroke="var(--t3)" stroke-width="1" stroke-dasharray="2 3"/>
+    <text x="98" y="18" font-size="10" fill="var(--t3)">r(z)=z⁴-2z²+5</text>
+    <line x1="15" y1="63" x2="255" y2="63" stroke="var(--acc)" stroke-width="1.3" stroke-dasharray="4 3"/>
+    <text x="260" y="67" font-size="11" fill="var(--acc)">z=1</text>
+    <line x1="15" y1="197" x2="255" y2="197" stroke="var(--acc)" stroke-width="1.3" stroke-dasharray="4 3"/>
+    <text x="257" y="201" font-size="11" fill="var(--acc)">z=-1</text>
+    <path d="M210,197 Q248,130 210,63" fill="none" stroke="var(--t1)" stroke-width="2"/>
+    <path d="M50,197 Q12,130 50,63" fill="none" stroke="var(--t1)" stroke-width="2"/>
+    <path d="M210,197 Q248,130 210,63 L50,63 Q12,130 50,197 Z" fill="var(--acc-bg)" opacity="0.5"/>
+    <circle cx="130" cy="63" r="2.5" fill="var(--t2)"/>
+    <circle cx="130" cy="197" r="2.5" fill="var(--t2)"/>
+    <text x="130" y="255" font-size="11" fill="var(--t2)" text-anchor="middle">S: 회전면에서 -1≤z≤1인 띠 영역 (색칠), r\'(±1)=0</text>
+  </svg>`,
   steps:[
     {num:'Step 1', title:'회전면 매개변수화, K(u) 공식',
      body:`반지름 $r(u)=u^4-2u^2+5$ (항상 양수), 높이 $z=u$인 회전면. 표준 공식 ①:
@@ -841,6 +928,23 @@ $$|\\tau(1)|=\\frac13$$`}
   id:'2026b11', year:2026, type:'전공B', cat:'gauss', pts:4,
   title:'세 평행원의 측지곡률 조건으로 f(0)과 가우스곡률 결정',
   problem:`최고차항의 계수가 $2$인 삼차함수 $f(x)$가 $-1<x<2$에서 $f(x)>0$이다. 3차원 유클리드 공간 $\\mathbb{R}^3$에서 곡선 $y=f(x),\\,z=0\\,(-1<x<2)$를 $x$축 둘레로 $360^\\circ$ 회전시켜 얻은 회전면(surface of revolution)을 $M$이라 하고, 곡면 $M$이 평면 $x=0$과 만나서 생기는 원을 $\\alpha$, 평면 $x=\\dfrac23$와 만나서 생기는 원을 $\\beta$, 평면 $x=1$과 만나서 생기는 원을 $\\gamma$라 하자. 곡면 $M$에 놓인 곡선으로서 $\\alpha,\\,\\beta,\\,\\gamma$의 측지곡률(geodesic curvature)이 각각 $0,\\,0,\\,\\dfrac25$이다. $f(0)$의 값과 곡선 $\\alpha$ 위의 점에서 $M$의 가우스 곡률(Gaussian curvature)을 풀이 과정과 함께 쓰시오.`,
+  diagram:`<svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" style="font-family:'Noto Sans KR',sans-serif">
+    <line x1="15" y1="100" x2="305" y2="100" stroke="var(--t3)" stroke-width="1" stroke-dasharray="3 3"/>
+    <polygon points="305,100 297,96 297,104" fill="var(--t3)"/>
+    <text x="300" y="115" font-size="11" fill="var(--t3)">x</text>
+    <path d="M30,60 Q70,35 113,44 Q145,50 175,52 Q205,45 207,44 Q250,30 295,10" fill="none" stroke="var(--t1)" stroke-width="1.8"/>
+    <path d="M30,140 Q70,165 113,156 Q145,150 175,148 Q205,155 207,156 Q250,170 295,190" fill="none" stroke="var(--t1)" stroke-width="1.8"/>
+    <ellipse cx="113" cy="100" rx="7" ry="56" fill="var(--acc-bg)" stroke="var(--acc)" stroke-width="1.8"/>
+    <ellipse cx="175" cy="100" rx="7" ry="48.5" fill="var(--acc-bg)" stroke="var(--acc)" stroke-width="1.8"/>
+    <ellipse cx="207" cy="100" rx="7" ry="56" fill="var(--acc-bg)" stroke="var(--acc)" stroke-width="1.8"/>
+    <text x="113" y="30" font-size="11" fill="var(--t1)" text-anchor="middle">x=0</text>
+    <text x="113" y="172" font-size="12" fill="var(--acc)" text-anchor="middle">α</text>
+    <text x="175" y="24" font-size="11" fill="var(--t1)" text-anchor="middle">x=2/3</text>
+    <text x="175" y="164" font-size="12" fill="var(--acc)" text-anchor="middle">β</text>
+    <text x="207" y="30" font-size="11" fill="var(--t1)" text-anchor="middle">x=1</text>
+    <text x="207" y="172" font-size="12" fill="var(--acc)" text-anchor="middle">γ</text>
+    <text x="160" y="195" font-size="11" fill="var(--t2)" text-anchor="middle">y=f(x)를 x축 둘레로 회전 — 세 단면원 α,β,γ의 측지곡률이 0,0,2/5</text>
+  </svg>`,
   steps:[
     {num:'Step 1', title:'평행원의 측지곡률 공식',
      body:`회전면(반지름함수 $r(x)=f(x)$)의 평행원(단면원)의 측지곡률 ①:
