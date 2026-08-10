@@ -85,7 +85,7 @@ $$T^{-1}(2)=-\\frac{i}{\\pi}\\bar z+\\ker(T)=\\left\\{-\\frac{i}{\\pi}\\bar z+b_
   title:'조던 부등식으로 경계적분 소멸 증명 후 실적분 계산',
   problem:`복소평면 $\\mathbb{C}$에서 다음 그림과 같이 반지름의 길이가 $R$인 반원을 $C_R=\\{Re^{it}\\in\\mathbb{C}\\mid0\\le t\\le\\pi\\}$라고 할 때, $a>0$과 $b>0$에 대하여 $\\displaystyle\\lim_{R\\to\\infty}\\int_{C_R}\\frac{ze^{ibz}}{z^2+a^2}\\,dz=0$임을 보이고 $\\displaystyle\\int_{-\\infty}^{\\infty}\\frac{xe^{ibx}}{x^2+a^2}\\,dx$의 값을 풀이 과정과 함께 쓰시오.`,
   steps:[
-    {num:'Step 1', title:'C_R 위에서 크기 추정',
+    {num:'Step 1', title:'$C_R$ 위에서 크기 추정',
      body:`$R>a$일 때 $|z^2+a^2|\\ge R^2-a^2$이고, $z=Re^{it}$에서 $|e^{ibz}|=e^{-bR\\sin t}$이므로:
 
 $$\\left|\\int_{C_R}\\frac{ze^{ibz}}{z^2+a^2}dz\\right|\\le\\int_0^\\pi\\frac{R\\cdot e^{-bR\\sin t}}{R^2-a^2}\\cdot R\\,dt=\\frac{R^2}{R^2-a^2}\\int_0^\\pi e^{-bR\\sin t}\\,dt$$`},
@@ -114,7 +114,7 @@ $$\\int_{-\\infty}^{\\infty}\\frac{xe^{ibx}}{x^2+a^2}dx=2\\pi i\\cdot\\frac{e^{-
 // ───────────────────────────────────────
 {
   id:'2016b7', year:2016, type:'전공B', cat:'series', pts:5,
-  title:'e^z/(e^{2z}+1)의 테일러 급수 홀수항 소멸과 유수 계산',
+  title:'$e^z/(e^{2z}+1)$의 테일러 급수 홀수항 소멸과 유수 계산',
   problem:`복소함수 $f(z)=\\dfrac{e^z}{e^{2z}+1}$ ($|z|<\\dfrac{\\pi}{2}$)의 점 $z_0=0$에 관한 테일러 급수 전개를 $f(z)=\\displaystyle\\sum_{n=0}^\\infty a_nz^n$이라 하자. 음이 아닌 모든 정수 $n$에 대하여 $a_{2n+1}=0$임을 보이시오. 또한 복소평면에서 시계반대방향의 단위원 $C:|z|=1$에 대하여 $\\displaystyle\\int_C\\frac{f(z)}{z^3}\\,dz$의 값을 풀이 과정과 함께 쓰시오.`,
   steps:[
     {num:'Step 1', title:'f(z)를 쌍곡코시컨트 함수로 정리',
@@ -254,7 +254,7 @@ $$T(z)=\\frac{-2z+2i}{z+i}$$`},
   title:'정함수의 부등식과 리우빌 정리로 f\'(0) 구하기',
   problem:`정함수(entire function) $f(z)$가 모든 복소수 $z$에 대하여 부등식 $|f(z)|\\le|e^z-1|$을 만족시킨다. $f(1)=1$일 때, $f'(0)$의 값을 풀이 과정과 함께 쓰시오.`,
   steps:[
-    {num:'Step 1', title:'g(z)=f(z)/(e^z-1)의 제거가능 특이점',
+    {num:'Step 1', title:'$g(z)=f(z)/(e^z-1)$의 제거가능 특이점',
      body:`$z=2\\pi ik$ ($k\\in\\mathbb{Z}$)에서 $e^z-1=0$이고, 주어진 부등식에서 $|f(2\\pi ik)|\\le0$이므로 $f(2\\pi ik)=0$도 성립합니다.
 
 $e^z-1$은 이 점들에서 단순영점 ($\\frac{d}{dz}(e^z-1)=e^z\\ne0$)이므로 $g(z)=\\dfrac{f(z)}{e^z-1}$은 각 $z=2\\pi ik$ 근방에서 $|g(z)|=\\dfrac{|f(z)|}{|e^z-1|}\\le1$로 유계.
@@ -613,7 +613,7 @@ $$\\int_C\\frac1{(z-3)(z^3-z-4)}dz=2\\pi i\\left(-\\frac1{20}\\right)=-\\frac{\\
 },
 {
   id:'2024b11', year:2024, type:'전공B', cat:'entire', pts:4,
-  title:'CR방정식과 부등식으로 f(z)=-e^{πz} 결정 후 비율 계산',
+  title:'CR방정식과 부등식으로 $f(z)=-e^{\\pi z}$ 결정 후 비율 계산',
   problem:`실숫값을 갖는 두 함수 $u(x,y),\\ v(x,y)$와 복소수 $z=x+iy$ ($x,y$는 실수)에 대하여 복소함수 $f(z)=u(x,y)+iv(x,y)$는 정함수(전해석함수, entire function)이다. $\\overline{f(\\bar z)}$가 정함수임을 보이시오. 또한, $f'(i)=\\pi,\\ f(-i)=1$이고 모든 실수 $x,y$에 대하여 $\\dfrac{\\partial u}{\\partial x}(x,y)\\dfrac{\\partial v}{\\partial y}(x,y)-\\dfrac{\\partial u}{\\partial y}(x,y)\\dfrac{\\partial v}{\\partial x}(x,y)>(u(x,-y))^2+(v(x,-y))^2$일 때, $\\dfrac{f'(1-i)}{f(1+i)}$의 값을 풀이 과정과 함께 쓰시오. (단, $\\bar z$는 $z$의 켤레복소수이다.)`,
   steps:[
     {num:'Step 1', title:'g(z)=conj(f(z̄))가 정함수임을 증명',
@@ -704,7 +704,7 @@ $$|1-0|=1$$`}
 },
 {
   id:'2025b9', year:2025, type:'전공B', cat:'series', pts:4,
-  title:'f(z)=e^{-z} 결정 후 essential singularity 유수로 f(1/z) 적분',
+  title:'$f(z)=e^{-z}$ 결정 후 essential singularity 유수로 $f(1/z)$ 적분',
   problem:`복소수 $z=x+iy$ ($x,y$는 실수)에 대한 함수 $f(z)=e^{-x}\\cos y+iv(x,y)$ (단, $v(x,y)$는 실숫값 함수)가 정함수(전해석함수, entire function)이고 $f(0)=1$을 만족시킬 때, $f(z)$를 풀이 과정과 함께 쓰시오. 또한 복소평면에서 중심이 원점이고 반지름의 길이가 $1$인 원을 시계반대방향으로 한 바퀴 도는 곡선 $C$에 대하여 선적분 $\\displaystyle\\int_Cf\\!\\left(\\frac1z\\right)dz$의 값을 풀이 과정과 함께 쓰시오.`,
   steps:[
     {num:'Step 1', title:'CR방정식으로 v 구하기',
@@ -719,7 +719,7 @@ $$v(x,y)=-e^{-x}\\sin y+C$$`},
 $f(0)=1+iC=1\\Rightarrow C=0$. 따라서:
 
 $$f(z)=e^{-z}$$`},
-    {num:'Step 3', title:'f(1/z)=e^{-1/z}의 로랑 전개',
+    {num:'Step 3', title:'$f(1/z)=e^{-1/z}$의 로랑 전개',
      body:`$$e^{-1/z}=\\sum_{n=0}^\\infty\\frac{(-1)^n}{n!\\,z^n}$$
 
 $z^{-1}$항($n=1$)의 계수(유수)는 $-1$.`},
@@ -772,7 +772,7 @@ $$\\int_{C(2)}\\frac{f'(z)}{f(z)}dz=2\\pi i(9-6)=6\\pi i$$`},
 },
 {
   id:'2026b8', year:2026, type:'전공B', cat:'series', pts:4,
-  title:'CR방정식으로 a,b,c,d 결정, e^{1/z}f(z)의 a₋₁ 계수',
+  title:'CR방정식으로 $a,b,c,d$ 결정, $e^{1/z}f(z)$의 $a_{-1}$ 계수',
   problem:`복소수 $z=x+iy$ ($x,y$는 실수)에 대한 함수 $f(z)=\\dfrac{x+ay}{x^2+y^2}+x^2+by^2+i\\left(\\dfrac{cy}{x^2+y^2}+dxy\\right)$가 영역 $\\mathbb{C}-\\{0\\}$에서 해석적(analytic)이 되도록 하는 실수 $a,b,c,d$의 값을 풀이 과정과 함께 쓰시오. 또한 $e^{\\frac1z}f(z)$의 $z=0$을 중심으로 하는 로랑 급수(Laurent series)를 $\\displaystyle\\sum_{n=-\\infty}^\\infty a_nz^n$이라 할 때, $a_{-1}$의 값을 풀이 과정과 함께 쓰시오.`,
   steps:[
     {num:'Step 1', title:'특이항을 1/z와 비교해 a,c 결정',
@@ -795,7 +795,7 @@ $u_{poly,y}=2by=-v_{poly,x}=-dy\\Rightarrow2b=-d=-2\\Rightarrow b=-1$`},
      body:`$a=0,b=-1,c=-1,d=2$일 때 $u_{poly}=x^2-y^2,\\ v_{poly}=2xy$이므로 $u_{poly}+iv_{poly}=z^2$.
 
 $$f(z)=\\frac1z+z^2$$`},
-    {num:'Step 4', title:'e^{1/z}f(z)의 a₋₁ 계수',
+    {num:'Step 4', title:'$e^{1/z}f(z)$의 $a_{-1}$ 계수',
      body:`$e^{1/z}=\\displaystyle\\sum_{n=0}^\\infty\\frac1{n!z^n}$이므로:
 
 $$e^{1/z}f(z)=\\left(\\sum_{n\\ge0}\\frac1{n!z^n}\\right)(z^2+z^{-1})=\\sum_{n\\ge0}\\frac{z^{2-n}}{n!}+\\sum_{n\\ge0}\\frac{z^{-n-1}}{n!}$$
