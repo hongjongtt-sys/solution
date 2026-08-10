@@ -128,7 +128,7 @@ $$[T]_B=\\begin{pmatrix}1&0\\\\-1&-1\\end{pmatrix}$$`}
   answer:'$\\|T(\\mathbf{x})\\|=\\|\\mathbf{x}\\|$ 증명 완료, $[T]_B=\\begin{pmatrix}1&0\\\\-1&-1\\end{pmatrix}$',
   footnotes:[
     {n:'①',text:'$T(x)=x-2(x·u)u$는 $u$방향 성분만 부호를 바꾸는 변환으로$, u$에 수직한 초평면에 대한 거울반사(하우스홀더 반사)이다.'},
-    {n:'②',text:'선형변환 $T$의 기저 $B={b1,b2}$에 대한 행렬표현 $[T]_B$는 $T(b1),T(b2)$를 $B$로 나타낸 좌표벡터를 각각 첫째·둘째 열로 하는 행렬.'}
+    {n:'②',text:'선형변환 $T$의 기저 $B=\\{b_1,b_2\\}$에 대한 행렬표현 $[T]_B$는 $T(b_1),T(b_2)$를 $B$로 나타낸 좌표벡터를 각각 첫째·둘째 열로 하는 행렬.'}
   ]
 },
 
@@ -144,7 +144,7 @@ $$[T]_B=\\begin{pmatrix}1&0\\\\-1&-1\\end{pmatrix}$$`}
      body:`$\\{\\mathbf{u_1},\\mathbf{u_2}\\}$가 $V$의 정규직교기저이므로, $V$에서 이 기저로의 좌표화는 등거리사상(isometry) ①입니다.
 
 따라서 $\\mathbf{v_1},\\mathbf{v_2}$가 이루는 평행사변형의 넓이는 좌표 $(a_{11},a_{12}),(a_{21},a_{22})$가 $\\mathbb{R}^2$에서 이루는 평행사변형의 넓이 $|a_{11}a_{22}-a_{12}a_{21}|$와 같습니다.`},
-    {num:'Step 2', title:'$v1×v2$의 크기로 넓이 계산',
+    {num:'Step 2', title:'$v_1\\times v_2$의 크기로 넓이 계산',
      body:`한편 $\\mathbb{R}^3$에서 $\\mathbf{v_1},\\mathbf{v_2}$가 이루는 평행사변형의 넓이는 $|\\mathbf{v_1}\\times\\mathbf{v_2}|$ ②이므로:
 
 $$|a_{11}a_{22}-a_{12}a_{21}|=|\\mathbf{v_1}\\times\\mathbf{v_2}|$$
@@ -156,7 +156,7 @@ $$\\mathbf{v_1}\\times\\mathbf{v_2}=(1,2,2)\\times(1,-1,2)=(6,0,-3)$$`},
   answer:'$3\\sqrt5$',
   footnotes:[
     {n:'①',text:'정규직교기저로의 좌표화는 내적(따라서 길이·각도·넓이)을 보존하는 선형등거리사상.'},
-    {n:'②',text:'두 벡터가 이루는 평행사변형의 넓이는 외적의 크기 $|v1×v2|$와 같다 (외적의 기하학적 정의).'}
+    {n:'②',text:'두 벡터가 이루는 평행사변형의 넓이는 외적의 크기 $|v_1\\times v_2|$와 같다 (외적의 기하학적 정의).'}
   ]
 },
 {
@@ -179,7 +179,7 @@ $$\\det(A)=1\\times2\\times3=6$$`}
   ],
   answer:'일차독립 증명 완료, $\\det(A)=6$',
   footnotes:[
-    {n:'①',text:'$c1+c2=0, c1+c3=0$을 빼면 $c2-c3=0. c2+c3=0$과 연립하면 $c2=c3=0,$ 이어서 $c1=0.$'},
+    {n:'①',text:'$c_1+c_2=0, c_1+c_3=0$을 빼면 $c_2-c_3=0$. $c_2+c_3=0$과 연립하면 $c_2=c_3=0$, 이어서 $c_1=0$.'},
     {n:'②',text:'행렬식은 고유값들의 곱과 같다 (대각화 가능 여부와 무관하게 항상 성립하는 사실).'}
   ]
 },
@@ -192,11 +192,11 @@ $$\\det(A)=1\\times2\\times3=6$$`}
   title:'두 정사영의 합 $T_k$가 비가역/랭크2가 되는 $k$',
   problem:`$3$차원 유클리드 내적 공간 $\\mathbb{R}^3$의 세 벡터 $\\mathbf{v_1}=(1,0,0),\\mathbf{v_2}=(1,1,1),\\mathbf{v_3}=(0,-1,1)$에 대하여, 두 벡터 $\\mathbf{v_1},\\mathbf{v_2}$로 생성된 부분공간을 $W_{12}$라 하고 두 벡터 $\\mathbf{v_1},\\mathbf{v_3}$으로 생성된 부분공간을 $W_{13}$이라 하자. $\\mathbb{R}^3$의 벡터 $\\mathbf{u}$에 대하여 부분공간 $W$ 위로의 $\\mathbf{u}$의 정사영(orthogonal projection)을 $\\text{proj}_W\\mathbf{u}$라 하고, 실수 $k$에 대하여 선형변환 $T_k:\\mathbb{R}^3\\to\\mathbb{R}^3$을 $T_k(\\mathbf{u})=\\text{proj}_{W_{12}}\\mathbf{u}+\\text{proj}_{W_{13}}\\mathbf{u}+k\\mathbf{u}$로 정의하자. $T_k$의 역변환(inverse transformation)이 존재하지 않도록 하는 모든 $k$의 값을 풀이 과정과 함께 쓰시오. 또한 $T_k$의 랭크(계수, 계급수, 유효차수, rank)가 $2$인 $k$의 값을 구하시오.`,
   steps:[
-    {num:'Step 1', title:'$W₁₃$의 정사영 $(v1⊥v3$이므로 간단)',
+    {num:'Step 1', title:'$W_{13}$의 정사영 ($v_1\\perp v_3$이므로 간단)',
      body:`$\\mathbf{v_1}\\cdot\\mathbf{v_3}=0$이므로 $W_{13}$은 이미 직교기저 $\\{\\mathbf{v_1},\\mathbf{v_3}\\}$를 가짐. 정사영 공식 ①:
 
 $$P_{13}=\\frac{\\mathbf{v_1}\\mathbf{v_1}^T}{\\mathbf{v_1}\\cdot\\mathbf{v_1}}+\\frac{\\mathbf{v_3}\\mathbf{v_3}^T}{\\mathbf{v_3}\\cdot\\mathbf{v_3}}=\\begin{pmatrix}1&0&0\\\\0&0.5&-0.5\\\\0&-0.5&0.5\\end{pmatrix}$$`},
-    {num:'Step 2', title:'$W₁₂$의 정사영 $(Gram$ 공식)',
+    {num:'Step 2', title:'$W_{12}$의 정사영 (Gram 공식)',
      body:`$\\mathbf{v_1},\\mathbf{v_2}$는 직교하지 않으므로 $P_{12}=V(V^TV)^{-1}V^T$ ($V=[\\mathbf{v_1}\\ \\mathbf{v_2}]$)를 계산 ②:
 
 $$P_{12}=\\begin{pmatrix}1&0&0\\\\0&0.5&0.5\\\\0&0.5&0.5\\end{pmatrix}$$`},
@@ -285,7 +285,7 @@ $$=1\\cdot1^n\\cdot(-1)+(-1)\\cdot2^n\\cdot(-1)+0\\cdot3^n\\cdot1=2^n-1$$
   answer:'$D=\\text{diag}(1,2,3)$, $P=\\begin{pmatrix}1&0&1\\\\1&-1&0\\\\-2&1&0\\end{pmatrix}$, $(A^n)_{23}=2^n-1$',
   footnotes:[
     {n:'①',text:'첫 열에 0이 두 개 있으므로 첫 열을 따라 여인수 전개하면 계산이 간단해진다.'},
-    {n:'②',text:'$A^n=PD^nP⁻¹$의 $(i,j)$ 성분은 $P$의 $i$행과 $D^nP⁻¹$의 $j$열의 내적$. D$가 대각행렬이므로 $D^n$도 대각행렬 $diag(d1^n,d2^n,d3^n).$'}
+    {n:'②',text:'$A^n=PD^nP⁻¹$의 $(i,j)$ 성분은 $P$의 $i$행과 $D^nP⁻¹$의 $j$열의 내적$. D$가 대각행렬이므로 $D^n$도 대각행렬 $diag(d_1^n,d_2^n,d_3^n).$'}
   ]
 },
 
